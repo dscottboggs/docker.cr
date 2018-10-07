@@ -1,21 +1,20 @@
 module Docker
   class Container
-
     JSON.mapping({
-      id: {key: "Id", type: String},
-      names: {key: "Names", nilable: true, type: Array(String)},
-      image: {key: "Image", nilable: true, type: String},
-      image_id: {key: "ImageID", nilable: true, type: String},
-      command: {key: "Command", nilable: true, type: String},
-      created: {key: "Created", nilable: true, type: Int64},
-      status: {key: "Status", nilable: true, type: String},
-      ports: {key: "Ports", nilable: true, type: Array(Hash(String, JSON::Any))},
-      labels: {key: "Labels", nilable: true, type: Hash(String, String)},
-      size_rw: {key: "SizeRw", nilable: true, type: Int32},
-      size_root_fs: {key: "SizeRootFs", nilable: true, type: Int32},
+      id:               {key: "Id", type: String},
+      names:            {key: "Names", nilable: true, type: Array(String)},
+      image:            {key: "Image", nilable: true, type: String},
+      image_id:         {key: "ImageID", nilable: true, type: String},
+      command:          {key: "Command", nilable: true, type: String},
+      created:          {key: "Created", nilable: true, type: Int64},
+      status:           {key: "Status", nilable: true, type: String},
+      ports:            {key: "Ports", nilable: true, type: Array(Hash(String, JSON::Any))},
+      labels:           {key: "Labels", nilable: true, type: Hash(String, String)},
+      size_rw:          {key: "SizeRw", nilable: true, type: Int32},
+      size_root_fs:     {key: "SizeRootFs", nilable: true, type: Int32},
       network_settings: {key: "NetworkSettings", nilable: true, type: Hash(String, JSON::Any)},
     })
-  
+
     def logs(follow = true, stdout = true, stderr = true, since = 0, timestamps = false)
       params = HTTP::Params.build do |qs|
         qs.add "follow", follow.to_s
@@ -38,30 +37,37 @@ module Docker
     end
 
     def start
-      handle_response Docker.client.post("/containers/#{id}/start")
+      post "/containers/#{id}/start"
     end
 
     def stop(wait = 5)
-      handle_response Docker.client.post("/containers/#{id}/stop?t=#{wait}")
+      post "/containers/#{id}/stop?t=#{wait}"
     end
 
     def restart(wait = 5)
-      handle_response Docker.client.post("/containers/#{id}/restart?t=#{wait}")
+      post "/containers/#{id}/restart?t=#{wait}"
     end
 
     def kill
-      handle_response Docker.client.post("/containers/#{id}/kill")
+      post "/containers/#{id}/kill"
     end
 
-    private def handle_response(res)
-      case res.status_code
+    private def post(path : String)
+      handle_response path, Docker.client.post( path )
+    end
+
+    private def handle_response(path : String, res : HTTP::Client::Response)
+      case res.status_code # make chainable
+      when 200
+        return self
       when 404
-        raise Docker::Client::Exception.new("no such container")
+        raise NotFound.new(path, res)
       when 500
-        raise Docker::Client::Exception.new("server error")
+        raise InternalServerError.new(path, res)
+      else
+        pp res
+        raise Docker::Client::Exception.new "unrecognized error code #{res.status_code}"
       end
-      self
     end
-
   end
 end

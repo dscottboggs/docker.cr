@@ -26,7 +26,7 @@ module Docker
 
     # The URL at which the docker client can be reached. It is advisable to use
     # a unix socket, which may be passed to this using the URL format "unix://*"
-    getter url        : URI
+    getter url : URI
     # Also accessible via DOCKER_TLS_VERIFY environment variable.
     setter verify_tls : Bool?
     cert_path : String?
@@ -39,14 +39,14 @@ module Docker
       # client assignment MUST be within initialize, or it will be nillable.
       # you can't just call setup_client from the initialize method. :(
       @client = if url.scheme === "unix"
-                 HTTP::Client.unix(url.to_s.sub /unix:\//, "")
-               elsif verify_tls?
-                 c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
-                 c.ssl_context = ssl_context
-                 c
-               else
-                 HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
-               end
+                  HTTP::Client.unix(url.to_s.sub /unix:\//, "")
+                elsif verify_tls?
+                  c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
+                  c.ssl_context = ssl_context
+                  c
+                else
+                  HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
+                end
     end
 
     def initialize(url : URI)
@@ -54,14 +54,14 @@ module Docker
       @raw_url = url.to_s
       # client assignment MUST be within initialize, or it will be nillable.
       @client = if url.scheme === "unix"
-                 HTTP::Client.unix(url.to_s.sub /unix:\//, "")
-               elsif verify_tls?
-                 c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
-                 c.ssl_context = ssl_context
-                 c
-               else
-                 HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
-               end
+                  HTTP::Client.unix(url.to_s.sub /unix:\//, "")
+                elsif verify_tls?
+                  c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
+                  c.ssl_context = ssl_context
+                  c
+                else
+                  HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
+                end
     end
 
     def url=(url : URI)
@@ -76,14 +76,14 @@ module Docker
 
     private def setup_client
       @client = if url.scheme === "unix"
-                 HTTP::Client.unix(url.to_s.sub /unix:\//, "")
-               elsif verify_tls?
-                 c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
-                 c.ssl_context = ssl_context
-                 c
-               else
-                 HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
-               end
+                  HTTP::Client.unix(url.to_s.sub /unix:\//, "")
+                elsif verify_tls?
+                  c = HTTP::Client.new url.host.not_nil!, url.port.not_nil!, true
+                  c.ssl_context = ssl_context
+                  c
+                else
+                  HTTP::Client.new url.host.not_nil!, url.port.not_nil!, false
+                end
     end
 
     private def ssl_context
@@ -125,13 +125,13 @@ module Docker
             required SSL, but no such file found at #{path} or no path specified"
         end
       end
-      {%for f in %i<ca key cert>%}
+      {% for f in %i<ca key cert> %}
       spawn do
         unless File.exists?("{{f.id}}.pem")
           raise "required SSL and #{path}/{{f.id}}.pem was not found"
         end
       end
-      {%end%}
+      {% end %}
       @cert_path = path
     end
 
