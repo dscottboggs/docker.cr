@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/dscottboggs/docker.cr">
+  <title>Docker::Info - github.com/dscottboggs/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/dscottboggs/docker.cr/Docker" data-name="docker">
+      <a href="../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/dscottboggs/docker.cr/Docker/Client" data-name="docker::client">
+      <a href="../Docker/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Client/Containers" data-name="docker::client::containers">
+      <a href="../Docker/Client/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Client/Exception" data-name="docker::client::exception">
+      <a href="../Docker/Client/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Client/Info" data-name="docker::client::info">
+      <a href="../Docker/Client/Info.html">Info</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../Docker/Container.html">Container</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/dscottboggs/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../Docker/Info.html">Info</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::Info
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Docker/Info.html">Docker::Info</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L2" target="_blank">
+        docker/info.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28__temp_67%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(__temp_67 : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#architecture%3AString%3F-instance-method" class="signature"><strong>#architecture</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#architecture%3D%28_architecture%3AString%3F%29-instance-method" class="signature"><strong>#architecture=</strong>(_architecture : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers%3AInt32%3F-instance-method" class="signature"><strong>#containers</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers%3D%28_containers%3AInt32%3F%29-instance-method" class="signature"><strong>#containers=</strong>(_containers : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_paused%3AInt32%3F-instance-method" class="signature"><strong>#containers_paused</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_paused%3D%28_containers_paused%3AInt32%3F%29-instance-method" class="signature"><strong>#containers_paused=</strong>(_containers_paused : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_running%3AInt32%3F-instance-method" class="signature"><strong>#containers_running</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_running%3D%28_containers_running%3AInt32%3F%29-instance-method" class="signature"><strong>#containers_running=</strong>(_containers_running : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_stopped%3AInt32%3F-instance-method" class="signature"><strong>#containers_stopped</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers_stopped%3D%28_containers_stopped%3AInt32%3F%29-instance-method" class="signature"><strong>#containers_stopped=</strong>(_containers_stopped : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_cfs_period%3ABool%3F-instance-method" class="signature"><strong>#cpu_cfs_period</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_cfs_period%3D%28_cpu_cfs_period%3ABool%3F%29-instance-method" class="signature"><strong>#cpu_cfs_period=</strong>(_cpu_cfs_period : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_cfs_quota%3ABool%3F-instance-method" class="signature"><strong>#cpu_cfs_quota</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_cfs_quota%3D%28_cpu_cfs_quota%3ABool%3F%29-instance-method" class="signature"><strong>#cpu_cfs_quota=</strong>(_cpu_cfs_quota : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#debug%3ABool%3F-instance-method" class="signature"><strong>#debug</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#debug%3D%28_debug%3ABool%3F%29-instance-method" class="signature"><strong>#debug=</strong>(_debug : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#discovery_backend%3AString%3F-instance-method" class="signature"><strong>#discovery_backend</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#discovery_backend%3D%28_discovery_backend%3AString%3F%29-instance-method" class="signature"><strong>#discovery_backend=</strong>(_discovery_backend : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#docker_root_dir%3AString%3F-instance-method" class="signature"><strong>#docker_root_dir</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#docker_root_dir%3D%28_docker_root_dir%3AString%3F%29-instance-method" class="signature"><strong>#docker_root_dir=</strong>(_docker_root_dir : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver%3AString%3F-instance-method" class="signature"><strong>#driver</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver%3D%28_driver%3AString%3F%29-instance-method" class="signature"><strong>#driver=</strong>(_driver : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver_status%3AArray%28Array%28String%29%29%3F-instance-method" class="signature"><strong>#driver_status</strong> : Array(Array(String))?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver_status%3D%28_driver_status%3AArray%28Array%28String%29%29%3F%29-instance-method" class="signature"><strong>#driver_status=</strong>(_driver_status : Array(Array(String))?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execution_driver%3AString%3F-instance-method" class="signature"><strong>#execution_driver</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execution_driver%3D%28_execution_driver%3AString%3F%29-instance-method" class="signature"><strong>#execution_driver=</strong>(_execution_driver : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#experimental_build%3ABool%3F-instance-method" class="signature"><strong>#experimental_build</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#experimental_build%3D%28_experimental_build%3ABool%3F%29-instance-method" class="signature"><strong>#experimental_build=</strong>(_experimental_build : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#http_proxy%3AString%3F-instance-method" class="signature"><strong>#http_proxy</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#http_proxy%3D%28_http_proxy%3AString%3F%29-instance-method" class="signature"><strong>#http_proxy=</strong>(_http_proxy : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#https_proxy%3AString%3F-instance-method" class="signature"><strong>#https_proxy</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#https_proxy%3D%28_https_proxy%3AString%3F%29-instance-method" class="signature"><strong>#https_proxy=</strong>(_https_proxy : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#i_pv4_forwarding%3ABool%3F-instance-method" class="signature"><strong>#i_pv4_forwarding</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#i_pv4_forwarding%3D%28_i_pv4_forwarding%3ABool%3F%29-instance-method" class="signature"><strong>#i_pv4_forwarding=</strong>(_i_pv4_forwarding : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AString%3F-instance-method" class="signature"><strong>#id</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28_id%3AString%3F%29-instance-method" class="signature"><strong>#id=</strong>(_id : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#images%3AInt32%3F-instance-method" class="signature"><strong>#images</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#images%3D%28_images%3AInt32%3F%29-instance-method" class="signature"><strong>#images=</strong>(_images : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#index_server_address%3AString%3F-instance-method" class="signature"><strong>#index_server_address</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#index_server_address%3D%28_index_server_address%3AString%3F%29-instance-method" class="signature"><strong>#index_server_address=</strong>(_index_server_address : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_path%3AString%3F-instance-method" class="signature"><strong>#init_path</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_path%3D%28_init_path%3AString%3F%29-instance-method" class="signature"><strong>#init_path=</strong>(_init_path : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_sha1%3AString%3F-instance-method" class="signature"><strong>#init_sha1</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_sha1%3D%28_init_sha1%3AString%3F%29-instance-method" class="signature"><strong>#init_sha1=</strong>(_init_sha1 : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_version%3AString%3F-instance-method" class="signature"><strong>#kernel_version</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_version%3D%28_kernel_version%3AString%3F%29-instance-method" class="signature"><strong>#kernel_version=</strong>(_kernel_version : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3AArray%28String%29%3F-instance-method" class="signature"><strong>#labels</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3D%28_labels%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#labels=</strong>(_labels : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_total%3AInt32%3F-instance-method" class="signature"><strong>#mem_total</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mem_total%3D%28_mem_total%3AInt32%3F%29-instance-method" class="signature"><strong>#mem_total=</strong>(_mem_total : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_limit%3ABool%3F-instance-method" class="signature"><strong>#memory_limit</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_limit%3D%28_memory_limit%3ABool%3F%29-instance-method" class="signature"><strong>#memory_limit=</strong>(_memory_limit : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_events_listener%3AInt32%3F-instance-method" class="signature"><strong>#n_events_listener</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_events_listener%3D%28_n_events_listener%3AInt32%3F%29-instance-method" class="signature"><strong>#n_events_listener=</strong>(_n_events_listener : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_fd%3AInt32%3F-instance-method" class="signature"><strong>#n_fd</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_fd%3D%28_n_fd%3AInt32%3F%29-instance-method" class="signature"><strong>#n_fd=</strong>(_n_fd : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_goroutines%3AInt32%3F-instance-method" class="signature"><strong>#n_goroutines</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_goroutines%3D%28_n_goroutines%3AInt32%3F%29-instance-method" class="signature"><strong>#n_goroutines=</strong>(_n_goroutines : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3AString%3F-instance-method" class="signature"><strong>#name</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3D%28_name%3AString%3F%29-instance-method" class="signature"><strong>#name=</strong>(_name : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ncpu%3AInt32%3F-instance-method" class="signature"><strong>#ncpu</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ncpu%3D%28_ncpu%3AInt32%3F%29-instance-method" class="signature"><strong>#ncpu=</strong>(_ncpu : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_proxy%3AString%3F-instance-method" class="signature"><strong>#no_proxy</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_proxy%3D%28_no_proxy%3AString%3F%29-instance-method" class="signature"><strong>#no_proxy=</strong>(_no_proxy : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_kill_disable%3ABool%3F-instance-method" class="signature"><strong>#oom_kill_disable</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_kill_disable%3D%28_oom_kill_disable%3ABool%3F%29-instance-method" class="signature"><strong>#oom_kill_disable=</strong>(_oom_kill_disable : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_score_adj%3AInt32%3F-instance-method" class="signature"><strong>#oom_score_adj</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_score_adj%3D%28_oom_score_adj%3AInt32%3F%29-instance-method" class="signature"><strong>#oom_score_adj=</strong>(_oom_score_adj : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#operating_system%3AString%3F-instance-method" class="signature"><strong>#operating_system</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#operating_system%3D%28_operating_system%3AString%3F%29-instance-method" class="signature"><strong>#operating_system=</strong>(_operating_system : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#os_type%3AString%3F-instance-method" class="signature"><strong>#os_type</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#os_type%3D%28_os_type%3AString%3F%29-instance-method" class="signature"><strong>#os_type=</strong>(_os_type : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plugins%3AHash%28String%2CJSON%3A%3AAny%29%3F-instance-method" class="signature"><strong>#plugins</strong> : Hash(String, JSON::Any)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plugins%3D%28_plugins%3AHash%28String%2CJSON%3A%3AAny%29%3F%29-instance-method" class="signature"><strong>#plugins=</strong>(_plugins : Hash(String, JSON::Any)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#registry_config%3AHash%28String%2CJSON%3A%3AAny%29%3F-instance-method" class="signature"><strong>#registry_config</strong> : Hash(String, JSON::Any)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#registry_config%3D%28_registry_config%3AHash%28String%2CJSON%3A%3AAny%29%3F%29-instance-method" class="signature"><strong>#registry_config=</strong>(_registry_config : Hash(String, JSON::Any)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#server_version%3AString%3F-instance-method" class="signature"><strong>#server_version</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#server_version%3D%28_server_version%3AString%3F%29-instance-method" class="signature"><strong>#server_version=</strong>(_server_version : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#swap_limit%3ABool%3F-instance-method" class="signature"><strong>#swap_limit</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#swap_limit%3D%28_swap_limit%3ABool%3F%29-instance-method" class="signature"><strong>#swap_limit=</strong>(_swap_limit : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_status%3AArray%28Array%28String%29%29%3F-instance-method" class="signature"><strong>#system_status</strong> : Array(Array(String))?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_status%3D%28_system_status%3AArray%28Array%28String%29%29%3F%29-instance-method" class="signature"><strong>#system_status=</strong>(_system_status : Array(Array(String))?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_time%3AString%3F-instance-method" class="signature"><strong>#system_time</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_time%3D%28_system_time%3AString%3F%29-instance-method" class="signature"><strong>#system_time=</strong>(_system_time : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(__temp_67:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(__temp_67 : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28__temp_67%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="architecture:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>architecture</strong> : String?
+
+        <a class="method-permalink" href="#architecture%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="architecture=(_architecture:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>architecture=</strong>(_architecture : String?)
+
+        <a class="method-permalink" href="#architecture%3D%28_architecture%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>containers</strong> : Int32?
+
+        <a class="method-permalink" href="#containers%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers=(_containers:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>containers=</strong>(_containers : Int32?)
+
+        <a class="method-permalink" href="#containers%3D%28_containers%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_paused:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_paused</strong> : Int32?
+
+        <a class="method-permalink" href="#containers_paused%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_paused=(_containers_paused:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_paused=</strong>(_containers_paused : Int32?)
+
+        <a class="method-permalink" href="#containers_paused%3D%28_containers_paused%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_running:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_running</strong> : Int32?
+
+        <a class="method-permalink" href="#containers_running%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_running=(_containers_running:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_running=</strong>(_containers_running : Int32?)
+
+        <a class="method-permalink" href="#containers_running%3D%28_containers_running%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_stopped:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_stopped</strong> : Int32?
+
+        <a class="method-permalink" href="#containers_stopped%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers_stopped=(_containers_stopped:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>containers_stopped=</strong>(_containers_stopped : Int32?)
+
+        <a class="method-permalink" href="#containers_stopped%3D%28_containers_stopped%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_cfs_period:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_cfs_period</strong> : Bool?
+
+        <a class="method-permalink" href="#cpu_cfs_period%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_cfs_period=(_cpu_cfs_period:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_cfs_period=</strong>(_cpu_cfs_period : Bool?)
+
+        <a class="method-permalink" href="#cpu_cfs_period%3D%28_cpu_cfs_period%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_cfs_quota:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_cfs_quota</strong> : Bool?
+
+        <a class="method-permalink" href="#cpu_cfs_quota%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_cfs_quota=(_cpu_cfs_quota:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_cfs_quota=</strong>(_cpu_cfs_quota : Bool?)
+
+        <a class="method-permalink" href="#cpu_cfs_quota%3D%28_cpu_cfs_quota%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="debug:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>debug</strong> : Bool?
+
+        <a class="method-permalink" href="#debug%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="debug=(_debug:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>debug=</strong>(_debug : Bool?)
+
+        <a class="method-permalink" href="#debug%3D%28_debug%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="discovery_backend:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>discovery_backend</strong> : String?
+
+        <a class="method-permalink" href="#discovery_backend%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="discovery_backend=(_discovery_backend:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>discovery_backend=</strong>(_discovery_backend : String?)
+
+        <a class="method-permalink" href="#discovery_backend%3D%28_discovery_backend%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="docker_root_dir:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>docker_root_dir</strong> : String?
+
+        <a class="method-permalink" href="#docker_root_dir%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="docker_root_dir=(_docker_root_dir:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>docker_root_dir=</strong>(_docker_root_dir : String?)
+
+        <a class="method-permalink" href="#docker_root_dir%3D%28_docker_root_dir%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>driver</strong> : String?
+
+        <a class="method-permalink" href="#driver%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver=(_driver:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>driver=</strong>(_driver : String?)
+
+        <a class="method-permalink" href="#driver%3D%28_driver%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver_status:Array(Array(String))?-instance-method">
+      <div class="signature">
+        
+        def <strong>driver_status</strong> : Array(Array(String))?
+
+        <a class="method-permalink" href="#driver_status%3AArray%28Array%28String%29%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver_status=(_driver_status:Array(Array(String))?)-instance-method">
+      <div class="signature">
+        
+        def <strong>driver_status=</strong>(_driver_status : Array(Array(String))?)
+
+        <a class="method-permalink" href="#driver_status%3D%28_driver_status%3AArray%28Array%28String%29%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execution_driver:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>execution_driver</strong> : String?
+
+        <a class="method-permalink" href="#execution_driver%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execution_driver=(_execution_driver:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>execution_driver=</strong>(_execution_driver : String?)
+
+        <a class="method-permalink" href="#execution_driver%3D%28_execution_driver%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="experimental_build:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>experimental_build</strong> : Bool?
+
+        <a class="method-permalink" href="#experimental_build%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="experimental_build=(_experimental_build:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>experimental_build=</strong>(_experimental_build : Bool?)
+
+        <a class="method-permalink" href="#experimental_build%3D%28_experimental_build%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="http_proxy:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>http_proxy</strong> : String?
+
+        <a class="method-permalink" href="#http_proxy%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="http_proxy=(_http_proxy:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>http_proxy=</strong>(_http_proxy : String?)
+
+        <a class="method-permalink" href="#http_proxy%3D%28_http_proxy%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="https_proxy:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>https_proxy</strong> : String?
+
+        <a class="method-permalink" href="#https_proxy%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="https_proxy=(_https_proxy:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>https_proxy=</strong>(_https_proxy : String?)
+
+        <a class="method-permalink" href="#https_proxy%3D%28_https_proxy%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="i_pv4_forwarding:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>i_pv4_forwarding</strong> : Bool?
+
+        <a class="method-permalink" href="#i_pv4_forwarding%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="i_pv4_forwarding=(_i_pv4_forwarding:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>i_pv4_forwarding=</strong>(_i_pv4_forwarding : Bool?)
+
+        <a class="method-permalink" href="#i_pv4_forwarding%3D%28_i_pv4_forwarding%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String?
+
+        <a class="method-permalink" href="#id%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(_id:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(_id : String?)
+
+        <a class="method-permalink" href="#id%3D%28_id%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="images:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>images</strong> : Int32?
+
+        <a class="method-permalink" href="#images%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="images=(_images:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>images=</strong>(_images : Int32?)
+
+        <a class="method-permalink" href="#images%3D%28_images%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index_server_address:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>index_server_address</strong> : String?
+
+        <a class="method-permalink" href="#index_server_address%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index_server_address=(_index_server_address:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>index_server_address=</strong>(_index_server_address : String?)
+
+        <a class="method-permalink" href="#index_server_address%3D%28_index_server_address%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_path:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>init_path</strong> : String?
+
+        <a class="method-permalink" href="#init_path%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_path=(_init_path:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>init_path=</strong>(_init_path : String?)
+
+        <a class="method-permalink" href="#init_path%3D%28_init_path%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_sha1:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>init_sha1</strong> : String?
+
+        <a class="method-permalink" href="#init_sha1%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_sha1=(_init_sha1:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>init_sha1=</strong>(_init_sha1 : String?)
+
+        <a class="method-permalink" href="#init_sha1%3D%28_init_sha1%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_version:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_version</strong> : String?
+
+        <a class="method-permalink" href="#kernel_version%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_version=(_kernel_version:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_version=</strong>(_kernel_version : String?)
+
+        <a class="method-permalink" href="#kernel_version%3D%28_kernel_version%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>labels</strong> : Array(String)?
+
+        <a class="method-permalink" href="#labels%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels=(_labels:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>labels=</strong>(_labels : Array(String)?)
+
+        <a class="method-permalink" href="#labels%3D%28_labels%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_total:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_total</strong> : Int32?
+
+        <a class="method-permalink" href="#mem_total%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mem_total=(_mem_total:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>mem_total=</strong>(_mem_total : Int32?)
+
+        <a class="method-permalink" href="#mem_total%3D%28_mem_total%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_limit:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_limit</strong> : Bool?
+
+        <a class="method-permalink" href="#memory_limit%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_limit=(_memory_limit:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_limit=</strong>(_memory_limit : Bool?)
+
+        <a class="method-permalink" href="#memory_limit%3D%28_memory_limit%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_events_listener:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>n_events_listener</strong> : Int32?
+
+        <a class="method-permalink" href="#n_events_listener%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_events_listener=(_n_events_listener:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>n_events_listener=</strong>(_n_events_listener : Int32?)
+
+        <a class="method-permalink" href="#n_events_listener%3D%28_n_events_listener%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_fd:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>n_fd</strong> : Int32?
+
+        <a class="method-permalink" href="#n_fd%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_fd=(_n_fd:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>n_fd=</strong>(_n_fd : Int32?)
+
+        <a class="method-permalink" href="#n_fd%3D%28_n_fd%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_goroutines:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>n_goroutines</strong> : Int32?
+
+        <a class="method-permalink" href="#n_goroutines%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_goroutines=(_n_goroutines:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>n_goroutines=</strong>(_n_goroutines : Int32?)
+
+        <a class="method-permalink" href="#n_goroutines%3D%28_n_goroutines%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String?
+
+        <a class="method-permalink" href="#name%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(_name:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(_name : String?)
+
+        <a class="method-permalink" href="#name%3D%28_name%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ncpu:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>ncpu</strong> : Int32?
+
+        <a class="method-permalink" href="#ncpu%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ncpu=(_ncpu:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>ncpu=</strong>(_ncpu : Int32?)
+
+        <a class="method-permalink" href="#ncpu%3D%28_ncpu%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_proxy:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_proxy</strong> : String?
+
+        <a class="method-permalink" href="#no_proxy%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_proxy=(_no_proxy:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>no_proxy=</strong>(_no_proxy : String?)
+
+        <a class="method-permalink" href="#no_proxy%3D%28_no_proxy%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_kill_disable:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_kill_disable</strong> : Bool?
+
+        <a class="method-permalink" href="#oom_kill_disable%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_kill_disable=(_oom_kill_disable:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_kill_disable=</strong>(_oom_kill_disable : Bool?)
+
+        <a class="method-permalink" href="#oom_kill_disable%3D%28_oom_kill_disable%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_score_adj:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_score_adj</strong> : Int32?
+
+        <a class="method-permalink" href="#oom_score_adj%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_score_adj=(_oom_score_adj:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_score_adj=</strong>(_oom_score_adj : Int32?)
+
+        <a class="method-permalink" href="#oom_score_adj%3D%28_oom_score_adj%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="operating_system:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>operating_system</strong> : String?
+
+        <a class="method-permalink" href="#operating_system%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="operating_system=(_operating_system:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>operating_system=</strong>(_operating_system : String?)
+
+        <a class="method-permalink" href="#operating_system%3D%28_operating_system%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="os_type:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>os_type</strong> : String?
+
+        <a class="method-permalink" href="#os_type%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="os_type=(_os_type:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>os_type=</strong>(_os_type : String?)
+
+        <a class="method-permalink" href="#os_type%3D%28_os_type%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plugins:Hash(String,JSON::Any)?-instance-method">
+      <div class="signature">
+        
+        def <strong>plugins</strong> : Hash(String, JSON::Any)?
+
+        <a class="method-permalink" href="#plugins%3AHash%28String%2CJSON%3A%3AAny%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plugins=(_plugins:Hash(String,JSON::Any)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>plugins=</strong>(_plugins : Hash(String, JSON::Any)?)
+
+        <a class="method-permalink" href="#plugins%3D%28_plugins%3AHash%28String%2CJSON%3A%3AAny%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="registry_config:Hash(String,JSON::Any)?-instance-method">
+      <div class="signature">
+        
+        def <strong>registry_config</strong> : Hash(String, JSON::Any)?
+
+        <a class="method-permalink" href="#registry_config%3AHash%28String%2CJSON%3A%3AAny%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="registry_config=(_registry_config:Hash(String,JSON::Any)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>registry_config=</strong>(_registry_config : Hash(String, JSON::Any)?)
+
+        <a class="method-permalink" href="#registry_config%3D%28_registry_config%3AHash%28String%2CJSON%3A%3AAny%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="server_version:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>server_version</strong> : String?
+
+        <a class="method-permalink" href="#server_version%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="server_version=(_server_version:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>server_version=</strong>(_server_version : String?)
+
+        <a class="method-permalink" href="#server_version%3D%28_server_version%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="swap_limit:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>swap_limit</strong> : Bool?
+
+        <a class="method-permalink" href="#swap_limit%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="swap_limit=(_swap_limit:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>swap_limit=</strong>(_swap_limit : Bool?)
+
+        <a class="method-permalink" href="#swap_limit%3D%28_swap_limit%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_status:Array(Array(String))?-instance-method">
+      <div class="signature">
+        
+        def <strong>system_status</strong> : Array(Array(String))?
+
+        <a class="method-permalink" href="#system_status%3AArray%28Array%28String%29%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_status=(_system_status:Array(Array(String))?)-instance-method">
+      <div class="signature">
+        
+        def <strong>system_status=</strong>(_system_status : Array(Array(String))?)
+
+        <a class="method-permalink" href="#system_status%3D%28_system_status%3AArray%28Array%28String%29%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_time:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>system_time</strong> : String?
+
+        <a class="method-permalink" href="#system_time%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_time=(_system_time:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>system_time=</strong>(_system_time : String?)
+
+        <a class="method-permalink" href="#system_time%3D%28_system_time%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(json : JSON::Builder)
+
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/30d88bc23d1d3885c3ef732a289fd311fe53b8f6/src/docker/info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
