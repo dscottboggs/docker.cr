@@ -1,30 +1,32 @@
 require "../image"
 
 module Docker
-  module Images
-    # retreive the collection of all images, optionally filtered with filters.
-    def images(all : Bool = false, filters : ImageFilters = ImageFilters.none)
-      ImageCollection.request all, filters
-    end
-    def images(
-      *,
-      all : Bool = false,
-      before : Tag? = nil,
-      dangling = true,
-      label : String | Tuple(String, String) | Nil = nil,
-      reference : Tag? = nil,
-      since : Tag? = nil
-    )
-      images(
-        all: all,
-        filters: ImageFilters.new(
-          before: before,
-          dangling: dangling,
-          label: label,
-          reference: reference,
-          since: since
-        )
+  class APIClient
+    module Images
+      # retreive the collection of all images, optionally filtered with filters.
+      def images(all : Bool = false, filters : ImageFilters = ImageFilters.none)
+        ImageCollection.request all, filters
+      end
+      def images(
+        *,
+        all : Bool = false,
+        before : Tag? = nil,
+        dangling = true,
+        label : String | Tuple(String, String) | Nil = nil,
+        reference : Tag? = nil,
+        since : Tag? = nil
       )
+        images(
+          all: all,
+          filters: ImageFilters.new(
+            before: before,
+            dangling: dangling,
+            label: label,
+            reference: reference,
+            since: since
+          )
+        )
+      end
     end
   end
 
@@ -38,6 +40,7 @@ module Docker
       params = HTTP::Params.build do |q|
         q.add "all", "true" if all
         q.add "filters", filters.to_json unless filters.none?
+        debugger
         q.add "digests", "true"
       end
       response = Docker.client.get "/images/json?#{params}"

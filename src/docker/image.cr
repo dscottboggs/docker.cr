@@ -1,3 +1,5 @@
+require "json"
+
 module Docker
   class Image
     JSON.mapping({

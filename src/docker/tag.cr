@@ -37,6 +37,12 @@ module Docker
         repo.not_nil! + "/" + image_name + ":" + tag
       end
     end
+    def to_json
+      to_s
+    end
+    def to_json(builder : JSON::Builder)
+      builder.string(to_s)
+    end
 
     def to_params
       String.builder do |path|

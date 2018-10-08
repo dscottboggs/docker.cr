@@ -8,6 +8,7 @@ module Docker
   class APIClient
     include Docker::APIClient::Info
     include Docker::APIClient::Containers
+    include Docker::APIClient::Images
 
     # Make a {{method.id.upcase}} request to the docker daemon
     # TODO won't work because of patches to the HTTP::Client class

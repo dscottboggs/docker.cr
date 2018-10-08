@@ -4,21 +4,25 @@ module Docker
   # Filter out the results of the Images by passing an instantiated ImageFilters
   # object. See https://docs.docker.com/engine/api/v1.30/#operation/ImageList
   class ImageFilters
-    JSON.mapping({
-      before:    Tag?,
-      dangling:  {type: Bool, default: true},
-      label:     String?,
-      reference: Tag?,
-      since:     Tag?,
-    })
+    include JSON::Serializable
     # Return only images with earlier versions than the given tag
-    property before
+    property before : Tag?
     # Return dangling images?
-    property dangling
+    @[JSON::Field(ignore: true)]
+    setter dangling : Bool = true
+
+    @[JSON::Field(key: "dangling")]
+    def dangling
+      if @dangling
+        nil
+      else
+        false
+      end
+    end
     # Return images matching a particular tag
-    property reference
+    property reference : Tag?
     # Return only immages since the given tagged version
-    property since
+    property since : Tag?
     # Filter images which have the given label.
     setter label : Tuple(String, String) | String | Nil
 
