@@ -165,12 +165,12 @@ module Docker
         tf_reader, tf_writer = IO.pipe
         tar_proc = Process.run "tar -c #{context}", output: tf_writer
         spawn do
-          handle_request endpoint, Docker.client.post(endpoint, body: tf_reader
+          handle_request endpoint, Docker.client.post(endpoint, body: tf_reader)
         end
         tar_proc.wait
         tf_writer.close
         Fiber.yield
-      end
+        self
       else
         if File.exists? context && tarfile_at? context
           File.open context do |tarfile|
@@ -197,6 +197,7 @@ module Docker
       url = "/images/create"
       url += '?' + query unless query.empty?
       stream_pull_status url, &block
+      Docker::Images.find image_tag
     end
 
     # Import an image from a tar archive. The block receives the stream of the
@@ -206,7 +207,6 @@ module Docker
       stream_pull_status "/images/create?fromSrc=#{path_or_url.to_s}", &block
     end
 
-    # :nodoc:
     def self.import(tarfile : File, &block)
       File.open tarfile do |file|
         stream_pull_status "/images/create?fromSrc=-", body: file, &block
@@ -216,8 +216,8 @@ module Docker
     private def stream_pull_status(url : String, body : IO? = nil, &block)
       Docker.client.post url, body do |result|
         loop do
-          raise NotFound.new(url, result) if result.status_code === 404
-          raise InternalServerError.new(url, result) if result.status_code === 500
+          raise Docker::Client::NotFound.new(url, result) if result.status_code === 404
+          raise Docker::Client::InternalServerError.new(url, result) if result.status_code === 500
           yield JSON.parse(result.body_io.gets "\n", chomp: true)
         end
       end

@@ -9,6 +9,10 @@ module Docker
 
     def initialize(@repo : String?, @image_name : String, @tag : String); end
 
+    def self.from_json(json : JSON::Any)
+      self.from_s(json.as(String))
+    end
+
     def self.from_s(string : String) : self
       repo, image_name, tag = nil, nil, nil
       if string.includes?("/") && string.includes?(":")

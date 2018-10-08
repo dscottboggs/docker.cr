@@ -61,9 +61,9 @@ module Docker
       when 200
         return self
       when 404
-        raise NotFound.new(path, res)
+        raise Docker::Client::NotFound.new("Container", path, res)
       when 500
-        raise InternalServerError.new(path, res)
+        raise Docker::Client::InternalServerError.new(path, res)
       else
         pp res
         raise Docker::Client::Exception.new "unrecognized error code #{res.status_code}"
