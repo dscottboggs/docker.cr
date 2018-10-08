@@ -29,7 +29,7 @@ module Docker
       when 500
         raise InternalServerError.new url, response
       else
-        raise Docker::Client::Exception.new(
+        raise Docker::APIClient::Exception.new(
           "got unexpected status #{response.status} for endpoint #{url}."
         )
       end
@@ -68,7 +68,7 @@ module Docker
       when 500
         raise InternalServerError.new url, response
       else
-        raise Docker::Client::Exception.new(
+        raise Docker::APIClient::Exception.new(
           "got unexpected status #{response.status} for endpoint #{url}."
         )
       end
@@ -177,7 +177,7 @@ module Docker
             handle_request endpoint, Docker.client.post endpoint, body: tarfile
           end
         else
-          raise Docker::Client::Exception.new "invalid image file #{context}"
+          raise Docker::APIClient::Exception.new "invalid image file #{context}"
         end
       end
       if tarfile_location.nil?
@@ -216,8 +216,8 @@ module Docker
     private def stream_pull_status(url : String, body : IO? = nil, &block)
       Docker.client.post url, body do |result|
         loop do
-          raise Docker::Client::NotFound.new(url, result) if result.status_code === 404
-          raise Docker::Client::InternalServerError.new(url, result) if result.status_code === 500
+          raise Docker::APIClient::NotFound.new(url, result) if result.status_code === 404
+          raise Docker::APIClient::InternalServerError.new(url, result) if result.status_code === 500
           yield JSON.parse(result.body_io.gets "\n", chomp: true)
         end
       end
@@ -228,11 +228,11 @@ module Docker
       when 200
         return
       when 400
-        raise Docker::Client::BadParameter.new(endpoint, result)
+        raise Docker::APIClient::BadParameter.new(endpoint, result)
       when 404
-        raise Docker::Client::NotFound.new endpoint, result
+        raise Docker::APIClient::NotFound.new endpoint, result
       when 500
-        raise Docker::Client::InternalServerError.new(endpoint, result)
+        raise Docker::APIClient::InternalServerError.new(endpoint, result)
       else
         raise "Unexpected HTTP status #{result.status} for #{endpoint}."
       end

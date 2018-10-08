@@ -1,6 +1,6 @@
 require "../../spec_helper"
 
-describe Docker::Client::Containers do
+describe Docker::APIClient::Containers do
 
   describe ".containers" do
     WebMock.reset
@@ -15,9 +15,8 @@ describe Docker::Client::Containers do
         { "Id" => "test2" }
       ].to_json)
 
-    subject {  }
     it "is a Array(Docker::Container)" do
-      Docker.client.containers.should be_an Array(Docker::Container)
+      Docker.client.containers.should be_a Array(Docker::Container)
     end
 
     ENV.delete "DOCKER_HOST"

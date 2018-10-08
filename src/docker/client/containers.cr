@@ -1,5 +1,5 @@
 module Docker
-  class Client
+  class APIClient
     module Containers
 
       def containers(
@@ -18,11 +18,11 @@ module Docker
           qs.add "size", size.to_s
           qs.add "filters", filters.to_json
         end
-        cs = [] of Container
-        JSON.parse(Docker.client.get("/containers/json?#{params}").body).each do |c|
-          cs << Container.from_json(c.to_json)
-        end
-        cs
+        Array(Docker::Container).from_json(
+          Docker.client.get(
+            "/containers/json?#{params}"
+          ).body
+        )
       end
 
     end

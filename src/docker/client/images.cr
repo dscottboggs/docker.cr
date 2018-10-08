@@ -12,7 +12,7 @@ module Docker
       before : Tag? = nil,
       dangling = true,
       label : String | Tuple(String, String) | Nil = nil,
-      reference : Tag? = nil
+      reference : Tag? = nil,
       since : Tag? = nil
     )
       images(
@@ -64,14 +64,14 @@ module Docker
 
     def self.[](img_id : String) : Image
       self.request.each { |img| return img if img.id === img_id }
-      raise Docker::Client::NotFound.new("image", "image ID: #{img_id}")
+      raise Docker::APIClient::NotFound.new("image", "image ID: #{img_id}")
     end
     def []?(img_id : String) : Image?
       self.each { |img| return img if img.id === img_id }
     end
     def [](img_id : String) : Image
       self.each { |img| return img if img.id === img_id }
-      raise Docker::Client::NotFound "Image", "image ID: #{img_id}"
+      raise Docker::APIClient::NotFound.new "Image", "image ID: #{img_id}"
     end
   end
 

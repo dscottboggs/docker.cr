@@ -4,10 +4,10 @@ require "uri"
 require "./client/*"
 
 module Docker
-  # The Docker::Client contains all of the methods created by the various files.
-  class Client
-    include Docker::Client::Info
-    include Docker::Client::Containers
+  # The Docker::APIClient contains all of the methods created by the various files.
+  class APIClient
+    include Docker::APIClient::Info
+    include Docker::APIClient::Containers
 
     # Make a {{method.id.upcase}} request to the docker daemon
     # TODO won't work because of patches to the HTTP::Client class
@@ -15,13 +15,14 @@ module Docker
 
     {% for method in %i<get post put patch head> %}
     # Make a {{method.id.upcase}} request to the docker daemon, using the
-    # already established Dcoker::Client
+    # already established Docker::APIClient
     delegate {{method}}, to: client
     {% end %}
 
-    DEFAULT_URL = ENV["DOCKER_URL"]? ||
-                  ENV["DOCKER_HOST"]? ||
-                  "unix:///var/run/docker.sock"
+
+    def default_client_url
+      ENV["DOCKER_URL"]? || ENV["DOCKER_HOST"]? || "unix:///var/run/docker.sock"
+    end
     DEFAULT_CERT_PATH = "#{ENV["HOME"]}/.docker"
 
     # The URL at which the docker client can be reached. It is advisable to use
@@ -34,7 +35,7 @@ module Docker
 
     @ssl_context : OpenSSL::SSL::Context | Nil
 
-    def initialize(@raw_url : String = DEFAULT_URL)
+    def initialize(@raw_url : String = default_client_url)
       @url = URI.parse(@raw_url)
       # client assignment MUST be within initialize, or it will be nillable.
       # you can't just call setup_client from the initialize method. :(

@@ -1,5 +1,5 @@
 module Docker
-  class Client
+  class APIClient
     module Info
 
       def info

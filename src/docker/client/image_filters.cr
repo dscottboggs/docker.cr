@@ -53,5 +53,18 @@ module Docker
         raise "got unrecognized type for label \"#{@label.inspect}\""
       end
     end
+
+    def to_params
+      return "" if none?
+      HTTP::Params.build do |q|
+        l = label
+        q.add "all",       "true"      if all
+        q.add "before",    before.to_s unless before.nil?
+        q.add "dangling",  "false"     unless dangling
+        q.add "label",     l           unless l.nil?
+        q.add "reference", reference   unless reference.nil?
+        q.add "since",     since       unless since.nil?
+      end
+    end
   end
 end

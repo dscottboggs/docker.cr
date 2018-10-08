@@ -1,5 +1,5 @@
 module Docker
-  class Client
+  class APIClient
     class Exception < ::Exception
     end
     class InternalServerError < Exception

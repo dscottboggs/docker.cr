@@ -1,6 +1,6 @@
 require "../../spec_helper"
 
-describe Docker::Client::Info do
+describe Docker::APIClient::Info do
   describe ".info" do
     WebMock.reset
     ENV["DOCKER_HOST"] = "tcp://localhost:1337"
