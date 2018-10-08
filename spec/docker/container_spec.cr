@@ -1,10 +1,6 @@
 require "../spec_helper"
 
 describe Docker::Container do
-  before { WebMock.reset }
-  before { ENV["DOCKER_HOST"] = "tcp://localhost:80" }
-  after { ENV.delete("DOCKER_HOST") }
-  subject { Docker::Container.from_json({"Id" => "test"}.to_json) }
 
   describe "#start" do
 
@@ -29,21 +25,33 @@ describe Docker::Container do
     # end
 
     context "not found" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 404)
-      end
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 404)
       it "raises error" do
-        expect { subject.start }.to raise_error(Docker::Client::Exception)
+        expect_raises(Docker::Client::NotFound) do
+          Docker::Container.from_json({"Id" => "test"}.to_json).start
+        end
+        expect_raises(Docker::Client::Exception) do
+          Docker::Container.from_json({"Id" => "test"}.to_json).start
+        end
       end
+      ENV.delete("DOCKER_HOST")
     end
 
     context "server error" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 500)
-      end
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 500)
       it "raises error" do
-        expect { subject.start }.to raise_error(Docker::Client::Exception)
+        expect_raises(Docker::Client::InternalServerError) do
+          Docker::Container.from_json({"Id" => "test"}.to_json).start
+        end
+        expect_raises(Docker::Client::Exception) do
+          Docker::Container.from_json({"Id" => "test"}.to_json).start
+        end
       end
+      ENV.delete("DOCKER_HOST")
     end
 
   end
@@ -71,21 +79,29 @@ describe Docker::Container do
     # end
 
     context "not found" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 404)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 404)
+      expect_raises(Docker::Client::NotFound) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).stop
       end
-      it "raises error" do
-        expect { subject.stop }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).stop
       end
+      ENV.delete("DOCKER_HOST")
     end
 
     context "server error" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 500)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 500)
+      expect_raises(Docker::Client::InternalServerError) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).stop
       end
-      it "raises error" do
-        expect { subject.stop }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).stop
       end
+      ENV.delete("DOCKER_HOST")
     end
   end
 
@@ -112,21 +128,29 @@ describe Docker::Container do
     # end
 
     context "not found" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 404)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 404)
+      expect_raises(Docker::Client::NotFound) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).restart
       end
-      it "raises error" do
-        expect { subject.restart }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).restart
       end
+      ENV.delete("DOCKER_HOST")
     end
 
     context "server error" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 500)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 500)
+      expect_raises(Docker::Client::InternalServerError) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).restart
       end
-      it "raises error" do
-        expect { subject.restart }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).restart
       end
+      ENV.delete("DOCKER_HOST")
     end
   end
 
@@ -153,23 +177,29 @@ describe Docker::Container do
     # end
 
     context "not found" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 404)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 404)
+      expect_raises(Docker::Client::NotFound) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).kill
       end
-      it "raises error" do
-        expect { subject.kill }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).kill
       end
+      ENV.delete("DOCKER_HOST")
     end
 
     context "server error" do
-      before do
-        WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 500)
+      WebMock.reset
+      ENV["DOCKER_HOST"] = "tcp://localhost:80"
+      WebMock.stub(:post, "localhost/containe~rs/test/kill").to_return(status: 500)
+      expect_raises(Docker::Client::InternalServerError) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).kill
       end
-      it "raises error" do
-        expect { subject.kill }.to raise_error(Docker::Client::Exception)
+      expect_raises(Docker::Client::Exception) do
+        Docker::Container.from_json({"Id" => "test"}.to_json).kill
       end
+      ENV.delete("DOCKER_HOST")
     end
-
   end
-
 end
