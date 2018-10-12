@@ -54,12 +54,8 @@ describe Docker::ImageCollection do
     .with(query: {"digests" => "true"})
     .to_return(mock_results.to_json)
   WebMock
-    .stub(:get, "http://localhost:1337/images/json")
-    .with(query: {
-    "filters" => Docker::ImageFilters.new(reference: test_find_tag).to_json,
-    "digests" => "true",
-  })
-    .to_return(mock_results[1].to_json)
+    .stub(:get, "http://localhost:1337/images/json?all=true&filters=%7B%22reference%22%3A%22testimage%3Alatest%22%7D&digests=true")
+    .to_return([mock_results[1]].to_json)
   describe ".get" do
     gotten = Docker::ImageCollection["sha256 hash value"]
     # perform the tests
@@ -121,26 +117,56 @@ describe Docker::APIClient::Images do
       .with(query: {"all" => "true", "digests" => "true"})
       .to_return(mock_results.to_json)
     WebMock
-      .stub(:get, "http://localhost:1337/images/json")
-      .with(query: {"all"     => "true",
-                    "digests" => "true",
-                    "filters" => Docker::ImageFilters.new(
-                      label: "test-label",
-                    ).to_json})
+      .stub(:get, "http://localhost:1337/images/json?filters=%7B%22label%22%3A%22test-label%22%7D&digests=true")
       .to_return(mock_results[1].to_json)
     context "with ImageFilters object" do
-      Docker.client.images(all: true).should eq mock_results
-      Docker.client.images(
-        all: false,
-        filters: Docker::ImageFilters.new(label: "test-label")
-      ).should eq mock_results[1]
+      describe "all" do
+        it "has the expected attributes" do
+          test_value = Docker.client.images(all: true)
+          expected = mock_results.map { |r| Docker::Image.from_json r.to_json }
+          expected.size.times do |i|
+            test_value[i].id.should eq expected[i].id
+            test_value[i].created_at.should eq expected[i].created
+            test_value[i].size.should eq expected[i].size
+          end
+        end
+      end
+      describe "filtered" do
+        it "has the expected attributes" do
+          filters = Docker::ImageFilters.new(label: "test-label")
+          test_value = Docker.client.images(all: false, filters: filters)
+          expected = Docker::Image.from_json(mock_results[1].to_json)
+          test_value.size.should eq 1
+          test_value[0].id.should eq expected.id
+          test_value[0].created_at.should eq expected.created
+          test_value[0].size.should eq expected.size
+          test_value[0].labels["test-label"].should eq "test label value"
+        end
+      end
     end
     context "with filters applied directly" do
-      Docker.client.images(all: true).should eq mock_results
-      Docker.client.images(
-        all: false,
-        label: "test-label"
-      ).should eq mock_results[1]
+      describe "all" do
+        it "has the expected attributes" do
+          test_value = Docker.client.images(all: true)
+          expected = mock_results.map { |r| Docker::Image.from_json r.to_json }
+          expected.size.times do |i|
+            test_value[i].id.should eq expected[i].id
+            test_value[i].created_at.should eq expected[i].created
+            test_value[i].size.should eq expected[i].size
+          end
+        end
+      end
+      describe "filtered" do
+        it "has the expected attributes" do
+          test_value = Docker.client.images(all: false, label: "test-label")
+          expected = Docker::Image.from_json(mock_results[1].to_json)
+          test_value.size.should eq 1
+          test_value[0].id.should eq expected.id
+          test_value[0].created_at.should eq expected.created
+          test_value[0].size.should eq expected.size
+          test_value[0].labels["test-label"].should eq "test label value"
+        end
+      end
     end
     WebMock.reset
     ENV.delete "DOCKER_HOST"

@@ -40,11 +40,18 @@ module Docker
       params = HTTP::Params.build do |q|
         q.add "all", "true" if all
         q.add "filters", filters.to_json unless filters.none?
-        debugger
         q.add "digests", "true"
       end
       response = Docker.client.get "/images/json?#{params}"
-      from_json response.body
+      begin
+        from_json response.body
+      rescue e : JSON::ParseException
+        begin
+          [Docker::Image.from_json response.body]
+        rescue JSON::ParseException
+          raise e
+        end
+      end
     end
 
     def self.all
