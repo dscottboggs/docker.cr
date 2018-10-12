@@ -2,18 +2,31 @@ require "json"
 
 module Docker
   class Image
-    JSON.mapping({
-      id:           {key: "Id", type: String},
-      parent_id:    {key: "ParentId", type: String},
-      repo_tags:    {key: "RepoTags", type: Array(String)},
-      repo_digests: {key: "RepoDigests", type: Array(String)},
-      created_at:   {key: "Created", type: Int64},
-      size:         {key: "Size", type: Int64},
-      shared_size:  {key: "SharedSize", type: Int64},
-      virtual_size: {key: "VirtualSize", type: Int64},
-      labels:       {key: "Labels", type: Hash(String, String)},
-      containers:   {key: "Containers", type: Int64},
-    })
+    include JSON::Serializable
+    @[JSON::Field(key: "Id")]
+    property id : String
+    @[JSON::Field(key: "ParentId")]
+    property parent_id : String
+    @[JSON::Field(key: "RepoTags")]
+    property repo_tags : Array(String)
+    @[JSON::Field(key: "RepoDigests")]
+    property repo_digests : Array(String)
+    @[JSON::Field(key: "Created")]
+    property created_at : Int32
+    @[JSON::Field(key: "Size")]
+    property size : Int32
+    @[JSON::Field(key: "SharedSize")]
+    property shared_size : Int32
+    @[JSON::Field(key: "VirtualSize")]
+    property virtual_size : Int32
+    @[JSON::Field(key: "Labels")]
+    property labels : Hash(String, String)
+    @[JSON::Field(key: "Containers")]
+    property containers : Int32
+
+    def created
+      created_at
+    end
 
     # Tag an image.
     # See https://docs.docker.com/engine/api/v1.30/#operation/ImageTag

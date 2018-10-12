@@ -42,19 +42,18 @@ module Docker
 
     # True if this filter won't filter out any images.
     def none?
-      before.nil? && dangling && label.nil? && reference.nil? && since.nil?
+      before.nil? && @dangling && label.nil? && reference.nil? && since.nil?
     end
 
     def label : String?
       return nil if @label.nil?
-      case typeof(@label)
-      when String
+      if @label.is_a? String
         @label.as(String)
-      when Tuple
+      elsif @label.is_a? Tuple(String, String)
         ltpl = @label.as(Tuple(String, String))
         ltpl[0] + '=' + ltpl[1]
       else
-        raise "got unrecognized type for label \"#{@label.inspect}\""
+        raise %<got unrecognized type for label "#{@label.inspect}" with type #{typeof(@label)}>
       end
     end
 

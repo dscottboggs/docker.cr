@@ -38,7 +38,7 @@ module Docker
       end
     end
     def to_json
-      to_s
+      `"#{to_s}"`
     end
     def to_json(builder : JSON::Builder)
       builder.string(to_s)
