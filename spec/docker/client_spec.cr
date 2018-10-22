@@ -1,9 +1,7 @@
 require "../spec_helper"
 
 describe Docker::APIClient do
-
   describe ".new" do
-
     context "defaults" do
       it "uses unix" do
         Docker::APIClient.new.url.to_s.should eq("unix:///var/run/docker.sock")
@@ -25,7 +23,5 @@ describe Docker::APIClient do
         subject.url.to_s.should eq("tcp://0.0.0.0:8001")
       end
     end
-
   end
-
 end

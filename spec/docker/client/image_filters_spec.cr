@@ -1,7 +1,7 @@
 require "../../spec_helper"
 
 describe Docker::ImageFilters do
-  describe ".none"do
+  describe ".none" do
     it "returns the default filters" do
       none = Docker::ImageFilters.none
       none.before.should be_nil
@@ -15,4 +15,4 @@ describe Docker::ImageFilters do
     Docker::ImageFilters.none.none?.should be_true
     Docker::ImageFilters.new.none?.should be_true
   end
- end
+end

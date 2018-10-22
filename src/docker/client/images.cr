@@ -7,6 +7,7 @@ module Docker
       def images(all : Bool = false, filters : ImageFilters = ImageFilters.none)
         ImageCollection.request all, filters
       end
+
       def images(
         *,
         all : Bool = false,
@@ -76,13 +77,14 @@ module Docker
       self.request.each { |img| return img if img.id === img_id }
       raise Docker::APIClient::NotFound.new("image", "image ID: #{img_id}")
     end
+
     def []?(img_id : String) : Image?
       self.each { |img| return img if img.id === img_id }
     end
+
     def [](img_id : String) : Image
       self.each { |img| return img if img.id === img_id }
       raise Docker::APIClient::NotFound.new "Image", "image ID: #{img_id}"
     end
   end
-
 end

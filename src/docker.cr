@@ -6,6 +6,7 @@ require "./docker/*"
 
 module Docker
   extend self
+
   def client
     Docker::APIClient.new
   end

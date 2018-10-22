@@ -15,5 +15,4 @@ describe Docker::APIClient::Info do
 
     ENV.delete "DOCKER_HOST"
   end
-
 end

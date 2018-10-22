@@ -1,14 +1,13 @@
 module Docker
   class APIClient
     module Containers
-
       def containers(
-        all    : Bool    = false,
-        limit  : Int32?  = nil,
-        since  : String? = nil,
+        all : Bool = false,
+        limit : Int32? = nil,
+        since : String? = nil,
         before : String? = nil,
-        size   : Bool    = false,
-        filters          = {} of String => Array(String)
+        size : Bool = false,
+        filters = {} of String => Array(String)
       )
         params = HTTP::Params.build do |qs|
           qs.add "all", all.to_s
@@ -24,7 +23,6 @@ module Docker
           ).body
         )
       end
-
     end
   end
 end

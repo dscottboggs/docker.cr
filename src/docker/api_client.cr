@@ -20,10 +20,10 @@ module Docker
     delegate {{method}}, to: client
     {% end %}
 
-
     def default_client_url
       ENV["DOCKER_URL"]? || ENV["DOCKER_HOST"]? || "unix:///var/run/docker.sock"
     end
+
     DEFAULT_CERT_PATH = "#{ENV["HOME"]}/.docker"
 
     # The URL at which the docker client can be reached. It is advisable to use

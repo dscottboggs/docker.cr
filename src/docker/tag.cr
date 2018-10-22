@@ -1,5 +1,11 @@
 module Docker
   # A tag for a particular image
+  #
+  # #### For example:
+  # the image for the latest version of crystal is
+  #   `crystallang/crystal:latest`
+  # which has the *repo* `crystallang`, the *image_name* `crystal`, and the
+  # *tag* `latest`.
   class Tag
     property repo : String?
     property image_name : String
@@ -37,9 +43,11 @@ module Docker
         repo.not_nil! + "/" + image_name + ":" + tag
       end
     end
+
     def to_json
       `"#{to_s}"`
     end
+
     def to_json(builder : JSON::Builder)
       builder.string(to_s)
     end

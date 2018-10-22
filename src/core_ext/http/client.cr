@@ -15,10 +15,10 @@ class HTTP::Client
 
   def socket
     @socket ||= if @tls
-      @ssl_socket ||= SSL::Socket::Client.new(tcp_socket)
-    else
-      tcp_socket
-    end
+                  @ssl_socket ||= SSL::Socket::Client.new(tcp_socket)
+                else
+                  tcp_socket
+                end
   end
 
   def socket=(socket : IO)
@@ -31,5 +31,4 @@ class HTTP::Client
     socket.sync = false
     socket
   end
-
 end

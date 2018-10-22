@@ -53,7 +53,7 @@ module Docker
     end
 
     private def post(path : String)
-      handle_response path, Docker.client.post( path )
+      handle_response path, Docker.client.post(path)
     end
 
     private def handle_response(path : String, res : HTTP::Client::Response)

@@ -142,8 +142,7 @@ module Docker
     # Build an image with the given parameters. Context must be one of:
     #   - a path to a directory to be used as context
     #   - a path to a .tar file to be used as context
-    #   - an IO which when read will yield a tarfile which can be used as
-    #     context
+    #   - an IO which when read will yield a tarfile to be used as context
     # Note that the dockerfile parameter is a path relative to the context, not
     # an absolute path.
     # See https://docs.docker.com/engine/api/v1.30/#operation/ImageBuild
@@ -154,7 +153,7 @@ module Docker
       extra_hosts : String = nil,
       remote : String? = nil,
       no_cache? = false,
-      chache_from : Array(String)? = nil,
+      cache_from : Array(String)? = nil,
       pull? = false,
       rm? = true,
       force_rm? = false,

@@ -1,9 +1,7 @@
 require "../spec_helper"
 
 describe Docker::Container do
-
   describe "#start" do
-
     # TODO: Find a way to test those.
 
     # context "success" do
@@ -53,11 +51,9 @@ describe Docker::Container do
       end
       ENV.delete("DOCKER_HOST")
     end
-
   end
 
   describe "#stop" do
-
     # TODO: Find a way to test those.
 
     # context "success" do
@@ -106,7 +102,6 @@ describe Docker::Container do
   end
 
   describe "#restart" do
-
     # TODO: Find a way to test those.
 
     # context "success" do
@@ -155,7 +150,6 @@ describe Docker::Container do
   end
 
   describe "#kill" do
-
     # TODO: Find a way to test those.
 
     # context "success" do
