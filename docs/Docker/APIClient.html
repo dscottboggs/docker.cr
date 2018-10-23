@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/dscottboggs/docker.cr">
+  <title>Docker::APIClient - github.com/dscottboggs/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/dscottboggs/docker.cr/Docker" data-name="docker">
+      <a href="../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/dscottboggs/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../Docker/Container.html">Container</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::APIClient
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Docker/APIClient.html">Docker::APIClient</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>The Docker::APIClient contains all of the methods created by the various files.</p>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../Docker/APIClient/Containers.html">Docker::APIClient::Containers</a></li>
+  
+    <li class="other-type"><a href="../Docker/APIClient/Images.html">Docker::APIClient::Images</a></li>
+  
+    <li class="other-type"><a href="../Docker/APIClient/Info.html">Docker::APIClient::Info</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/containers.cr#L2" target="_blank">
+        docker/client/containers.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/errors.cr#L2" target="_blank">
+        docker/client/errors.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/exception.cr#L2" target="_blank">
+        docker/client/exception.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/images.cr#L4" target="_blank">
+        docker/client/images.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/info.cr#L2" target="_blank">
+        docker/client/info.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L8" target="_blank">
+        docker/api_client.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DEFAULT_CERT_PATH">
+        <strong>DEFAULT_CERT_PATH</strong> = <code><span class="s">&quot;</span><span class="i">#{</span><span class="t">ENV</span>[<span class="s">&quot;HOME&quot;</span>]<span class="i">}</span><span class="s">/.docker&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28raw_url%3AString%3Ddefault_client_url%29-class-method" class="signature"><strong>.new</strong>(raw_url : String = default_client_url)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28url%3AURI%29-class-method" class="signature"><strong>.new</strong>(url : URI)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cert_path-instance-method" class="signature"><strong>#cert_path</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cert_path%3D%28path%3AString%29-instance-method" class="signature"><strong>#cert_path=</strong>(path : String)</a>
+        
+          <div class="summary"><p>Also accessible via DOCKER_CERT_PATH environment variable.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#client%3AHTTP%3A%3AClient-instance-method" class="signature"><strong>#client</strong> : HTTP::Client</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#client%3D%28client%3AHTTP%3A%3AClient%29-instance-method" class="signature"><strong>#client=</strong>(client : HTTP::Client)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_client_url-instance-method" class="signature"><strong>#default_client_url</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#get</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Make a GET request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#get</strong>(*args, **options, &block)</a>
+        
+          <div class="summary"><p>Make a GET request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#head</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Make a HEAD request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#head</strong>(*args, **options, &block)</a>
+        
+          <div class="summary"><p>Make a HEAD request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#patch</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Make a PATCH request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#patch</strong>(*args, **options, &block)</a>
+        
+          <div class="summary"><p>Make a PATCH request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#post</strong>(*args, **options, &block)</a>
+        
+          <div class="summary"><p>Make a POST request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#post</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Make a POST request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#put</strong>(*args, **options, &block)</a>
+        
+          <div class="summary"><p>Make a PUT request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#put</strong>(*args, **options)</a>
+        
+          <div class="summary"><p>Make a PUT request to the docker daemon, using the already established Docker::APIClient</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3AURI-instance-method" class="signature"><strong>#url</strong> : URI</a>
+        
+          <div class="summary"><p>The URL at which the docker client can be reached.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3D%28url%3AURI%29-instance-method" class="signature"><strong>#url=</strong>(url : URI)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3D%28raw_url%29-instance-method" class="signature"><strong>#url=</strong>(raw_url)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verify_tls%3D%28verify_tls%3ABool%3F%29-instance-method" class="signature"><strong>#verify_tls=</strong>(verify_tls : Bool?)</a>
+        
+          <div class="summary"><p>Also accessible via DOCKER_TLS_VERIFY environment variable.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Docker/APIClient/Images.html">Docker::APIClient::Images</a></code></h3>
+  
+  
+    <a href="../Docker/APIClient/Images.html#images%28all%3ABool%3Dfalse%2Cfilters%3AImageFilters%3DImageFilters.none%29-instance-method" class="tooltip">
+      <span>images(all : Bool = <span class="n">false</span>, filters : ImageFilters = <span class="t">ImageFilters</span>.none)<br/>images(*, all : Bool = <span class="n">false</span>, before : Tag? = <span class="n">nil</span>, dangling = <span class="n">true</span>, label : String | Tuple(String, String) | Nil = <span class="n">nil</span>, reference : Tag? = <span class="n">nil</span>, since : Tag? = <span class="n">nil</span>)</span>
+    images</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Docker/APIClient/Containers.html">Docker::APIClient::Containers</a></code></h3>
+  
+  
+    <a href="../Docker/APIClient/Containers.html#containers%28all%3ABool%3Dfalse%2Climit%3AInt32%3F%3Dnil%2Csince%3AString%3F%3Dnil%2Cbefore%3AString%3F%3Dnil%2Csize%3ABool%3Dfalse%2Cfilters%3D%7B%7DofString%3D%3EArray%28String%29%29-instance-method" class="tooltip">
+      <span>containers(all : Bool = <span class="n">false</span>, limit : Int32? = <span class="n">nil</span>, since : String? = <span class="n">nil</span>, before : String? = <span class="n">nil</span>, size : Bool = <span class="n">false</span>, filters = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">Array</span>(<span class="t">String</span>))</span>
+    containers</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Docker/APIClient/Info.html">Docker::APIClient::Info</a></code></h3>
+  
+  
+    <a href="../Docker/APIClient/Info.html#info-instance-method" class="tooltip">
+      <span>info</span>
+    info</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(raw_url:String=default_client_url)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(raw_url : String = default_client_url)
+
+        <a class="method-permalink" href="#new%28raw_url%3AString%3Ddefault_client_url%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(url:URI)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(url : URI)
+
+        <a class="method-permalink" href="#new%28url%3AURI%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="cert_path-instance-method">
+      <div class="signature">
+        
+        def <strong>cert_path</strong>
+
+        <a class="method-permalink" href="#cert_path-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cert_path=(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>cert_path=</strong>(path : String)
+
+        <a class="method-permalink" href="#cert_path%3D%28path%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Also accessible via DOCKER_CERT_PATH environment variable.
+If the envvar is not empty or this varable is not nil, it must be a path
+to a directory on the filesystem which contains the following files
+containing a valid SSL certificate:</p>
+
+<ul><li>ca.pem</li><li>key.pem</li><li>cert.pem</li></ul>
+
+<p>Setting cert_path and not having these files present will raise an
+exception.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="client:HTTP::Client-instance-method">
+      <div class="signature">
+        
+        def <strong>client</strong> : <a href="../HTTP/Client.html">HTTP::Client</a>
+
+        <a class="method-permalink" href="#client%3AHTTP%3A%3AClient-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="client=(client:HTTP::Client)-instance-method">
+      <div class="signature">
+        
+        def <strong>client=</strong>(client : <a href="../HTTP/Client.html">HTTP::Client</a>)
+
+        <a class="method-permalink" href="#client%3D%28client%3AHTTP%3A%3AClient%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_client_url-instance-method">
+      <div class="signature">
+        
+        def <strong>default_client_url</strong>
+
+        <a class="method-permalink" href="#default_client_url-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(*args, **options)
+
+        <a class="method-permalink" href="#get%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a GET request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#get%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a GET request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>head</strong>(*args, **options)
+
+        <a class="method-permalink" href="#head%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a HEAD request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>head</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#head%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a HEAD request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>patch</strong>(*args, **options)
+
+        <a class="method-permalink" href="#patch%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a PATCH request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>patch</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#patch%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a PATCH request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>post</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#post%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a POST request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>post</strong>(*args, **options)
+
+        <a class="method-permalink" href="#post%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a POST request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>put</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#put%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a PUT request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>put</strong>(*args, **options)
+
+        <a class="method-permalink" href="#put%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Make a PUT request to the docker daemon, using the
+already established Docker::APIClient</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url:URI-instance-method">
+      <div class="signature">
+        
+        def <strong>url</strong> : URI
+
+        <a class="method-permalink" href="#url%3AURI-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The URL at which the docker client can be reached. It is advisable to use
+a unix socket, which may be passed to this using the URL format "unix://*"</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url=(url:URI)-instance-method">
+      <div class="signature">
+        
+        def <strong>url=</strong>(url : URI)
+
+        <a class="method-permalink" href="#url%3D%28url%3AURI%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url=(raw_url)-instance-method">
+      <div class="signature">
+        
+        def <strong>url=</strong>(raw_url)
+
+        <a class="method-permalink" href="#url%3D%28raw_url%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verify_tls=(verify_tls:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>verify_tls=</strong>(verify_tls : Bool?)
+
+        <a class="method-permalink" href="#verify_tls%3D%28verify_tls%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Also accessible via DOCKER_TLS_VERIFY environment variable.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/api_client.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

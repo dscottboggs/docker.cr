@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/dscottboggs/docker.cr">
+  <title>Docker::Image - github.com/dscottboggs/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/dscottboggs/docker.cr/Docker" data-name="docker">
+      <a href="../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../Docker/Container.html">Container</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/dscottboggs/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::Image
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Docker/Image.html">Docker::Image</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L4" target="_blank">
+        docker/image.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#build%28context%3AString%7CIO%3DDir.current%2Cdockerfile%3AString%3F%3Dnil%2Ctag%3AArray%28String%29%3F%3Dnil%2Cextra_hosts%3AString%3Dnil%2Cremote%3AString%3F%3Dnil%2Cno_cache%3F%3Dfalse%2Ccache_from%3AArray%28String%29%3F%3Dnil%2Cpull%3F%3Dfalse%2Crm%3F%3Dtrue%2Cforce_rm%3F%3Dfalse%2Climits%3DContainerLimits.new%29-class-method" class="signature"><strong>.build</strong>(context : String | IO = <span class="t">Dir</span>.current, dockerfile : String? = <span class="n">nil</span>, tag : Array(String)? = <span class="n">nil</span>, extra_hosts : String = <span class="n">nil</span>, remote : String? = <span class="n">nil</span>, no_cache? = <span class="n">false</span>, cache_from : Array(String)? = <span class="n">nil</span>, pull? = <span class="n">false</span>, rm? = <span class="n">true</span>, force_rm? = <span class="n">false</span>, limits = <span class="t">ContainerLimits</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Build an image with the given parameters.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28%2Aids_or_names%3AString%2C%26block%29-class-method" class="signature"><strong>.export</strong>(*ids_or_names : String, &block)</a>
+        
+          <div class="summary"><p>Like Image#export, but retreives multiple images into a single tar file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28%2Aids_or_names%3AString%2Cinto%3AIO%29-class-method" class="signature"><strong>.export</strong>(*ids_or_names : String, into : IO)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28%2Aids_or_names%3AString%2Cinto%3AString%29-class-method" class="signature"><strong>.export</strong>(*ids_or_names : String, into : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#import%28path_or_url%3AString%7CURI%2C%26block%29-class-method" class="signature"><strong>.import</strong>(path_or_url : String | URI, &block)</a>
+        
+          <div class="summary"><p>Import an image from a tar archive.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#import%28tarfile%3AFile%2C%26block%29-class-method" class="signature"><strong>.import</strong>(tarfile : File, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pull%28image_tag%3ATag%2C%26block%3AJSON%3A%3AAny-%3ENil%29-class-method" class="signature"><strong>.pull</strong>(image_tag : Tag, &block : JSON::Any -> Nil)</a>
+        
+          <div class="summary"><p>Pull an image by its tag.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#containers%3AInt32-instance-method" class="signature"><strong>#containers</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#containers%3D%28containers%3AInt32%29-instance-method" class="signature"><strong>#containers=</strong>(containers : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#created-instance-method" class="signature"><strong>#created</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#created_at%3AInt32-instance-method" class="signature"><strong>#created_at</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#created_at%3D%28created_at%3AInt32%29-instance-method" class="signature"><strong>#created_at=</strong>(created_at : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28into%3AString%29-instance-method" class="signature"><strong>#export</strong>(into : String)</a>
+        
+          <div class="summary"><p>Exports the image into the given file on the filesystem</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28into%3AIO%29-instance-method" class="signature"><strong>#export</strong>(into : IO)</a>
+        
+          <div class="summary"><p>Exports the image into the given IO</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28%26block%29-instance-method" class="signature"><strong>#export</strong>(&block)</a>
+        
+          <div class="summary"><p>Yield each byte of a tar archive of the export of this image.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28id%3AString%29-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3AHash%28String%2CString%29-instance-method" class="signature"><strong>#labels</strong> : Hash(String, String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3D%28labels%3AHash%28String%2CString%29%29-instance-method" class="signature"><strong>#labels=</strong>(labels : Hash(String, String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_id%3AString-instance-method" class="signature"><strong>#parent_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_id%3D%28parent_id%3AString%29-instance-method" class="signature"><strong>#parent_id=</strong>(parent_id : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove%28force%3F%3Dfalse%2Cprune%3F%3Dtrue%29-instance-method" class="signature"><strong>#remove</strong>(force? = <span class="n">false</span>, prune? = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Remove this image, pruning untagged parent images by default.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#repo_digests%3AArray%28String%29-instance-method" class="signature"><strong>#repo_digests</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#repo_digests%3D%28repo_digests%3AArray%28String%29%29-instance-method" class="signature"><strong>#repo_digests=</strong>(repo_digests : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#repo_tags%3AArray%28String%29-instance-method" class="signature"><strong>#repo_tags</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#repo_tags%3D%28repo_tags%3AArray%28String%29%29-instance-method" class="signature"><strong>#repo_tags=</strong>(repo_tags : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#search%28term%3AString%2Climit%3AInt64%2Cfilters%3AHash%28String%2CString%29%29-instance-method" class="signature"><strong>#search</strong>(term : String, limit : Int64, filters : Hash(String, String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shared_size%3AInt32-instance-method" class="signature"><strong>#shared_size</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shared_size%3D%28shared_size%3AInt32%29-instance-method" class="signature"><strong>#shared_size=</strong>(shared_size : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%3AInt32-instance-method" class="signature"><strong>#size</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%3D%28size%3AInt32%29-instance-method" class="signature"><strong>#size=</strong>(size : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tag%28tag_val%3AString%29-instance-method" class="signature"><strong>#tag</strong>(tag_val : String)</a>
+        
+          <div class="summary"><p>The string is converted to a Docker::Tag.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tag%28tag_val%3ATag%29-instance-method" class="signature"><strong>#tag</strong>(tag_val : Tag)</a>
+        
+          <div class="summary"><p>Tag an image.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#virtual_size%3AInt32-instance-method" class="signature"><strong>#virtual_size</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#virtual_size%3D%28virtual_size%3AInt32%29-instance-method" class="signature"><strong>#virtual_size=</strong>(virtual_size : Int32)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="build(context:String|IO=Dir.current,dockerfile:String?=nil,tag:Array(String)?=nil,extra_hosts:String=nil,remote:String?=nil,no_cache?=false,cache_from:Array(String)?=nil,pull?=false,rm?=true,force_rm?=false,limits=ContainerLimits.new)-class-method">
+      <div class="signature">
+        
+        def self.<strong>build</strong>(context : String | IO = <span class="t">Dir</span>.current, dockerfile : String? = <span class="n">nil</span>, tag : Array(String)? = <span class="n">nil</span>, extra_hosts : String = <span class="n">nil</span>, remote : String? = <span class="n">nil</span>, no_cache? = <span class="n">false</span>, cache_from : Array(String)? = <span class="n">nil</span>, pull? = <span class="n">false</span>, rm? = <span class="n">true</span>, force_rm? = <span class="n">false</span>, limits = <span class="t">ContainerLimits</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#build%28context%3AString%7CIO%3DDir.current%2Cdockerfile%3AString%3F%3Dnil%2Ctag%3AArray%28String%29%3F%3Dnil%2Cextra_hosts%3AString%3Dnil%2Cremote%3AString%3F%3Dnil%2Cno_cache%3F%3Dfalse%2Ccache_from%3AArray%28String%29%3F%3Dnil%2Cpull%3F%3Dfalse%2Crm%3F%3Dtrue%2Cforce_rm%3F%3Dfalse%2Climits%3DContainerLimits.new%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Build an image with the given parameters. Context must be one of:</p>
+
+<ul><li>a path to a directory to be used as context</li><li>a path to a .tar file to be used as context</li><li>an IO which when read will yield a tarfile to be used as context
+Note that the dockerfile parameter is a path relative to the context, not
+an absolute path.
+See https://docs.docker.com/engine/api/v1.30/#operation/ImageBuild</li></ul></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L149" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(*ids_or_names:String,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>export</strong>(*ids_or_names : String, &block)
+
+        <a class="method-permalink" href="#export%28%2Aids_or_names%3AString%2C%26block%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Like Image#export, but retreives multiple images into a single tar file.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(*ids_or_names:String,into:IO)-class-method">
+      <div class="signature">
+        
+        def self.<strong>export</strong>(*ids_or_names : String, into : IO)
+
+        <a class="method-permalink" href="#export%28%2Aids_or_names%3AString%2Cinto%3AIO%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L130" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(*ids_or_names:String,into:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>export</strong>(*ids_or_names : String, into : String)
+
+        <a class="method-permalink" href="#export%28%2Aids_or_names%3AString%2Cinto%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L136" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="import(path_or_url:String|URI,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>import</strong>(path_or_url : String | URI, &block)
+
+        <a class="method-permalink" href="#import%28path_or_url%3AString%7CURI%2C%26block%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Import an image from a tar archive. The block receives the stream of the
+status, line-by-line, as JSON objects. See
+https://docs.docker.com/engine/api/v1.30/#operation/ImageCreate</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L220" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="import(tarfile:File,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>import</strong>(tarfile : File, &block)
+
+        <a class="method-permalink" href="#import%28tarfile%3AFile%2C%26block%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pull(image_tag:Tag,&amp;block:JSON::Any-&gt;Nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>pull</strong>(image_tag : <a href="../Docker/Tag.html">Tag</a>, &block : JSON::Any -> Nil)
+
+        <a class="method-permalink" href="#pull%28image_tag%3ATag%2C%26block%3AJSON%3A%3AAny-%3ENil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Pull an image by its tag. The block receives the stream of the status,
+line-by-line, as JSON objects. See
+https://docs.docker.com/engine/api/v1.30/#operation/ImageCreate</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="containers:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>containers</strong> : Int32
+
+        <a class="method-permalink" href="#containers%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="containers=(containers:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>containers=</strong>(containers : Int32)
+
+        <a class="method-permalink" href="#containers%3D%28containers%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="created-instance-method">
+      <div class="signature">
+        
+        def <strong>created</strong>
+
+        <a class="method-permalink" href="#created-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="created_at:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>created_at</strong> : Int32
+
+        <a class="method-permalink" href="#created_at%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="created_at=(created_at:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>created_at=</strong>(created_at : Int32)
+
+        <a class="method-permalink" href="#created_at%3D%28created_at%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(into:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>export</strong>(into : String)
+
+        <a class="method-permalink" href="#export%28into%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Exports the image into the given file on the filesystem</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L115" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(into:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>export</strong>(into : IO)
+
+        <a class="method-permalink" href="#export%28into%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Exports the image into the given IO</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>export</strong>(&block)
+
+        <a class="method-permalink" href="#export%28%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Yield each byte of a tar archive of the export of this image.
+See https://docs.docker.com/engine/api/v1.30/#operation/ImageCommit</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String
+
+        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : String)
+
+        <a class="method-permalink" href="#id%3D%28id%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels:Hash(String,String)-instance-method">
+      <div class="signature">
+        
+        def <strong>labels</strong> : Hash(String, String)
+
+        <a class="method-permalink" href="#labels%3AHash%28String%2CString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels=(labels:Hash(String,String))-instance-method">
+      <div class="signature">
+        
+        def <strong>labels=</strong>(labels : Hash(String, String))
+
+        <a class="method-permalink" href="#labels%3D%28labels%3AHash%28String%2CString%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_id</strong> : String
+
+        <a class="method-permalink" href="#parent_id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_id=(parent_id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_id=</strong>(parent_id : String)
+
+        <a class="method-permalink" href="#parent_id%3D%28parent_id%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove(force?=false,prune?=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>remove</strong>(force? = <span class="n">false</span>, prune? = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#remove%28force%3F%3Dfalse%2Cprune%3F%3Dtrue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Remove this image, pruning untagged parent images by default.
+See https://docs.docker.com/engine/api/v1.30/#operation/ImageDelete</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="repo_digests:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>repo_digests</strong> : Array(String)
+
+        <a class="method-permalink" href="#repo_digests%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="repo_digests=(repo_digests:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>repo_digests=</strong>(repo_digests : Array(String))
+
+        <a class="method-permalink" href="#repo_digests%3D%28repo_digests%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="repo_tags:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>repo_tags</strong> : Array(String)
+
+        <a class="method-permalink" href="#repo_tags%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="repo_tags=(repo_tags:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>repo_tags=</strong>(repo_tags : Array(String))
+
+        <a class="method-permalink" href="#repo_tags%3D%28repo_tags%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="search(term:String,limit:Int64,filters:Hash(String,String))-instance-method">
+      <div class="signature">
+        
+        def <strong>search</strong>(term : String, limit : Int64, filters : Hash(String, String))
+
+        <a class="method-permalink" href="#search%28term%3AString%2Climit%3AInt64%2Cfilters%3AHash%28String%2CString%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L92" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shared_size:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>shared_size</strong> : Int32
+
+        <a class="method-permalink" href="#shared_size%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shared_size=(shared_size:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>shared_size=</strong>(shared_size : Int32)
+
+        <a class="method-permalink" href="#shared_size%3D%28shared_size%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong> : Int32
+
+        <a class="method-permalink" href="#size%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size=(size:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>size=</strong>(size : Int32)
+
+        <a class="method-permalink" href="#size%3D%28size%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tag(tag_val:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>tag</strong>(tag_val : String)
+
+        <a class="method-permalink" href="#tag%28tag_val%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The string is converted to a Docker::Tag.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tag(tag_val:Tag)-instance-method">
+      <div class="signature">
+        
+        def <strong>tag</strong>(tag_val : <a href="../Docker/Tag.html">Tag</a>)
+
+        <a class="method-permalink" href="#tag%28tag_val%3ATag%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Tag an image.
+See https://docs.docker.com/engine/api/v1.30/#operation/ImageTag</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="virtual_size:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>virtual_size</strong> : Int32
+
+        <a class="method-permalink" href="#virtual_size%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="virtual_size=(virtual_size:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>virtual_size=</strong>(virtual_size : Int32)
+
+        <a class="method-permalink" href="#virtual_size%3D%28virtual_size%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/image.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/dscottboggs/docker.cr">
+  <title>Docker::ContainerLimits - github.com/dscottboggs/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/dscottboggs/docker.cr/Docker" data-name="docker">
+      <a href="../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../Docker/Container.html">Container</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/dscottboggs/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/dscottboggs/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::ContainerLimits
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Docker/ContainerLimits.html">Docker::ContainerLimits</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L2" target="_blank">
+        docker/client/container_limits.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28memory%3AInt32%3F%2Cmemory_and_swap%3AInt32%3F%2Ccpu_shares%3AInt32%3F%2Callowed_CPUs%3AString%3F%2Ccpu_period%3AInt32%3F%2Ccpu_quota%3AInt32%3F%29-class-method" class="signature"><strong>.new</strong>(memory : Int32?, memory_and_swap : Int32?, cpu_shares : Int32?, allowed_CPUs : String?, cpu_period : Int32?, cpu_quota : Int32?)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#allowed_CPUs%3AString%3F-instance-method" class="signature"><strong>#allowed_CPUs</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#allowed_CPUs%3D%28allowed_CPUs%3AString%3F%29-instance-method" class="signature"><strong>#allowed_CPUs=</strong>(allowed_CPUs : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_period%3AInt32%3F-instance-method" class="signature"><strong>#cpu_period</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_period%3D%28cpu_period%3AInt32%3F%29-instance-method" class="signature"><strong>#cpu_period=</strong>(cpu_period : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_quota%3AInt32%3F-instance-method" class="signature"><strong>#cpu_quota</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_quota%3D%28cpu_quota%3AInt32%3F%29-instance-method" class="signature"><strong>#cpu_quota=</strong>(cpu_quota : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_shares%3AInt32%3F-instance-method" class="signature"><strong>#cpu_shares</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_shares%3D%28cpu_shares%3AInt32%3F%29-instance-method" class="signature"><strong>#cpu_shares=</strong>(cpu_shares : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory%3AInt32%3F-instance-method" class="signature"><strong>#memory</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory%3D%28memory%3AInt32%3F%29-instance-method" class="signature"><strong>#memory=</strong>(memory : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_and_swap%3AInt32%3F-instance-method" class="signature"><strong>#memory_and_swap</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_and_swap%3D%28memory_and_swap%3AInt32%3F%29-instance-method" class="signature"><strong>#memory_and_swap=</strong>(memory_and_swap : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_params-instance-method" class="signature"><strong>#to_params</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(memory:Int32?,memory_and_swap:Int32?,cpu_shares:Int32?,allowed_CPUs:String?,cpu_period:Int32?,cpu_quota:Int32?)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(memory : Int32?, memory_and_swap : Int32?, cpu_shares : Int32?, allowed_CPUs : String?, cpu_period : Int32?, cpu_quota : Int32?)
+
+        <a class="method-permalink" href="#new%28memory%3AInt32%3F%2Cmemory_and_swap%3AInt32%3F%2Ccpu_shares%3AInt32%3F%2Callowed_CPUs%3AString%3F%2Ccpu_period%3AInt32%3F%2Ccpu_quota%3AInt32%3F%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="allowed_CPUs:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>allowed_CPUs</strong> : String?
+
+        <a class="method-permalink" href="#allowed_CPUs%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="allowed_CPUs=(allowed_CPUs:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>allowed_CPUs=</strong>(allowed_CPUs : String?)
+
+        <a class="method-permalink" href="#allowed_CPUs%3D%28allowed_CPUs%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_period:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_period</strong> : Int32?
+
+        <a class="method-permalink" href="#cpu_period%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_period=(cpu_period:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_period=</strong>(cpu_period : Int32?)
+
+        <a class="method-permalink" href="#cpu_period%3D%28cpu_period%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_quota:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_quota</strong> : Int32?
+
+        <a class="method-permalink" href="#cpu_quota%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_quota=(cpu_quota:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_quota=</strong>(cpu_quota : Int32?)
+
+        <a class="method-permalink" href="#cpu_quota%3D%28cpu_quota%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_shares:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_shares</strong> : Int32?
+
+        <a class="method-permalink" href="#cpu_shares%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_shares=(cpu_shares:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_shares=</strong>(cpu_shares : Int32?)
+
+        <a class="method-permalink" href="#cpu_shares%3D%28cpu_shares%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory</strong> : Int32?
+
+        <a class="method-permalink" href="#memory%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory=(memory:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory=</strong>(memory : Int32?)
+
+        <a class="method-permalink" href="#memory%3D%28memory%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_and_swap:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_and_swap</strong> : Int32?
+
+        <a class="method-permalink" href="#memory_and_swap%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_and_swap=(memory_and_swap:Int32?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_and_swap=</strong>(memory_and_swap : Int32?)
+
+        <a class="method-permalink" href="#memory_and_swap%3D%28memory_and_swap%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_params-instance-method">
+      <div class="signature">
+        
+        def <strong>to_params</strong>
+
+        <a class="method-permalink" href="#to_params-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/dscottboggs/docker.cr/blob/2d30aa663f925d0f421fc5653ac27afeae7d7e3d/src/docker/client/container_limits.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
