@@ -31,7 +31,7 @@ module Docker
     getter url : URI
     # Also accessible via DOCKER_TLS_VERIFY environment variable.
     setter verify_tls : Bool?
-    cert_path : String?
+    @cert_path : String?
     property client : HTTP::Client
 
     @ssl_context : OpenSSL::SSL::Context | Nil
