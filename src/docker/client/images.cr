@@ -28,6 +28,14 @@ module Docker
           )
         )
       end
+
+      def [](image)
+        ImageCollection[image]
+      end
+
+      def []?(image)
+        ImageCollection[image]?
+      end
     end
   end
 

@@ -10,7 +10,7 @@ mock_results = [
     "Size"        => 13 << 19,   # big
     "VirtualSize" => 13 << 19,   # numbers
     "SharedSize"  => 0,
-    "Labels"      => Hash(String, String).new,
+    "Labels"      => {"test" => "label"},
     "Containers"  => 1,
   }, {
   "Id"          => "sha256 hash value",
@@ -34,7 +34,7 @@ mock_results = [
   "Size"        => 4 << 22,
   "VirtualSize" => 4 << 22,
   "SharedSize"  => 0,
-  "Labels"      => Hash(String, String).new,
+  "Labels"      => {"test" => "label"},
   "Containers"  => 3,
 },
 ]

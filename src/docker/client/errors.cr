@@ -26,6 +26,12 @@ module Docker
     end
 
     class NotFound < Exception
+      def initialize(resource_type : String, identifier : String)
+        super "\
+          the requested #{resource_type} resource (identifier #{identifier}) \
+          couldn't be found."
+      end
+
       def initialize(
         resource_type : String,
         endpoint : String,

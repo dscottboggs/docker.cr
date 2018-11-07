@@ -4,6 +4,7 @@ module Docker
   class APIClient
     module Containers
       extend self
+
       def containers(all : Bool = false,
                      limit : Int32? = nil,
                      since : String? = nil,
@@ -16,8 +17,7 @@ module Docker
           since: since,
           before: before,
           size: size,
-          filters: filters,
-        ).map do |container|
+          filters: filters).map do |container|
           if (names = container.names).empty?
             Docker::Container.new container.image, container.id
           else

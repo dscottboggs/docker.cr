@@ -1,37 +1,47 @@
 require "../spec_helper"
 
 describe Docker::Container do
-  describe "#start" do
-    # TODO: Find a way to test those.
+  # TODO integration tests
 
-    # context "success" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 204)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.start).to be(subject)
-    #   end
-    # end
+  {% for method in {:start, :stop, :restart, :kill} %}
 
-    # context "already started" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 304)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.start).to be(subject)
-    #   end
-    # end
+  describe "#" + "{{method.id}}" do
+    context "success" do
+      WebMock.reset
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 204)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 204)
+      it "returns itself" do
+        subject = Docker::Container.new(id: "test", image: "some:image")
+        subject.{{method.id}}.should be subject
+      end
+    end
+
+    context "already {{method.id}}ed" do
+      WebMock.reset
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 304)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 304)
+      it "returns itself" do
+        buffer = IO::Memory.new
+        subject = Docker::Container.new(id: "test", image: "some:image", warnings: buffer)
+        subject.{{method.id}}.should be subject
+        buffer.rewind
+        warning_text = buffer.gets
+        warning_text.should_not be_nil
+        warning_text.try &.starts_with?("container test already {{method.id}}").should be_true
+      end
+    end
 
     context "not found" do
       WebMock.reset
       ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 404)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 404)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 404)
       it "raises error" do
         expect_raises(Docker::APIClient::NotFound) do
-          Docker::Container.from_json({"Id" => "test"}.to_json).start
+          Docker::Container.new(id: "test", image: "some:image").{{method.id}}
         end
         expect_raises(Docker::APIClient::Exception) do
-          Docker::Container.from_json({"Id" => "test"}.to_json).start
+          Docker::Container.new(id: "test", image: "some:image").{{method.id}}
         end
       end
       ENV.delete("DOCKER_HOST")
@@ -40,160 +50,87 @@ describe Docker::Container do
     context "server error" do
       WebMock.reset
       ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/start").to_return(status: 500)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 500)
+      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 500)
       it "raises error" do
         expect_raises(Docker::APIClient::InternalServerError) do
-          Docker::Container.from_json({"Id" => "test"}.to_json).start
+          Docker::Container.new(id: "test", image: "some:image").{{method.id}}
         end
         expect_raises(Docker::APIClient::Exception) do
-          Docker::Container.from_json({"Id" => "test"}.to_json).start
+          Docker::Container.new(id: "test", image: "some:image").{{method.id}}
         end
       end
       ENV.delete("DOCKER_HOST")
     end
   end
+  {% end %}
 
-  describe "#stop" do
-    # TODO: Find a way to test those.
-
-    # context "success" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 204)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.stop).to be(subject)
-    #   end
-    # end
-
-    # context "already stoped" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 304)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.stop).to be(subject)
-    #   end
-    # end
-
-    context "not found" do
+  describe ".create" do
+    context "success" do
       WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 404)
-      expect_raises(Docker::APIClient::NotFound) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).stop
+      WebMock
+        .stub(:post, "localhost/containers/create")
+        .with(body: CreateContainerSampleData.to_json)
+        .with(query: {"name" => "test-image-name"})
+        .to_return(status: 200, body: {"Id" => "test", "Warnings" => ["fake warning"]}.to_json)
+      buffer = IO::Memory.new
+      subject = Docker::Container.create(
+        image: Docker::Tag.new(image_name: "some", tag: "image"),
+        name: "test-image-name",
+        warnings: buffer)
+      it "responds with the correct values" do
+        subject.should be_a Docker::Container
+        subject.id.should eq "test"
+        subject.image.image_name.should eq "some"
+        subject.image.tag.should eq "image"
+        subject.names.should eq ["test-image-name"]
+        buffer.rewind.gets.should eq "fake warning"
       end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).stop
-      end
-      ENV.delete("DOCKER_HOST")
     end
-
     context "server error" do
       WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/stop?t=5").to_return(status: 500)
-      expect_raises(Docker::APIClient::InternalServerError) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).stop
+      WebMock
+        .stub(:post, "localhost/containers/create")
+        .with(body: {"Image" => "some:image"}.to_json)
+        .with(query: {"name" => "test-image-name"})
+        .to_return(status: 500)
+      it "raises Docker::APIClient::InternalServerError" do
+        expect_raises Docker::APIClient::InternalServerError do
+          subject = Docker::Container.create(
+            image: Docker::Tag.new(image_name: "some", tag: "image"),
+            name: "test-image-name")
+        end
       end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).stop
-      end
-      ENV.delete("DOCKER_HOST")
     end
-  end
-
-  describe "#restart" do
-    # TODO: Find a way to test those.
-
-    # context "success" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 204)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.restart).to be(subject)
-    #   end
-    # end
-
-    # context "already restarted" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 304)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.restart).to be(subject)
-    #   end
-    # end
-
-    context "not found" do
+    context "when not found" do
       WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 404)
-      expect_raises(Docker::APIClient::NotFound) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).restart
+      WebMock
+        .stub(:post, "localhost/containers/create")
+        .with(body: {"Image" => "some:image"}.to_json)
+        .with(query: {"name" => "test-image-name"})
+        .to_return(status: 404)
+      it "raises Docker::APIClient::NotFound" do
+        expect_raises Docker::APIClient::NotFound do
+          Docker::Container.create(
+            image: Docker::Tag.new(image_name: "some", tag: "image"),
+            name: "test-image-name")
+        end
       end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).restart
-      end
-      ENV.delete("DOCKER_HOST")
     end
-
-    context "server error" do
+    context "when a conflict arises" do
       WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/restart?t=5").to_return(status: 500)
-      expect_raises(Docker::APIClient::InternalServerError) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).restart
+      WebMock
+        .stub(:post, "localhost/containers/create")
+        .with(body: {"Image" => "some:image"}.to_json)
+        .with(query: {"name" => "test-image-name"})
+        .to_return(status: 409)
+      it "raises Docker::APIClient::Exception" do
+        expect_raises Docker::APIClient::Exception do
+          Docker::Container.create(
+            image: Docker::Tag.new(image_name: "some", tag: "image"),
+            name: "test-image-name")
+        end
       end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).restart
-      end
-      ENV.delete("DOCKER_HOST")
-    end
-  end
-
-  describe "#kill" do
-    # TODO: Find a way to test those.
-
-    # context "success" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 204)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.kill).to be(subject)
-    #   end
-    # end
-
-    # context "already killed" do
-    #   before do
-    #     WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 304)
-    #   end
-    #   it "returns itself" do
-    #     expect(subject.kill).to be(subject)
-    #   end
-    # end
-
-    context "not found" do
-      WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 404)
-      expect_raises(Docker::APIClient::NotFound) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).kill
-      end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).kill
-      end
-      ENV.delete("DOCKER_HOST")
-    end
-
-    context "server error" do
-      WebMock.reset
-      ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/kill").to_return(status: 500)
-      expect_raises(Docker::APIClient::InternalServerError) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).kill
-      end
-      expect_raises(Docker::APIClient::Exception) do
-        Docker::Container.from_json({"Id" => "test"}.to_json).kill
-      end
-      ENV.delete("DOCKER_HOST")
     end
   end
 end

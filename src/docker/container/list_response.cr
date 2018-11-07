@@ -2,7 +2,10 @@ require "../client/networking_config"
 
 module Docker
   class Container
+    # an array of ListResponse is received from the docker client when requesting a list
+    # of containers. See https://docs.docker.com/engine/api/v1.30/#operation/ContainerList
     class ListResponse
+      # In a Docker::Container::ListResponse, a set of ports are received in this format.
       struct PortConfig
         include JSON::Serializable
         @[JSON::Field(key: "IP")]
