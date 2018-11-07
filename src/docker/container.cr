@@ -95,24 +95,44 @@ module Docker
       end
     end
 
+    # Start this container.
+    # If the container successfully starts, `self` is returned (that is, the
+    # method is chainable). If the container is already started, it will output
+    # a warning on the
     def start
-      post "/containers/#{id}/start"
+      if id.empty?
+        raise "invalid empty id for container named #{names} with image #{image}"
+      else
+        post "/containers/#{id}/start", :started
+      end
     end
 
     def stop(wait = 5)
-      post "/containers/#{id}/stop?t=#{wait}"
+      if id.empty?
+        raise "invalid empty id for container named #{names} with image #{image}"
+      else
+        post "/containers/#{id}/stop?t=#{wait}", :stopped
+      end
     end
 
     def restart(wait = 5)
-      post "/containers/#{id}/restart?t=#{wait}"
+      if id.empty?
+        raise "invalid empty id for container named #{names} with image #{image}"
+      else
+        post "/containers/#{id}/restart?t=#{wait}", :restarted
+      end
     end
 
     def kill
-      post "/containers/#{id}/kill"
+      if id.empty?
+        raise "invalid empty id for container named #{names} with image #{image}"
+      else
+        post "/containers/#{id}/kill", :killed
+      end
     end
 
-    private def post(path : String)
-      handle_response path, Docker.client.post(path)
+    private def post(path : String, action)
+      handle_response path, Docker.client.post(path), action
     end
 
     private def handle_response(path : String, res : HTTP::Client::Response, action)
