@@ -19,44 +19,44 @@ module Docker
       end
 
       include JSON::Serializable
-      # The ID of this container
       @[JSON::Field(key: "Id")]
+      # The ID of this container
       property id : String
-      # The name of the image used when creating this container
       @[JSON::Field(key: "Image")]
+      # The name of the image used when creating this container
       property image : String
-      # The names that this container has been given
       @[JSON::Field(key: "Names")]
+      # The names that this container has been given
       property names = [] of String
-      # The ID of the image that this container was created from
       @[JSON::Field(key: "ImageID")]
+      # The ID of the image that this container was created from
       property image_id : String?
-      # Command to run when starting the container
       @[JSON::Field(key: "Command")]
+      # Command to run when starting the container
       property command : String?
-      # When the container was created
       @[JSON::Field(key: "Created")]
+      # When the container was created
       property created : Int64?
-      # The ports exposed by this container
       @[JSON::Field(key: "Ports")]
+      # The ports exposed by this container
       property ports : Array(PortConfig)?
-      # User-defined key/value metadata.
       @[JSON::Field(key: "Labels")]
+      # User-defined key/value metadata.
       property labels : Hash(String, String)?
-      # The size of files that have been created or changed by this container
       @[JSON::Field(key: "SizeRw")]
+      # The size of files that have been created or changed by this container
       property size_rw : Int64?
-      # The total size of all the files in this container
       @[JSON::Field(key: "SizeRootFs")]
+      # The total size of all the files in this container
       property size_root_fs : Int64?
-      # The state of this container (e.g. Exited)
       @[JSON::Field(key: "State")]
+      # The state of this container (e.g. Exited)
       property state : String?
-      # Additional human-readable status of this container (e.g. Exit 0)
       @[JSON::Field(key: "Status")]
+      # Additional human-readable status of this container (e.g. Exit 0)
       property status : String?
-      # A summary of the container's network settings
       @[JSON::Field(key: "NetworkSettings")]
+      # A summary of the container's network settings
       property network_settings : APIClient::NetworkingConfig?
 
       def self.request(all : Bool = false,
