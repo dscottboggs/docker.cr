@@ -14,7 +14,7 @@
 </script>
 
   <meta id="repository-name" content="github.com/owentams/docker.cr">
-  <title>Docker::APIClient::NotFound - github.com/owentams/docker.cr</title>
+  <title>Docker::APIClient::RestartPolicy - github.com/owentams/docker.cr</title>
 </head>
 <body>
 
@@ -91,7 +91,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
       <a href="../../Docker/APIClient/NotFound.html">NotFound</a>
       
     </li>
@@ -106,7 +106,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/RestartPolicy" data-name="docker::apiclient::restartpolicy">
+  <li class=" current" data-id="github.com/owentams/docker.cr/Docker/APIClient/RestartPolicy" data-name="docker::apiclient::restartpolicy">
       <a href="../../Docker/APIClient/RestartPolicy.html">RestartPolicy</a>
       
     </li>
@@ -245,12 +245,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Docker::APIClient::NotFound
+  <span class="kind">struct</span> Docker::APIClient::RestartPolicy
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/APIClient/NotFound.html">Docker::APIClient::NotFound</a></li><li class="superclass"><a href="../../Docker/APIClient/Exception.html">Docker::APIClient::Exception</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/APIClient/RestartPolicy.html">Docker::APIClient::RestartPolicy</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -258,6 +258,13 @@
 
 
 
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
 
 
 
@@ -271,8 +278,8 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/errors.cr#L28" target="_blank">
-        docker/client/errors.cr
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L3" target="_blank">
+        docker/client/restart_policy.cr
       </a>
     
     <br/>
@@ -286,7 +293,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28resource_type%3AString%2Cendpoint%3AString%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(resource_type : String, endpoint : String, response : HTTP::Client::Response? = <span class="n">nil</span>)</a>
+        <a href="#new%28name%2Cmaximum_retry_count%29-class-method" class="signature"><strong>.new</strong>(name, maximum_retry_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -295,6 +307,31 @@
 
 
 
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#maximum_retry_count%3AUInt64-instance-method" class="signature"><strong>#maximum_retry_count</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#maximum_retry_count%3D%28maximum_retry_count%3AUInt64%29-instance-method" class="signature"><strong>#maximum_retry_count=</strong>(maximum_retry_count : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3D%28name%3AString%29-instance-method" class="signature"><strong>#name=</strong>(name : String)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -347,18 +384,34 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new(resource_type:String,endpoint:String,response:HTTP::Client::Response?=nil)-class-method">
+    <div class="entry-detail" id="new(name,maximum_retry_count)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(resource_type : String, endpoint : String, response : HTTP::Client::Response? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(name, maximum_retry_count)
 
-        <a class="method-permalink" href="#new%28resource_type%3AString%2Cendpoint%3AString%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28name%2Cmaximum_retry_count%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/errors.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -367,6 +420,73 @@
 
 
 
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="maximum_retry_count:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_retry_count</strong> : UInt64
+
+        <a class="method-permalink" href="#maximum_retry_count%3AUInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="maximum_retry_count=(maximum_retry_count:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_retry_count=</strong>(maximum_retry_count : UInt64)
+
+        <a class="method-permalink" href="#maximum_retry_count%3D%28maximum_retry_count%3AUInt64%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(name : String)
+
+        <a class="method-permalink" href="#name%3D%28name%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/restart_policy.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
