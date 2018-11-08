@@ -1,4 +1,5 @@
-require "../image"
+require "./image"
+require "./images/list_response"
 
 module Docker
   class APIClient
@@ -52,14 +53,16 @@ module Docker
         q.add "digests", "true"
       end
       response = Docker.client.get "/images/json?#{params}"
+      Array(Docker::Image::ListResponse).from_json response.body
+    rescue e : JSON::ParseException
       begin
-        from_json response.body
-      rescue e : JSON::ParseException
-        begin
-          [Docker::Image.from_json response.body]
-        rescue JSON::ParseException
+        if (r = response).nil?
           raise e
+        else
+          [Docker::Image::ListResponse.from_json r.body]
         end
+      rescue JSON::ParseException
+        raise e
       end
     end
 
@@ -77,22 +80,24 @@ module Docker
     end
 
     # Retreive an image by its ID.
-    def self.[]?(img_id : String) : Image?
-      self.request.each { |img| return img if img.id === img_id }
+    def self.[]?(img_id : String) : Docker::Image::ListResponse?
+      self.request.find { |img| img.id === img_id }
     end
 
-    def self.[](img_id : String) : Image
-      self.request.each { |img| return img if img.id === img_id }
-      raise Docker::APIClient::NotFound.new("image", "image ID: #{img_id}")
+    def self.[](img_id : String) : Docker::Image::ListResponse
+      self[img_id]? || raise Docker::APIClient::NotFound.new(
+        "image", "image ID: #{img_id}"
+      )
     end
 
     def []?(img_id : String) : Image?
-      self.each { |img| return img if img.id === img_id }
+      self.find { |img| img.id === img_id }
     end
 
     def [](img_id : String) : Image
-      self.each { |img| return img if img.id === img_id }
-      raise Docker::APIClient::NotFound.new "Image", "image ID: #{img_id}"
+      self.[img_id]? || raise Docker::APIClient::NotFound.new(
+        "Image", "image ID: #{img_id}"
+      )
     end
   end
 end

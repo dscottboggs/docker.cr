@@ -2,14 +2,14 @@ require "../spec_helper"
 
 describe Docker::Container do
   # TODO integration tests
-
+  ENV["DOCKER_HOST"] = "tcp://localhost:1337"
   {% for method in {:start, :stop, :restart, :kill} %}
 
   describe "#" + "{{method.id}}" do
     context "success" do
       WebMock.reset
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 204)
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 204)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").to_return(status: 204)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 204)
       it "returns itself" do
         subject = Docker::Container.new(id: "test", image: "some:image")
         subject.{{method.id}}.should be subject
@@ -18,8 +18,8 @@ describe Docker::Container do
 
     context "already {{method.id}}ed" do
       WebMock.reset
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 304)
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 304)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").to_return(status: 304)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 304)
       it "returns itself" do
         buffer = IO::Memory.new
         subject = Docker::Container.new(id: "test", image: "some:image", warnings: buffer)
@@ -34,8 +34,8 @@ describe Docker::Container do
     context "not found" do
       WebMock.reset
       ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 404)
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 404)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").to_return(status: 404)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 404)
       it "raises error" do
         expect_raises(Docker::APIClient::NotFound) do
           Docker::Container.new(id: "test", image: "some:image").{{method.id}}
@@ -50,8 +50,8 @@ describe Docker::Container do
     context "server error" do
       WebMock.reset
       ENV["DOCKER_HOST"] = "tcp://localhost:80"
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").to_return(status: 500)
-      WebMock.stub(:post, "localhost/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 500)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").to_return(status: 500)
+      WebMock.stub(:post, "localhost:1337/containers/test/{{method.id}}").with(query:{"t" => "5"}).to_return(status: 500)
       it "raises error" do
         expect_raises(Docker::APIClient::InternalServerError) do
           Docker::Container.new(id: "test", image: "some:image").{{method.id}}
@@ -69,7 +69,7 @@ describe Docker::Container do
     context "success" do
       WebMock.reset
       WebMock
-        .stub(:post, "localhost/containers/create")
+        .stub(:post, "localhost:1337/containers/create")
         .with(body: CreateContainerSampleData.to_json)
         .with(query: {"name" => "test-image-name"})
         .to_return(status: 200, body: {"Id" => "test", "Warnings" => ["fake warning"]}.to_json)
@@ -90,7 +90,7 @@ describe Docker::Container do
     context "server error" do
       WebMock.reset
       WebMock
-        .stub(:post, "localhost/containers/create")
+        .stub(:post, "localhost:1337/containers/create")
         .with(body: {"Image" => "some:image"}.to_json)
         .with(query: {"name" => "test-image-name"})
         .to_return(status: 500)
@@ -105,7 +105,7 @@ describe Docker::Container do
     context "when not found" do
       WebMock.reset
       WebMock
-        .stub(:post, "localhost/containers/create")
+        .stub(:post, "localhost:1337/containers/create")
         .with(body: {"Image" => "some:image"}.to_json)
         .with(query: {"name" => "test-image-name"})
         .to_return(status: 404)
@@ -120,7 +120,7 @@ describe Docker::Container do
     context "when a conflict arises" do
       WebMock.reset
       WebMock
-        .stub(:post, "localhost/containers/create")
+        .stub(:post, "localhost:1337/containers/create")
         .with(body: {"Image" => "some:image"}.to_json)
         .with(query: {"name" => "test-image-name"})
         .to_return(status: 409)
@@ -133,4 +133,5 @@ describe Docker::Container do
       end
     end
   end
+  ENV.delete "DOCKER_HOST"
 end

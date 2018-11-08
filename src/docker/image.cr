@@ -1,32 +1,14 @@
 require "json"
+require "./container/limits"
 
 module Docker
   class Image
-    include JSON::Serializable
-    @[JSON::Field(key: "Id")]
-    property id : String
-    @[JSON::Field(key: "ParentId")]
-    property parent_id : String
-    @[JSON::Field(key: "RepoTags")]
-    property repo_tags : Array(String)
-    @[JSON::Field(key: "RepoDigests")]
-    property repo_digests : Array(String)
-    @[JSON::Field(key: "Created")]
-    property created_at : Int32
-    @[JSON::Field(key: "Size")]
-    property size : Int32
-    @[JSON::Field(key: "SharedSize")]
-    property shared_size : Int32
-    @[JSON::Field(key: "VirtualSize")]
-    property virtual_size : Int32
-    @[JSON::Field(key: "Labels")]
-    property labels : Hash(String, String)
-    @[JSON::Field(key: "Containers")]
-    property containers : Int32
-
-    def created
-      created_at
+    def initialize(@tags, @id)
     end
+
+    property id : String? = nil
+    getter tags : Array(Tag)
+    delegate to_s, to: @tags
 
     # Tag an image.
     # See https://docs.docker.com/engine/api/v1.30/#operation/ImageTag
@@ -34,6 +16,7 @@ module Docker
       reponse = Docker.client.post("/images/#{id}/tag" + tag_val.to_params)
       case response.status_code
       when 201
+        @tags << tag_val
         return self
       when 400
         raise BadParameter.new url, response
@@ -146,11 +129,18 @@ module Docker
     # Note that the dockerfile parameter is a path relative to the context, not
     # an absolute path.
     # See https://docs.docker.com/engine/api/v1.30/#operation/ImageBuild
-    def self.build(
+    def self.build(tag : Array(Tag)? = nil, **kwargs)
+      self.new(tag).build(**kwargs)
+    end
+
+    def self.build(tag : Array(String)?, **kwargs)
+      self.new(tag.map { |t| Tag.from_s t }).build(**kwargs)
+    end
+
+    def build(
       context : String | IO = Dir.current,
       dockerfile : String? = nil,
-      tag : Array(String)? = nil,
-      extra_hosts : String = nil,
+      extra_hosts : String? = nil,
       remote : String? = nil,
       no_cache? = false,
       cache_from : Array(String)? = nil,
@@ -159,11 +149,10 @@ module Docker
       force_rm? = false,
       limits = ContainerLimits.new
     )
-      lim = limits.to_q
-      q = HTTP::Params.build do |query|
+      query = limits.not_nil!.to_q do |query|
         query.add "dockerfile", dockerfile unless dockerfile == "Dockerfile" ||
                                                   dockerfile.nil?
-        tag.nil? || tag.each { |t| query.add "t", t }
+        tag.try &.each { |t| query.add "t", t }
         query.add "extrahosts", extra_hosts unless extra_hosts.nil?
         query.add "remote", remote unless remote.nil?
         query.add "nocache", "true" if no_cache?
@@ -171,10 +160,13 @@ module Docker
         query.add "pull", "true" if pull?
         query.add "rm", "false" unless rm?
         query.add "forcerm", "true" if force_rm?
+        query
       end
-      query_string = lim.nil? ? q : lim + '&' + q
-      query_string = "?" + query_string unless query_string.empty?
-      endpoint = "/build#{query_string}"
+      endpoint = if query.empty?
+                   "/build"
+                 else
+                   "/build?#{query.to_s}"
+                 end
       if File.directory? context
         tf_reader, tf_writer = IO.pipe
         tar_proc = Process.run "tar -c #{context}", output: tf_writer
@@ -218,12 +210,16 @@ module Docker
     # status, line-by-line, as JSON objects. See
     # https://docs.docker.com/engine/api/v1.30/#operation/ImageCreate
     def self.import(path_or_url : String | URI, &block)
-      stream_pull_status "/images/create?fromSrc=#{path_or_url.to_s}", &block
+      stream_pull_status "/images/create?fromSrc=#{path_or_url.to_s}" do |status|
+        yield status
+      end
     end
 
     def self.import(tarfile : File, &block)
       File.open tarfile do |file|
-        stream_pull_status "/images/create?fromSrc=-", body: file, &block
+        stream_pull_status "/images/create?fromSrc=-", body: file do |status|
+          yield status
+        end
       end
     end
 

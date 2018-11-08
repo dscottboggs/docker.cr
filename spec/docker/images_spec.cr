@@ -21,10 +21,8 @@ mock_results = [
   "Size"        => 5 << 20,
   "VirtualSize" => 5 << 20,
   "SharedSize"  => 0,
-  "Labels":        {
-    "test-label" => "test label value",
-  },
-  "Containers" => 2,
+  "Labels"      => {"test-label" => "test label value"},
+  "Containers"  => 2,
 }, {
   "Id"          => "another sha256 hash value",
   "ParentId"    => "a fourth fake sha256 hash value",
@@ -60,7 +58,7 @@ describe Docker::ImageCollection do
     gotten = Docker::ImageCollection["sha256 hash value"]
     # perform the tests
     it "is of the right type" do
-      gotten.should be_a Docker::Image
+      gotten.should be_a Docker::Image::ListResponse
     end
     it "has all the right attributes" do
       gotten.id.should eq "sha256 hash value"
@@ -89,7 +87,7 @@ describe Docker::ImageCollection do
   describe ".all" do
     all = Docker::ImageCollection.all
     it "is of the right type" do
-      all.should be_a(Array(Docker::Image))
+      all.should be_a Array(Docker::Image::ListResponse)
     end
     it "gathered the right number of results" do
       all.size.should eq 3
@@ -98,7 +96,7 @@ describe Docker::ImageCollection do
   describe ".find" do
     found = Docker::ImageCollection.find(test_find_tag)
     it "finds the image" do
-      found.should be_a Array(Docker::Image)
+      found.should be_a Array(Docker::Image::ListResponse)
       found.size.should eq 1
       found[0].id.should eq "sha256 hash value"
     end
@@ -123,7 +121,7 @@ describe Docker::APIClient::Images do
       describe "all" do
         it "has the expected attributes" do
           test_value = Docker.client.images(all: true)
-          expected = mock_results.map { |r| Docker::Image.from_json r.to_json }
+          expected = mock_results.map { |r| Docker::Image::ListResponse.from_json r.to_json }
           expected.size.times do |i|
             test_value[i].id.should eq expected[i].id
             test_value[i].created_at.should eq expected[i].created
@@ -135,7 +133,7 @@ describe Docker::APIClient::Images do
         it "has the expected attributes" do
           filters = Docker::ImageFilters.new(label: "test-label")
           test_value = Docker.client.images(all: false, filters: filters)
-          expected = Docker::Image.from_json(mock_results[1].to_json)
+          expected = Docker::Image::ListResponse.from_json(mock_results[1].to_json)
           test_value.size.should eq 1
           test_value[0].id.should eq expected.id
           test_value[0].created_at.should eq expected.created
@@ -148,7 +146,7 @@ describe Docker::APIClient::Images do
       describe "all" do
         it "has the expected attributes" do
           test_value = Docker.client.images(all: true)
-          expected = mock_results.map { |r| Docker::Image.from_json r.to_json }
+          expected = mock_results.map { |r| Docker::Image::ListResponse.from_json r.to_json }
           expected.size.times do |i|
             test_value[i].id.should eq expected[i].id
             test_value[i].created_at.should eq expected[i].created
@@ -159,7 +157,7 @@ describe Docker::APIClient::Images do
       describe "filtered" do
         it "has the expected attributes" do
           test_value = Docker.client.images(all: false, label: "test-label")
-          expected = Docker::Image.from_json(mock_results[1].to_json)
+          expected = Docker::Image::ListResponse.from_json(mock_results[1].to_json)
           test_value.size.should eq 1
           test_value[0].id.should eq expected.id
           test_value[0].created_at.should eq expected.created
