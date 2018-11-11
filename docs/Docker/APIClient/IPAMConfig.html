@@ -14,7 +14,7 @@
 </script>
 
   <meta id="repository-name" content="github.com/owentams/docker.cr">
-  <title>Docker::APIClient::NotFound - github.com/owentams/docker.cr</title>
+  <title>Docker::APIClient::IPAMConfig - github.com/owentams/docker.cr</title>
 </head>
 <body>
 
@@ -81,7 +81,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/IPAMConfig" data-name="docker::apiclient::ipamconfig">
+  <li class=" current" data-id="github.com/owentams/docker.cr/Docker/APIClient/IPAMConfig" data-name="docker::apiclient::ipamconfig">
       <a href="../../Docker/APIClient/IPAMConfig.html">IPAMConfig</a>
       
     </li>
@@ -91,7 +91,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
       <a href="../../Docker/APIClient/NotFound.html">NotFound</a>
       
     </li>
@@ -245,19 +245,30 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Docker::APIClient::NotFound
+  <span class="kind">class</span> Docker::APIClient::IPAMConfig
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/APIClient/NotFound.html">Docker::APIClient::NotFound</a></li><li class="superclass"><a href="../../Docker/APIClient/Exception.html">Docker::APIClient::Exception</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/APIClient/IPAMConfig.html">Docker::APIClient::IPAMConfig</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>IPAM configurations for an endpoint</p>
 
 
 
 
 
-
-
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
 
 
 
@@ -271,8 +282,8 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/errors.cr#L28" target="_blank">
-        docker/client/errors.cr
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L4" target="_blank">
+        docker/client/ipam_config.cr
       </a>
     
     <br/>
@@ -286,7 +297,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28resource_type%3AString%2Cendpoint%3AString%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(resource_type : String, endpoint : String, response : HTTP::Client::Response? = <span class="n">nil</span>)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -295,6 +306,41 @@
 
 
 
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#ipv4_address%3AString-instance-method" class="signature"><strong>#ipv4_address</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ipv4_address%3D%28ipv4_address%3AString%29-instance-method" class="signature"><strong>#ipv4_address=</strong>(ipv4_address : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ipv6_address%3AString-instance-method" class="signature"><strong>#ipv6_address</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ipv6_address%3D%28ipv6_address%3AString%29-instance-method" class="signature"><strong>#ipv6_address=</strong>(ipv6_address : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#link_local_ips%3AArray%28String%29-instance-method" class="signature"><strong>#link_local_ips</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#link_local_ips%3D%28link_local_ips%3AArray%28String%29%29-instance-method" class="signature"><strong>#link_local_ips=</strong>(link_local_ips : Array(String))</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -332,33 +378,23 @@
 
 
   
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new(resource_type:String,endpoint:String,response:HTTP::Client::Response?=nil)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(resource_type : String, endpoint : String, response : HTTP::Client::Response? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new%28resource_type%3AString%2Cendpoint%3AString%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/errors.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -367,6 +403,105 @@
 
 
 
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="ipv4_address:String-instance-method">
+      <div class="signature">
+        
+        def <strong>ipv4_address</strong> : String
+
+        <a class="method-permalink" href="#ipv4_address%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ipv4_address=(ipv4_address:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>ipv4_address=</strong>(ipv4_address : String)
+
+        <a class="method-permalink" href="#ipv4_address%3D%28ipv4_address%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ipv6_address:String-instance-method">
+      <div class="signature">
+        
+        def <strong>ipv6_address</strong> : String
+
+        <a class="method-permalink" href="#ipv6_address%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ipv6_address=(ipv6_address:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>ipv6_address=</strong>(ipv6_address : String)
+
+        <a class="method-permalink" href="#ipv6_address%3D%28ipv6_address%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="link_local_ips:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>link_local_ips</strong> : Array(String)
+
+        <a class="method-permalink" href="#link_local_ips%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="link_local_ips=(link_local_ips:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>link_local_ips=</strong>(link_local_ips : Array(String))
+
+        <a class="method-permalink" href="#link_local_ips%3D%28link_local_ips%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/ipam_config.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 

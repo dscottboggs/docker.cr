@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/owentams/docker.cr">
+  <title>Docker::Container::ListResponse - github.com/owentams/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/DeviceMapping" data-name="devicemapping">
+      <a href="../../DeviceMapping.html">DeviceMapping</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker" data-name="docker">
+      <a href="../../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/IPAMConfig" data-name="docker::apiclient::ipamconfig">
+      <a href="../../Docker/APIClient/IPAMConfig.html">IPAMConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NetworkingConfig" data-name="docker::apiclient::networkingconfig">
+      <a href="../../Docker/APIClient/NetworkingConfig.html">NetworkingConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/PortBindings" data-name="docker::apiclient::portbindings">
+      <a href="../../Docker/APIClient/PortBindings.html">PortBindings</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/RestartPolicy" data-name="docker::apiclient::restartpolicy">
+      <a href="../../Docker/APIClient/RestartPolicy.html">RestartPolicy</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/ThrottleDevice" data-name="docker::apiclient::throttledevice">
+      <a href="../../Docker/APIClient/ThrottleDevice.html">ThrottleDevice</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../../Docker/Container.html">Container</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/CreateBody" data-name="docker::container::createbody">
+      <a href="../../Docker/Container/CreateBody.html">CreateBody</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HealthCheck" data-name="docker::container::healthcheck">
+      <a href="../../Docker/Container/HealthCheck.html">HealthCheck</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig" data-name="docker::container::hostconfig">
+      <a href="../../Docker/Container/HostConfig.html">HostConfig</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount" data-name="docker::container::hostconfig::mount">
+      <a href="../../Docker/Container/HostConfig/Mount.html">Mount</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/TmpfsOptions" data-name="docker::container::hostconfig::mount::tmpfsoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/TmpfsOptions.html">TmpfsOptions</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions" data-name="docker::container::hostconfig::mount::volumeoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions.html">VolumeOptions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig" data-name="docker::container::hostconfig::mount::volumeoptions::driverconfig">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig.html">DriverConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/ULimit" data-name="docker::container::hostconfig::ulimit">
+      <a href="../../Docker/Container/HostConfig/ULimit.html">ULimit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse" data-name="docker::container::listresponse">
+      <a href="../../Docker/Container/ListResponse.html">ListResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse/PortConfig" data-name="docker::container::listresponse::portconfig">
+      <a href="../../Docker/Container/ListResponse/PortConfig.html">PortConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::Container::ListResponse
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/Container/ListResponse.html">Docker::Container::ListResponse</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>an array of ListResponse is received from the docker client when requesting a list
+of containers. See https://docs.docker.com/engine/api/v1.30/#operation/ContainerList</p>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L7" target="_blank">
+        docker/container/list_response.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#request%28all%3ABool%3Dfalse%2Climit%3AInt32%3F%3Dnil%2Csince%3AString%3F%3Dnil%2Cbefore%3AString%3F%3Dnil%2Csize%3ABool%3Dfalse%2Cfilters%3D%7B%7DofString%3D%3EArray%28String%29%29-class-method" class="signature"><strong>.request</strong>(all : Bool = <span class="n">false</span>, limit : Int32? = <span class="n">nil</span>, since : String? = <span class="n">nil</span>, before : String? = <span class="n">nil</span>, size : Bool = <span class="n">false</span>, filters = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">Array</span>(<span class="t">String</span>))</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#command%3AString%3F-instance-method" class="signature"><strong>#command</strong> : String?</a>
+        
+          <div class="summary"><p>Command to run when starting the container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#command%3D%28command%3AString%3F%29-instance-method" class="signature"><strong>#command=</strong>(command : String?)</a>
+        
+          <div class="summary"><p>Command to run when starting the container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#created%3AInt64%3F-instance-method" class="signature"><strong>#created</strong> : Int64?</a>
+        
+          <div class="summary"><p>When the container was created</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#created%3D%28created%3AInt64%3F%29-instance-method" class="signature"><strong>#created=</strong>(created : Int64?)</a>
+        
+          <div class="summary"><p>When the container was created</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
+        
+          <div class="summary"><p>The ID of this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28id%3AString%29-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
+        
+          <div class="summary"><p>The ID of this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3AString-instance-method" class="signature"><strong>#image</strong> : String</a>
+        
+          <div class="summary"><p>The name of the image used when creating this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3D%28image%3AString%29-instance-method" class="signature"><strong>#image=</strong>(image : String)</a>
+        
+          <div class="summary"><p>The name of the image used when creating this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image_id%3AString%3F-instance-method" class="signature"><strong>#image_id</strong> : String?</a>
+        
+          <div class="summary"><p>The ID of the image that this container was created from</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image_id%3D%28image_id%3AString%3F%29-instance-method" class="signature"><strong>#image_id=</strong>(image_id : String?)</a>
+        
+          <div class="summary"><p>The ID of the image that this container was created from</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#labels</strong> : Hash(String, String)?</a>
+        
+          <div class="summary"><p>User-defined key/value metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3D%28labels%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#labels=</strong>(labels : Hash(String, String)?)</a>
+        
+          <div class="summary"><p>User-defined key/value metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#names%3AArray%28String%29-instance-method" class="signature"><strong>#names</strong> : Array(String)</a>
+        
+          <div class="summary"><p>The names that this container has been given</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#names%3D%28names%29-instance-method" class="signature"><strong>#names=</strong>(names)</a>
+        
+          <div class="summary"><p>The names that this container has been given</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_settings%3AAPIClient%3A%3ANetworkingConfig%3F-instance-method" class="signature"><strong>#network_settings</strong> : APIClient::NetworkingConfig?</a>
+        
+          <div class="summary"><p>A summary of the container's network settings</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_settings%3D%28network_settings%3AAPIClient%3A%3ANetworkingConfig%3F%29-instance-method" class="signature"><strong>#network_settings=</strong>(network_settings : APIClient::NetworkingConfig?)</a>
+        
+          <div class="summary"><p>A summary of the container's network settings</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ports%3AArray%28PortConfig%29%3F-instance-method" class="signature"><strong>#ports</strong> : Array(PortConfig)?</a>
+        
+          <div class="summary"><p>The ports exposed by this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ports%3D%28ports%3AArray%28PortConfig%29%3F%29-instance-method" class="signature"><strong>#ports=</strong>(ports : Array(PortConfig)?)</a>
+        
+          <div class="summary"><p>The ports exposed by this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_root_fs%3AInt64%3F-instance-method" class="signature"><strong>#size_root_fs</strong> : Int64?</a>
+        
+          <div class="summary"><p>The total size of all the files in this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_root_fs%3D%28size_root_fs%3AInt64%3F%29-instance-method" class="signature"><strong>#size_root_fs=</strong>(size_root_fs : Int64?)</a>
+        
+          <div class="summary"><p>The total size of all the files in this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_rw%3AInt64%3F-instance-method" class="signature"><strong>#size_rw</strong> : Int64?</a>
+        
+          <div class="summary"><p>The size of files that have been created or changed by this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_rw%3D%28size_rw%3AInt64%3F%29-instance-method" class="signature"><strong>#size_rw=</strong>(size_rw : Int64?)</a>
+        
+          <div class="summary"><p>The size of files that have been created or changed by this container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state%3AString%3F-instance-method" class="signature"><strong>#state</strong> : String?</a>
+        
+          <div class="summary"><p>The state of this container (e.g.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state%3D%28state%3AString%3F%29-instance-method" class="signature"><strong>#state=</strong>(state : String?)</a>
+        
+          <div class="summary"><p>The state of this container (e.g.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status%3AString%3F-instance-method" class="signature"><strong>#status</strong> : String?</a>
+        
+          <div class="summary"><p>Additional human-readable status of this container (e.g.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status%3D%28status%3AString%3F%29-instance-method" class="signature"><strong>#status=</strong>(status : String?)</a>
+        
+          <div class="summary"><p>Additional human-readable status of this container (e.g.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="request(all:Bool=false,limit:Int32?=nil,since:String?=nil,before:String?=nil,size:Bool=false,filters={}ofString=&gt;Array(String))-class-method">
+      <div class="signature">
+        
+        def self.<strong>request</strong>(all : Bool = <span class="n">false</span>, limit : Int32? = <span class="n">nil</span>, since : String? = <span class="n">nil</span>, before : String? = <span class="n">nil</span>, size : Bool = <span class="n">false</span>, filters = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">Array</span>(<span class="t">String</span>))
+
+        <a class="method-permalink" href="#request%28all%3ABool%3Dfalse%2Climit%3AInt32%3F%3Dnil%2Csince%3AString%3F%3Dnil%2Cbefore%3AString%3F%3Dnil%2Csize%3ABool%3Dfalse%2Cfilters%3D%7B%7DofString%3D%3EArray%28String%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="command:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>command</strong> : String?
+
+        <a class="method-permalink" href="#command%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Command to run when starting the container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="command=(command:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>command=</strong>(command : String?)
+
+        <a class="method-permalink" href="#command%3D%28command%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Command to run when starting the container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="created:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>created</strong> : Int64?
+
+        <a class="method-permalink" href="#created%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>When the container was created</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="created=(created:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>created=</strong>(created : Int64?)
+
+        <a class="method-permalink" href="#created%3D%28created%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>When the container was created</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String
+
+        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ID of this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : String)
+
+        <a class="method-permalink" href="#id%3D%28id%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ID of this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image:String-instance-method">
+      <div class="signature">
+        
+        def <strong>image</strong> : String
+
+        <a class="method-permalink" href="#image%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The name of the image used when creating this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image=(image:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>image=</strong>(image : String)
+
+        <a class="method-permalink" href="#image%3D%28image%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The name of the image used when creating this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image_id:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>image_id</strong> : String?
+
+        <a class="method-permalink" href="#image_id%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ID of the image that this container was created from</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image_id=(image_id:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>image_id=</strong>(image_id : String?)
+
+        <a class="method-permalink" href="#image_id%3D%28image_id%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ID of the image that this container was created from</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>labels</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#labels%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>User-defined key/value metadata.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels=(labels:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>labels=</strong>(labels : Hash(String, String)?)
+
+        <a class="method-permalink" href="#labels%3D%28labels%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>User-defined key/value metadata.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="names:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>names</strong> : Array(String)
+
+        <a class="method-permalink" href="#names%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The names that this container has been given</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="names=(names)-instance-method">
+      <div class="signature">
+        
+        def <strong>names=</strong>(names)
+
+        <a class="method-permalink" href="#names%3D%28names%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The names that this container has been given</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_settings:APIClient::NetworkingConfig?-instance-method">
+      <div class="signature">
+        
+        def <strong>network_settings</strong> : <a href="../../Docker/APIClient/NetworkingConfig.html">APIClient::NetworkingConfig</a>?
+
+        <a class="method-permalink" href="#network_settings%3AAPIClient%3A%3ANetworkingConfig%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A summary of the container's network settings</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_settings=(network_settings:APIClient::NetworkingConfig?)-instance-method">
+      <div class="signature">
+        
+        def <strong>network_settings=</strong>(network_settings : <a href="../../Docker/APIClient/NetworkingConfig.html">APIClient::NetworkingConfig</a>?)
+
+        <a class="method-permalink" href="#network_settings%3D%28network_settings%3AAPIClient%3A%3ANetworkingConfig%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A summary of the container's network settings</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ports:Array(PortConfig)?-instance-method">
+      <div class="signature">
+        
+        def <strong>ports</strong> : Array(<a href="../../Docker/Container/ListResponse/PortConfig.html">PortConfig</a>)?
+
+        <a class="method-permalink" href="#ports%3AArray%28PortConfig%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ports exposed by this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ports=(ports:Array(PortConfig)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>ports=</strong>(ports : Array(<a href="../../Docker/Container/ListResponse/PortConfig.html">PortConfig</a>)?)
+
+        <a class="method-permalink" href="#ports%3D%28ports%3AArray%28PortConfig%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The ports exposed by this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_root_fs:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>size_root_fs</strong> : Int64?
+
+        <a class="method-permalink" href="#size_root_fs%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The total size of all the files in this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_root_fs=(size_root_fs:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>size_root_fs=</strong>(size_root_fs : Int64?)
+
+        <a class="method-permalink" href="#size_root_fs%3D%28size_root_fs%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The total size of all the files in this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_rw:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>size_rw</strong> : Int64?
+
+        <a class="method-permalink" href="#size_rw%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The size of files that have been created or changed by this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_rw=(size_rw:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>size_rw=</strong>(size_rw : Int64?)
+
+        <a class="method-permalink" href="#size_rw%3D%28size_rw%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The size of files that have been created or changed by this container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>state</strong> : String?
+
+        <a class="method-permalink" href="#state%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The state of this container (e.g. Exited)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state=(state:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>state=</strong>(state : String?)
+
+        <a class="method-permalink" href="#state%3D%28state%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The state of this container (e.g. Exited)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>status</strong> : String?
+
+        <a class="method-permalink" href="#status%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Additional human-readable status of this container (e.g. Exit 0)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status=(status:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>status=</strong>(status : String?)
+
+        <a class="method-permalink" href="#status%3D%28status%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Additional human-readable status of this container (e.g. Exit 0)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/list_response.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

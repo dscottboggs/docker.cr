@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/owentams/docker.cr">
+  <title>Docker::Container::CreateBody - github.com/owentams/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/DeviceMapping" data-name="devicemapping">
+      <a href="../../DeviceMapping.html">DeviceMapping</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker" data-name="docker">
+      <a href="../../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/IPAMConfig" data-name="docker::apiclient::ipamconfig">
+      <a href="../../Docker/APIClient/IPAMConfig.html">IPAMConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NetworkingConfig" data-name="docker::apiclient::networkingconfig">
+      <a href="../../Docker/APIClient/NetworkingConfig.html">NetworkingConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/PortBindings" data-name="docker::apiclient::portbindings">
+      <a href="../../Docker/APIClient/PortBindings.html">PortBindings</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/RestartPolicy" data-name="docker::apiclient::restartpolicy">
+      <a href="../../Docker/APIClient/RestartPolicy.html">RestartPolicy</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/ThrottleDevice" data-name="docker::apiclient::throttledevice">
+      <a href="../../Docker/APIClient/ThrottleDevice.html">ThrottleDevice</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../../Docker/Container.html">Container</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/owentams/docker.cr/Docker/Container/CreateBody" data-name="docker::container::createbody">
+      <a href="../../Docker/Container/CreateBody.html">CreateBody</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HealthCheck" data-name="docker::container::healthcheck">
+      <a href="../../Docker/Container/HealthCheck.html">HealthCheck</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig" data-name="docker::container::hostconfig">
+      <a href="../../Docker/Container/HostConfig.html">HostConfig</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount" data-name="docker::container::hostconfig::mount">
+      <a href="../../Docker/Container/HostConfig/Mount.html">Mount</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/TmpfsOptions" data-name="docker::container::hostconfig::mount::tmpfsoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/TmpfsOptions.html">TmpfsOptions</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions" data-name="docker::container::hostconfig::mount::volumeoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions.html">VolumeOptions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig" data-name="docker::container::hostconfig::mount::volumeoptions::driverconfig">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig.html">DriverConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/ULimit" data-name="docker::container::hostconfig::ulimit">
+      <a href="../../Docker/Container/HostConfig/ULimit.html">ULimit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse" data-name="docker::container::listresponse">
+      <a href="../../Docker/Container/ListResponse.html">ListResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse/PortConfig" data-name="docker::container::listresponse::portconfig">
+      <a href="../../Docker/Container/ListResponse/PortConfig.html">PortConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Docker::Container::CreateBody
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/Container/CreateBody.html">Docker::Container::CreateBody</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L26" target="_blank">
+        docker/container/create_body.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28image%2C%2A%2Chostname%3Dnil%2Cdomain_name%3Dnil%2Cuser%3Dnil%2Ccommand%3Dnil%2Cworking_dir%3Dnil%2Cmac_address%3Dnil%2Cattach_stdin%3Dtrue%2Cattach_stderr%3Dtrue%2Cattach_stdout%3Dtrue%2Cstdin_once%3Dfalse%2Ctty%3Dfalse%2Copen_stdin%3Dfalse%2Cargs_escaped_already%3Dfalse%2Cnetwork_disabled%3Dfalse%2Chealth_check%3Dnil%2Cenv%3Dnil%2Cexposed_ports%3Dnil%2Cvolumes%3Dnil%2Centrypoint%3Dnil%2Con_build%3Dnil%2Clabels%3Dnil%2Cstop_signal%3D%26quot%3BSIGTERM%26quot%3B%2Cstop_timeout%3D10%2Cshell%3Dnil%29-class-method" class="signature"><strong>.new</strong>(image, *, hostname = <span class="n">nil</span>, domain_name = <span class="n">nil</span>, user = <span class="n">nil</span>, command = <span class="n">nil</span>, working_dir = <span class="n">nil</span>, mac_address = <span class="n">nil</span>, attach_stdin = <span class="n">true</span>, attach_stderr = <span class="n">true</span>, attach_stdout = <span class="n">true</span>, stdin_once = <span class="n">false</span>, tty = <span class="n">false</span>, open_stdin = <span class="n">false</span>, args_escaped_already = <span class="n">false</span>, network_disabled = <span class="n">false</span>, health_check = <span class="n">nil</span>, env = <span class="n">nil</span>, exposed_ports = <span class="n">nil</span>, volumes = <span class="n">nil</span>, entrypoint = <span class="n">nil</span>, on_build = <span class="n">nil</span>, labels = <span class="n">nil</span>, stop_signal = <span class="s">&quot;SIGTERM&quot;</span>, stop_timeout = <span class="n">10</span>, shell = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#args_escaped_already%3ABool-instance-method" class="signature"><strong>#args_escaped_already</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#args_escaped_already%3D%28args_escaped_already%29-instance-method" class="signature"><strong>#args_escaped_already=</strong>(args_escaped_already)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_keys%28values%3AIndexable%28String%29%2Cbuilder%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#as_keys</strong>(values : Indexable(String), builder : JSON::Builder)</a>
+        
+          <div class="summary"><p>the unique elements from the Indexable "values" is converted to an object in the given builder, where the values from the indexable are the keys, mapped to empty values, like <code>{"value one" => {}, "value two" => {}}</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stderr%3ABool-instance-method" class="signature"><strong>#attach_stderr</strong> : Bool</a>
+        
+          <div class="summary"><p>whether to attach "STDERR".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stderr%3D%28attach_stderr%29-instance-method" class="signature"><strong>#attach_stderr=</strong>(attach_stderr)</a>
+        
+          <div class="summary"><p>whether to attach "STDERR".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stdin%3ABool-instance-method" class="signature"><strong>#attach_stdin</strong> : Bool</a>
+        
+          <div class="summary"><p>whether to attach "STDIN".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stdin%3D%28attach_stdin%29-instance-method" class="signature"><strong>#attach_stdin=</strong>(attach_stdin)</a>
+        
+          <div class="summary"><p>whether to attach "STDIN".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stdout%3ABool-instance-method" class="signature"><strong>#attach_stdout</strong> : Bool</a>
+        
+          <div class="summary"><p>whether to attach "STDOUT".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attach_stdout%3D%28attach_stdout%29-instance-method" class="signature"><strong>#attach_stdout=</strong>(attach_stdout)</a>
+        
+          <div class="summary"><p>whether to attach "STDOUT".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#command%3AString%3F-instance-method" class="signature"><strong>#command</strong> : String?</a>
+        
+          <div class="summary"><p>the command of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#command%3D%28command%3AString%3F%29-instance-method" class="signature"><strong>#command=</strong>(command : String?)</a>
+        
+          <div class="summary"><p>the command of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#domain_name%3AString%3F-instance-method" class="signature"><strong>#domain_name</strong> : String?</a>
+        
+          <div class="summary"><p>the domain_name of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#domain_name%3D%28domain_name%3AString%3F%29-instance-method" class="signature"><strong>#domain_name=</strong>(domain_name : String?)</a>
+        
+          <div class="summary"><p>the domain_name of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#entrypoint%3D%28entrypoint%3AString%7CArray%28String%29%7CNil%29-instance-method" class="signature"><strong>#entrypoint=</strong>(entrypoint : String | Array(String) | Nil)</a>
+        
+          <div class="summary"><p>The entry point for the container as a string or an array of strings.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#entrypoint%3F%3AString%7CArray%28String%29%7CNil-instance-method" class="signature"><strong>#entrypoint?</strong> : String | Array(String) | Nil</a>
+        
+          <div class="summary"><p>The entry point for the container as a string or an array of strings.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#env%3D%28env%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#env=</strong>(env : Hash(String, String)?)</a>
+        
+          <div class="summary"><p>? environment variables to set inside the container environment variables to set inside the container environment variables to set inside the container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#env%3F%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#env?</strong> : Hash(String, String)?</a>
+        
+          <div class="summary"><p>? environment variables to set inside the container environment variables to set inside the container environment variables to set inside the container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exposed_ports%3D%28exposed_ports%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#exposed_ports=</strong>(exposed_ports : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exposed_ports%3F%3AArray%28String%29%3F-instance-method" class="signature"><strong>#exposed_ports?</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#health_check%3D%28health_check%3AHealthCheck%3F%29-instance-method" class="signature"><strong>#health_check=</strong>(health_check : HealthCheck?)</a>
+        
+          <div class="summary"><p>A test to perform to check that the container is healthy.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#health_check%3F%3AHealthCheck%3F-instance-method" class="signature"><strong>#health_check?</strong> : HealthCheck?</a>
+        
+          <div class="summary"><p>A test to perform to check that the container is healthy.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hostname%3AString%3F-instance-method" class="signature"><strong>#hostname</strong> : String?</a>
+        
+          <div class="summary"><p>the hostname of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hostname%3D%28hostname%3AString%3F%29-instance-method" class="signature"><strong>#hostname=</strong>(hostname : String?)</a>
+        
+          <div class="summary"><p>the hostname of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3D%28image%3ATag%7CString%29-instance-method" class="signature"><strong>#image=</strong>(image : Tag | String)</a>
+        
+          <div class="summary"><p>The Tag of the image to use when creating the container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3F-instance-method" class="signature"><strong>#image?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3D%28labels%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#labels=</strong>(labels : Hash(String, String)?)</a>
+        
+          <div class="summary"><p>User-defined key/value metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#labels%3F%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#labels?</strong> : Hash(String, String)?</a>
+        
+          <div class="summary"><p>User-defined key/value metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mac_address%3AString%3F-instance-method" class="signature"><strong>#mac_address</strong> : String?</a>
+        
+          <div class="summary"><p>the mac_address of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mac_address%3D%28mac_address%3AString%3F%29-instance-method" class="signature"><strong>#mac_address=</strong>(mac_address : String?)</a>
+        
+          <div class="summary"><p>the mac_address of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_disabled%3ABool-instance-method" class="signature"><strong>#network_disabled</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_disabled%3D%28network_disabled%29-instance-method" class="signature"><strong>#network_disabled=</strong>(network_disabled)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_build%3D%28on_build%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#on_build=</strong>(on_build : Array(String)?)</a>
+        
+          <div class="summary"><p><code>ONBUILD</code> metadata that were defined in the image's <code>Dockerfile</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_build%3F%3AArray%28String%29%3F-instance-method" class="signature"><strong>#on_build?</strong> : Array(String)?</a>
+        
+          <div class="summary"><p><code>ONBUILD</code> metadata that were defined in the image's <code>Dockerfile</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_stdin%3ABool-instance-method" class="signature"><strong>#open_stdin</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_stdin%3D%28open_stdin%29-instance-method" class="signature"><strong>#open_stdin=</strong>(open_stdin)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shell%3D%28shell%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#shell=</strong>(shell : Array(String)?)</a>
+        
+          <div class="summary"><p>Shell for when <code>RUN</code>, <code>CMD</code>, and <code>ENTRYPOINT</code> uses a shell.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shell%3F%3AArray%28String%29%3F-instance-method" class="signature"><strong>#shell?</strong> : Array(String)?</a>
+        
+          <div class="summary"><p>Shell for when <code>RUN</code>, <code>CMD</code>, and <code>ENTRYPOINT</code> uses a shell.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stdin_once%3ABool-instance-method" class="signature"><strong>#stdin_once</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stdin_once%3D%28stdin_once%29-instance-method" class="signature"><strong>#stdin_once=</strong>(stdin_once)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_signal%3AString%7CUInt8-instance-method" class="signature"><strong>#stop_signal</strong> : String | UInt8</a>
+        
+          <div class="summary"><p>Signal to stop a container as a string or unsigned integer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_signal%3D%28stop_signal%3AString%7CUInt8%29-instance-method" class="signature"><strong>#stop_signal=</strong>(stop_signal : String | UInt8)</a>
+        
+          <div class="summary"><p>Signal to stop a container as a string or unsigned integer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_timeout%3AInt32-instance-method" class="signature"><strong>#stop_timeout</strong> : Int32</a>
+        
+          <div class="summary"><p>Timeout to stop a container in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_timeout%3D%28stop_timeout%29-instance-method" class="signature"><strong>#stop_timeout=</strong>(stop_timeout)</a>
+        
+          <div class="summary"><p>Timeout to stop a container in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(builder : JSON::Builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json-instance-method" class="signature"><strong>#to_json</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tty%3ABool-instance-method" class="signature"><strong>#tty</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tty%3D%28tty%29-instance-method" class="signature"><strong>#tty=</strong>(tty)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user%3AString%3F-instance-method" class="signature"><strong>#user</strong> : String?</a>
+        
+          <div class="summary"><p>the user of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user%3D%28user%3AString%3F%29-instance-method" class="signature"><strong>#user=</strong>(user : String?)</a>
+        
+          <div class="summary"><p>the user of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volumes%3D%28volumes%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#volumes=</strong>(volumes : Array(String)?)</a>
+        
+          <div class="summary"><p>paths which will become volumes in the created container the volume name or host binding is not specified.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volumes%3F%3AArray%28String%29%3F-instance-method" class="signature"><strong>#volumes?</strong> : Array(String)?</a>
+        
+          <div class="summary"><p>paths which will become volumes in the created container the volume name or host binding is not specified.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#working_dir%3AString%3F-instance-method" class="signature"><strong>#working_dir</strong> : String?</a>
+        
+          <div class="summary"><p>the working_dir of the new container</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#working_dir%3D%28working_dir%3AString%3F%29-instance-method" class="signature"><strong>#working_dir=</strong>(working_dir : String?)</a>
+        
+          <div class="summary"><p>the working_dir of the new container</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(image,*,hostname=nil,domain_name=nil,user=nil,command=nil,working_dir=nil,mac_address=nil,attach_stdin=true,attach_stderr=true,attach_stdout=true,stdin_once=false,tty=false,open_stdin=false,args_escaped_already=false,network_disabled=false,health_check=nil,env=nil,exposed_ports=nil,volumes=nil,entrypoint=nil,on_build=nil,labels=nil,stop_signal=&amp;quot;SIGTERM&amp;quot;,stop_timeout=10,shell=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(image, *, hostname = <span class="n">nil</span>, domain_name = <span class="n">nil</span>, user = <span class="n">nil</span>, command = <span class="n">nil</span>, working_dir = <span class="n">nil</span>, mac_address = <span class="n">nil</span>, attach_stdin = <span class="n">true</span>, attach_stderr = <span class="n">true</span>, attach_stdout = <span class="n">true</span>, stdin_once = <span class="n">false</span>, tty = <span class="n">false</span>, open_stdin = <span class="n">false</span>, args_escaped_already = <span class="n">false</span>, network_disabled = <span class="n">false</span>, health_check = <span class="n">nil</span>, env = <span class="n">nil</span>, exposed_ports = <span class="n">nil</span>, volumes = <span class="n">nil</span>, entrypoint = <span class="n">nil</span>, on_build = <span class="n">nil</span>, labels = <span class="n">nil</span>, stop_signal = <span class="s">&quot;SIGTERM&quot;</span>, stop_timeout = <span class="n">10</span>, shell = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28image%2C%2A%2Chostname%3Dnil%2Cdomain_name%3Dnil%2Cuser%3Dnil%2Ccommand%3Dnil%2Cworking_dir%3Dnil%2Cmac_address%3Dnil%2Cattach_stdin%3Dtrue%2Cattach_stderr%3Dtrue%2Cattach_stdout%3Dtrue%2Cstdin_once%3Dfalse%2Ctty%3Dfalse%2Copen_stdin%3Dfalse%2Cargs_escaped_already%3Dfalse%2Cnetwork_disabled%3Dfalse%2Chealth_check%3Dnil%2Cenv%3Dnil%2Cexposed_ports%3Dnil%2Cvolumes%3Dnil%2Centrypoint%3Dnil%2Con_build%3Dnil%2Clabels%3Dnil%2Cstop_signal%3D%26quot%3BSIGTERM%26quot%3B%2Cstop_timeout%3D10%2Cshell%3Dnil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="args_escaped_already:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>args_escaped_already</strong> : Bool
+
+        <a class="method-permalink" href="#args_escaped_already%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="args_escaped_already=(args_escaped_already)-instance-method">
+      <div class="signature">
+        
+        def <strong>args_escaped_already=</strong>(args_escaped_already)
+
+        <a class="method-permalink" href="#args_escaped_already%3D%28args_escaped_already%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_keys(values:Indexable(String),builder:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>as_keys</strong>(values : Indexable(String), builder : JSON::Builder)
+
+        <a class="method-permalink" href="#as_keys%28values%3AIndexable%28String%29%2Cbuilder%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the unique elements from the Indexable "values" is converted to an
+object in the given builder, where the values from the indexable are the
+keys, mapped to empty values, like
+<code>{"value one" => {}, "value two" => {}}</code></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L99" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stderr:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stderr</strong> : Bool
+
+        <a class="method-permalink" href="#attach_stderr%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDERR". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stderr=(attach_stderr)-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stderr=</strong>(attach_stderr)
+
+        <a class="method-permalink" href="#attach_stderr%3D%28attach_stderr%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDERR". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stdin:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stdin</strong> : Bool
+
+        <a class="method-permalink" href="#attach_stdin%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDIN". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stdin=(attach_stdin)-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stdin=</strong>(attach_stdin)
+
+        <a class="method-permalink" href="#attach_stdin%3D%28attach_stdin%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDIN". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stdout:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stdout</strong> : Bool
+
+        <a class="method-permalink" href="#attach_stdout%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDOUT". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attach_stdout=(attach_stdout)-instance-method">
+      <div class="signature">
+        
+        def <strong>attach_stdout=</strong>(attach_stdout)
+
+        <a class="method-permalink" href="#attach_stdout%3D%28attach_stdout%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>whether to attach "STDOUT". Defaults to "true".</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="command:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>command</strong> : String?
+
+        <a class="method-permalink" href="#command%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the command of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="command=(command:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>command=</strong>(command : String?)
+
+        <a class="method-permalink" href="#command%3D%28command%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the command of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="domain_name:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>domain_name</strong> : String?
+
+        <a class="method-permalink" href="#domain_name%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the domain_name of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="domain_name=(domain_name:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>domain_name=</strong>(domain_name : String?)
+
+        <a class="method-permalink" href="#domain_name%3D%28domain_name%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the domain_name of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="entrypoint=(entrypoint:String|Array(String)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>entrypoint=</strong>(entrypoint : String | Array(String) | Nil)
+
+        <a class="method-permalink" href="#entrypoint%3D%28entrypoint%3AString%7CArray%28String%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The entry point for the container as a string or an array of strings.</p>
+
+<p>If the array consists of exactly one empty string ([""]) then the entry
+point is reset to system default (i.e., the entry point used by docker
+when there is no <code>ENTRYPOINT</code> instruction in the <code>Dockerfile</code>).</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="entrypoint?:String|Array(String)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>entrypoint?</strong> : String | Array(String) | Nil
+
+        <a class="method-permalink" href="#entrypoint%3F%3AString%7CArray%28String%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The entry point for the container as a string or an array of strings.</p>
+
+<p>If the array consists of exactly one empty string ([""]) then the entry
+point is reset to system default (i.e., the entry point used by docker
+when there is no <code>ENTRYPOINT</code> instruction in the <code>Dockerfile</code>).</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="env=(env:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>env=</strong>(env : Hash(String, String)?)
+
+        <a class="method-permalink" href="#env%3D%28env%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>?
+environment variables to set inside the container
+environment variables to set inside the container
+environment variables to set inside the container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="env?:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>env?</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#env%3F%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>?
+environment variables to set inside the container
+environment variables to set inside the container
+environment variables to set inside the container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exposed_ports=(exposed_ports:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>exposed_ports=</strong>(exposed_ports : Array(String)?)
+
+        <a class="method-permalink" href="#exposed_ports%3D%28exposed_ports%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exposed_ports?:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>exposed_ports?</strong> : Array(String)?
+
+        <a class="method-permalink" href="#exposed_ports%3F%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="health_check=(health_check:HealthCheck?)-instance-method">
+      <div class="signature">
+        
+        def <strong>health_check=</strong>(health_check : <a href="../../Docker/Container/HealthCheck.html">HealthCheck</a>?)
+
+        <a class="method-permalink" href="#health_check%3D%28health_check%3AHealthCheck%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A test to perform to check that the container is healthy.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="health_check?:HealthCheck?-instance-method">
+      <div class="signature">
+        
+        def <strong>health_check?</strong> : <a href="../../Docker/Container/HealthCheck.html">HealthCheck</a>?
+
+        <a class="method-permalink" href="#health_check%3F%3AHealthCheck%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A test to perform to check that the container is healthy.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hostname:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>hostname</strong> : String?
+
+        <a class="method-permalink" href="#hostname%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the hostname of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hostname=(hostname:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>hostname=</strong>(hostname : String?)
+
+        <a class="method-permalink" href="#hostname%3D%28hostname%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the hostname of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image=(image:Tag|String)-instance-method">
+      <div class="signature">
+        
+        def <strong>image=</strong>(image : <a href="../../Docker/Tag.html">Tag</a> | String)
+
+        <a class="method-permalink" href="#image%3D%28image%3ATag%7CString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>The Tag of the image to use when creating the container</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image?-instance-method">
+      <div class="signature">
+        
+        def <strong>image?</strong>
+
+        <a class="method-permalink" href="#image%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels=(labels:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>labels=</strong>(labels : Hash(String, String)?)
+
+        <a class="method-permalink" href="#labels%3D%28labels%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>User-defined key/value metadata.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="labels?:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>labels?</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#labels%3F%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>User-defined key/value metadata.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mac_address:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>mac_address</strong> : String?
+
+        <a class="method-permalink" href="#mac_address%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the mac_address of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mac_address=(mac_address:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>mac_address=</strong>(mac_address : String?)
+
+        <a class="method-permalink" href="#mac_address%3D%28mac_address%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the mac_address of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_disabled:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>network_disabled</strong> : Bool
+
+        <a class="method-permalink" href="#network_disabled%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_disabled=(network_disabled)-instance-method">
+      <div class="signature">
+        
+        def <strong>network_disabled=</strong>(network_disabled)
+
+        <a class="method-permalink" href="#network_disabled%3D%28network_disabled%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_build=(on_build:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_build=</strong>(on_build : Array(String)?)
+
+        <a class="method-permalink" href="#on_build%3D%28on_build%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p><code>ONBUILD</code> metadata that were defined in the image's <code>Dockerfile</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_build?:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>on_build?</strong> : Array(String)?
+
+        <a class="method-permalink" href="#on_build%3F%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p><code>ONBUILD</code> metadata that were defined in the image's <code>Dockerfile</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_stdin:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>open_stdin</strong> : Bool
+
+        <a class="method-permalink" href="#open_stdin%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_stdin=(open_stdin)-instance-method">
+      <div class="signature">
+        
+        def <strong>open_stdin=</strong>(open_stdin)
+
+        <a class="method-permalink" href="#open_stdin%3D%28open_stdin%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shell=(shell:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>shell=</strong>(shell : Array(String)?)
+
+        <a class="method-permalink" href="#shell%3D%28shell%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Shell for when <code>RUN</code>, <code>CMD</code>, and <code>ENTRYPOINT</code> uses a shell.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shell?:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>shell?</strong> : Array(String)?
+
+        <a class="method-permalink" href="#shell%3F%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Shell for when <code>RUN</code>, <code>CMD</code>, and <code>ENTRYPOINT</code> uses a shell.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stdin_once:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>stdin_once</strong> : Bool
+
+        <a class="method-permalink" href="#stdin_once%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stdin_once=(stdin_once)-instance-method">
+      <div class="signature">
+        
+        def <strong>stdin_once=</strong>(stdin_once)
+
+        <a class="method-permalink" href="#stdin_once%3D%28stdin_once%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_signal:String|UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_signal</strong> : String | UInt8
+
+        <a class="method-permalink" href="#stop_signal%3AString%7CUInt8-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Signal to stop a container as a string or unsigned integer.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_signal=(stop_signal:String|UInt8)-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_signal=</strong>(stop_signal : String | UInt8)
+
+        <a class="method-permalink" href="#stop_signal%3D%28stop_signal%3AString%7CUInt8%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Signal to stop a container as a string or unsigned integer.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_timeout:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_timeout</strong> : Int32
+
+        <a class="method-permalink" href="#stop_timeout%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Timeout to stop a container in seconds.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_timeout=(stop_timeout)-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_timeout=</strong>(stop_timeout)
+
+        <a class="method-permalink" href="#stop_timeout%3D%28stop_timeout%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Timeout to stop a container in seconds.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(builder:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(builder : JSON::Builder)
+
+        <a class="method-permalink" href="#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>
+
+        <a class="method-permalink" href="#to_json-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tty:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>tty</strong> : Bool
+
+        <a class="method-permalink" href="#tty%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tty=(tty)-instance-method">
+      <div class="signature">
+        
+        def <strong>tty=</strong>(tty)
+
+        <a class="method-permalink" href="#tty%3D%28tty%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>user</strong> : String?
+
+        <a class="method-permalink" href="#user%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the user of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user=(user:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>user=</strong>(user : String?)
+
+        <a class="method-permalink" href="#user%3D%28user%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the user of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volumes=(volumes:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>volumes=</strong>(volumes : Array(String)?)
+
+        <a class="method-permalink" href="#volumes%3D%28volumes%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>paths which will become volumes in the created container
+the volume name or host binding is not specified.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volumes?:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>volumes?</strong> : Array(String)?
+
+        <a class="method-permalink" href="#volumes%3F%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>paths which will become volumes in the created container
+the volume name or host binding is not specified.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/create_body.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="working_dir:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>working_dir</strong> : String?
+
+        <a class="method-permalink" href="#working_dir%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the working_dir of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="working_dir=(working_dir:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>working_dir=</strong>(working_dir : String?)
+
+        <a class="method-permalink" href="#working_dir%3D%28working_dir%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>the working_dir of the new container</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

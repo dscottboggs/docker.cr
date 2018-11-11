@@ -14,7 +14,7 @@
 </script>
 
   <meta id="repository-name" content="github.com/owentams/docker.cr">
-  <title>README - github.com/owentams/docker.cr</title>
+  <title>DeviceMapping - github.com/owentams/docker.cr</title>
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   <div class="types-list">
     <ul>
   
-  <li class=" " data-id="github.com/owentams/docker.cr/DeviceMapping" data-name="devicemapping">
+  <li class=" current" data-id="github.com/owentams/docker.cr/DeviceMapping" data-name="devicemapping">
       <a href="DeviceMapping.html">DeviceMapping</a>
       
     </li>
@@ -243,66 +243,297 @@
 
 
 <div class="main-content">
-<h1>Docker <a href="https://travis-ci.org/jeromegn/docker.cr" target="_blank"><img src="https://travis-ci.org/jeromegn/docker.cr.svg?branch=master" alt="Build Status"/></a> <a href="https://shards.rocks/github/jeromegn/docker.cr" target="_blank"><img src="https://shards.rocks/badge/github/jeromegn/docker.cr/status.svg" alt="Dependency Status"/></a> <a href="https://shards.rocks/github/jeromegn/docker.cr" target="_blank"><img src="https://shards.rocks/badge/github/jeromegn/docker.cr/dev_status.svg" alt="devDependency Status"/></a></h1>
+<h1 class="type-name">
 
-<p>Docker API client in Crystal.</p>
+  <span class="kind">struct</span> DeviceMapping
 
-<h2>Installation</h2>
+</h1>
 
-<p>Add this to your application's <code>shard.yml</code>:</p>
 
-<pre><code class="language-yaml">dependencies:
-  docker:
-    github: jeromegn/docker.cr</code></pre>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="DeviceMapping.html">DeviceMapping</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
-<h2>Status: Developer Preview</h2>
 
-<p>This is not nearly complete. Just got the initial connecting working and simple casting. I added a few commands as a proof of concept.</p>
 
-<p>This shard extends OpenSSL and HTTP::Client a little bit to support Docker's SSL method (TLS V1.)</p>
 
-<h2>Usage</h2>
 
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;docker&quot;</span></code></pre>
 
-<h3>Options</h3>
 
-<p>By default, options will be taken from the environment variables:</p>
 
-<pre><code><span class="t">DOCKER_URL</span> or <span class="t">DOCKER_HOST</span>
-<span class="t">DOCKER_VERIFY_TLS</span>
-<span class="t">DOCKER_CERT_PATH</span></code></pre>
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
 
-<p>but they can also be set manually like:</p>
 
-<pre><code class="language-crystal"><span class="t">Docker</span>.client.url <span class="o">=</span> <span class="s">&quot;tcp://192.168.99.100:2376&quot;</span>
-<span class="t">Docker</span>.client.verify_tls <span class="o">=</span> <span class="n">true</span>
-<span class="t">Docker</span>.client.cert_path <span class="o">=</span> <span class="s">&quot;</span><span class="i">#{</span><span class="t">ENV</span>[<span class="s">&quot;HOME&quot;</span>]<span class="i">}</span><span class="s">/.docker&quot;</span></code></pre>
 
-<p>If nothing is set, this client will use the unix socket.</p>
 
-<h3>Info</h3>
 
-<pre><code class="language-crystal"><span class="t">Docker</span>.client.info.container <span class="c"># =&gt; Returns container count</span></code></pre>
 
-<h3>Containers</h3>
 
-<pre><code class="language-crystal"><span class="t">Docker</span>.client.containers <span class="c"># =&gt; Array of Docker::Container</span>
-container <span class="o">=</span> <span class="t">Docker</span>.client.containers.first
-p container <span class="c"># =&gt; #&lt;Docker::Container:0x10f6a3ea0 @id=&quot;cbbeb51f25b4c91b61e6d1b5fc0c1c2bb470ccd8aaf5dc4a57885f35f21d7245&quot;, @names=[&quot;api&quot;], @image=&quot;ruby&quot; ...&gt;</span>
 
-container.stop
-container.start
-container.restart
-container.kill</code></pre>
 
-<h2>Contributing</h2>
 
-<ol><li>Fork it ( https://github.com/jeromegn/docker.cr/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L1" target="_blank">
+        docker/client/device_mapping.cr
+      </a>
+    
+    <br/>
+  
 
-<h2>Contributors</h2>
 
-<ul><li><a href="https://github.com/jeromegn" target="_blank">jeromegn</a> Jerome Gravel-Niquet - creator, maintainer</li></ul>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28path_on_host%2Cpath_in_container%2Ccgroup_permissions%29-class-method" class="signature"><strong>.new</strong>(path_on_host, path_in_container, cgroup_permissions)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cgroup_permissions%3AString-instance-method" class="signature"><strong>#cgroup_permissions</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cgroup_permissions%3D%28cgroup_permissions%3AString%29-instance-method" class="signature"><strong>#cgroup_permissions=</strong>(cgroup_permissions : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path_in_container%3AString-instance-method" class="signature"><strong>#path_in_container</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path_in_container%3D%28path_in_container%3AString%29-instance-method" class="signature"><strong>#path_in_container=</strong>(path_in_container : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path_on_host%3AString-instance-method" class="signature"><strong>#path_on_host</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path_on_host%3D%28path_on_host%3AString%29-instance-method" class="signature"><strong>#path_on_host=</strong>(path_on_host : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
 </div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(path_on_host,path_in_container,cgroup_permissions)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(path_on_host, path_in_container, cgroup_permissions)
+
+        <a class="method-permalink" href="#new%28path_on_host%2Cpath_in_container%2Ccgroup_permissions%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="cgroup_permissions:String-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup_permissions</strong> : String
+
+        <a class="method-permalink" href="#cgroup_permissions%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cgroup_permissions=(cgroup_permissions:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup_permissions=</strong>(cgroup_permissions : String)
+
+        <a class="method-permalink" href="#cgroup_permissions%3D%28cgroup_permissions%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path_in_container:String-instance-method">
+      <div class="signature">
+        
+        def <strong>path_in_container</strong> : String
+
+        <a class="method-permalink" href="#path_in_container%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path_in_container=(path_in_container:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>path_in_container=</strong>(path_in_container : String)
+
+        <a class="method-permalink" href="#path_in_container%3D%28path_in_container%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path_on_host:String-instance-method">
+      <div class="signature">
+        
+        def <strong>path_on_host</strong> : String
+
+        <a class="method-permalink" href="#path_on_host%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path_on_host=(path_on_host:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>path_on_host=</strong>(path_on_host : String)
+
+        <a class="method-permalink" href="#path_on_host%3D%28path_on_host%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/client/device_mapping.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
 </body>
 </html>

@@ -1,0 +1,3139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/owentams/docker.cr">
+  <title>Docker::Container::HostConfig - github.com/owentams/docker.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/DeviceMapping" data-name="devicemapping">
+      <a href="../../DeviceMapping.html">DeviceMapping</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker" data-name="docker">
+      <a href="../../Docker.html">Docker</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/APIClient" data-name="docker::apiclient">
+      <a href="../../Docker/APIClient.html">APIClient</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/BadParameter" data-name="docker::apiclient::badparameter">
+      <a href="../../Docker/APIClient/BadParameter.html">BadParameter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Containers" data-name="docker::apiclient::containers">
+      <a href="../../Docker/APIClient/Containers.html">Containers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Exception" data-name="docker::apiclient::exception">
+      <a href="../../Docker/APIClient/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Images" data-name="docker::apiclient::images">
+      <a href="../../Docker/APIClient/Images.html">Images</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/Info" data-name="docker::apiclient::info">
+      <a href="../../Docker/APIClient/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/InternalServerError" data-name="docker::apiclient::internalservererror">
+      <a href="../../Docker/APIClient/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/IPAMConfig" data-name="docker::apiclient::ipamconfig">
+      <a href="../../Docker/APIClient/IPAMConfig.html">IPAMConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NetworkingConfig" data-name="docker::apiclient::networkingconfig">
+      <a href="../../Docker/APIClient/NetworkingConfig.html">NetworkingConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotFound" data-name="docker::apiclient::notfound">
+      <a href="../../Docker/APIClient/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/NotYetImplemented" data-name="docker::apiclient::notyetimplemented">
+      <a href="../../Docker/APIClient/NotYetImplemented.html">NotYetImplemented</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/PortBindings" data-name="docker::apiclient::portbindings">
+      <a href="../../Docker/APIClient/PortBindings.html">PortBindings</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/RestartPolicy" data-name="docker::apiclient::restartpolicy">
+      <a href="../../Docker/APIClient/RestartPolicy.html">RestartPolicy</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/APIClient/ThrottleDevice" data-name="docker::apiclient::throttledevice">
+      <a href="../../Docker/APIClient/ThrottleDevice.html">ThrottleDevice</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker/Container" data-name="docker::container">
+      <a href="../../Docker/Container.html">Container</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/CreateBody" data-name="docker::container::createbody">
+      <a href="../../Docker/Container/CreateBody.html">CreateBody</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HealthCheck" data-name="docker::container::healthcheck">
+      <a href="../../Docker/Container/HealthCheck.html">HealthCheck</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig" data-name="docker::container::hostconfig">
+      <a href="../../Docker/Container/HostConfig.html">HostConfig</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount" data-name="docker::container::hostconfig::mount">
+      <a href="../../Docker/Container/HostConfig/Mount.html">Mount</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/TmpfsOptions" data-name="docker::container::hostconfig::mount::tmpfsoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/TmpfsOptions.html">TmpfsOptions</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions" data-name="docker::container::hostconfig::mount::volumeoptions">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions.html">VolumeOptions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig" data-name="docker::container::hostconfig::mount::volumeoptions::driverconfig">
+      <a href="../../Docker/Container/HostConfig/Mount/VolumeOptions/DriverConfig.html">DriverConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/HostConfig/ULimit" data-name="docker::container::hostconfig::ulimit">
+      <a href="../../Docker/Container/HostConfig/ULimit.html">ULimit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse" data-name="docker::container::listresponse">
+      <a href="../../Docker/Container/ListResponse.html">ListResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Container/ListResponse/PortConfig" data-name="docker::container::listresponse::portconfig">
+      <a href="../../Docker/Container/ListResponse/PortConfig.html">PortConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ContainerLimits" data-name="docker::containerlimits">
+      <a href="../../Docker/ContainerLimits.html">ContainerLimits</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Image" data-name="docker::image">
+      <a href="../../Docker/Image.html">Image</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageCollection" data-name="docker::imagecollection">
+      <a href="../../Docker/ImageCollection.html">ImageCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/ImageFilters" data-name="docker::imagefilters">
+      <a href="../../Docker/ImageFilters.html">ImageFilters</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Info" data-name="docker::info">
+      <a href="../../Docker/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/owentams/docker.cr/Docker/Tag" data-name="docker::tag">
+      <a href="../../Docker/Tag.html">Tag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Docker::Container::HostConfig
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Docker/Container/HostConfig.html">Docker::Container::HostConfig</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">JSON::Serializable</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L8" target="_blank">
+        docker/container/host_config.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#allowed_CPUs%3AString%3F-instance-method" class="signature"><strong>#allowed_CPUs</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#allowed_CPUs%3D%28allowed_CPUs%3AString%3F%29-instance-method" class="signature"><strong>#allowed_CPUs=</strong>(allowed_CPUs : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#auto_remove-instance-method" class="signature"><strong>#auto_remove</strong></a>
+        
+          <div class="summary"><p>Automatically remove the container when the container's process exits.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#auto_remove%3F%3ABool-instance-method" class="signature"><strong>#auto_remove?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#binds%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#binds</strong> : Hash(String, String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#binds%3D%28b%3AHash%28String%2CString%29%29-instance-method" class="signature"><strong>#binds=</strong>(b : Hash(String, String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_read_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method" class="signature"><strong>#blkio_device_read_bps</strong> : Array(Docker::APIClient::ThrottleDevice?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_read_bps%3D%28blkio_device_read_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method" class="signature"><strong>#blkio_device_read_bps=</strong>(blkio_device_read_bps : Array(Docker::APIClient::ThrottleDevice?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_read_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method" class="signature"><strong>#blkio_device_read_iops</strong> : Array(Docker::APIClient::ThrottleDevice?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_read_iops%3D%28blkio_device_read_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method" class="signature"><strong>#blkio_device_read_iops=</strong>(blkio_device_read_iops : Array(Docker::APIClient::ThrottleDevice?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_write_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method" class="signature"><strong>#blkio_device_write_bps</strong> : Array(Docker::APIClient::ThrottleDevice?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_write_bps%3D%28blkio_device_write_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method" class="signature"><strong>#blkio_device_write_bps=</strong>(blkio_device_write_bps : Array(Docker::APIClient::ThrottleDevice?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_write_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method" class="signature"><strong>#blkio_device_write_iops</strong> : Array(Docker::APIClient::ThrottleDevice?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_device_write_iops%3D%28blkio_device_write_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method" class="signature"><strong>#blkio_device_write_iops=</strong>(blkio_device_write_iops : Array(Docker::APIClient::ThrottleDevice?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_weight%3AInt64%3F-instance-method" class="signature"><strong>#blkio_weight</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_weight%3D%28blkio_weight%3AInt64%3F%29-instance-method" class="signature"><strong>#blkio_weight=</strong>(blkio_weight : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_weight_device%3AArray%28Hash%28String%2CString%7CInt64%29%29%3F-instance-method" class="signature"><strong>#blkio_weight_device</strong> : Array(Hash(String, String | Int64))?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blkio_weight_device%3D%28blkio_weight_device%3AArray%28Hash%28String%2CString%7CInt64%29%29%3F%29-instance-method" class="signature"><strong>#blkio_weight_device=</strong>(blkio_weight_device : Array(Hash(String, String | Int64))?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cap_add%3AArray%28String%29%3F-instance-method" class="signature"><strong>#cap_add</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cap_add%3D%28cap_add%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#cap_add=</strong>(cap_add : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cap_drop%3AArray%28String%29%3F-instance-method" class="signature"><strong>#cap_drop</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cap_drop%3D%28cap_drop%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#cap_drop=</strong>(cap_drop : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cgroup%3AString%3F-instance-method" class="signature"><strong>#cgroup</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cgroup%3D%28cgroup%3AString%3F%29-instance-method" class="signature"><strong>#cgroup=</strong>(cgroup : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cgroup_parent%3AString%3F-instance-method" class="signature"><strong>#cgroup_parent</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cgroup_parent%3D%28cgroup_parent%3AString%3F%29-instance-method" class="signature"><strong>#cgroup_parent=</strong>(cgroup_parent : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#console_size%3ATuple%28UInt64%2CUInt64%29%3F-instance-method" class="signature"><strong>#console_size</strong> : Tuple(UInt64, UInt64)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#console_size%3D%28console_size%3ATuple%28UInt64%2CUInt64%29%3F%29-instance-method" class="signature"><strong>#console_size=</strong>(console_size : Tuple(UInt64, UInt64)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#container_id_file%3AString%3F-instance-method" class="signature"><strong>#container_id_file</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#container_id_file%3D%28container_id_file%3AString%3F%29-instance-method" class="signature"><strong>#container_id_file=</strong>(container_id_file : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_count%3AInt64%3F-instance-method" class="signature"><strong>#cpu_count</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_count%3D%28cpu_count%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_count=</strong>(cpu_count : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_percent%3AInt64%3F-instance-method" class="signature"><strong>#cpu_percent</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_percent%3D%28cpu_percent%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_percent=</strong>(cpu_percent : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_period%3AInt64%3F-instance-method" class="signature"><strong>#cpu_period</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_period%3D%28cpu_period%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_period=</strong>(cpu_period : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_quota%3AInt64%3F-instance-method" class="signature"><strong>#cpu_quota</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_quota%3D%28cpu_quota%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_quota=</strong>(cpu_quota : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_realtime_period%3AInt64%3F-instance-method" class="signature"><strong>#cpu_realtime_period</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_realtime_period%3D%28cpu_realtime_period%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_realtime_period=</strong>(cpu_realtime_period : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_realtime_runtime%3AInt64%3F-instance-method" class="signature"><strong>#cpu_realtime_runtime</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_realtime_runtime%3D%28cpu_realtime_runtime%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_realtime_runtime=</strong>(cpu_realtime_runtime : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_set_mems%3AString%3F-instance-method" class="signature"><strong>#cpu_set_mems</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_set_mems%3D%28cpu_set_mems%3AString%3F%29-instance-method" class="signature"><strong>#cpu_set_mems=</strong>(cpu_set_mems : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_shares%3AInt64%3F-instance-method" class="signature"><strong>#cpu_shares</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cpu_shares%3D%28cpu_shares%3AInt64%3F%29-instance-method" class="signature"><strong>#cpu_shares=</strong>(cpu_shares : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#device_cgroup_rules%3AArray%28String%29%3F-instance-method" class="signature"><strong>#device_cgroup_rules</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#device_cgroup_rules%3D%28device_cgroup_rules%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#device_cgroup_rules=</strong>(device_cgroup_rules : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#devices%3AArray%28DeviceMapping%29%3F-instance-method" class="signature"><strong>#devices</strong> : Array(DeviceMapping)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#devices%3D%28devices%3AArray%28DeviceMapping%29%3F%29-instance-method" class="signature"><strong>#devices=</strong>(devices : Array(DeviceMapping)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disk_quota%3AInt64%3F-instance-method" class="signature"><strong>#disk_quota</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disk_quota%3D%28disk_quota%3AInt64%3F%29-instance-method" class="signature"><strong>#disk_quota=</strong>(disk_quota : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns%3AArray%28String%29%3F-instance-method" class="signature"><strong>#dns</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns%3D%28dns%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#dns=</strong>(dns : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns_options%3AArray%28String%29%3F-instance-method" class="signature"><strong>#dns_options</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns_options%3D%28dns_options%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#dns_options=</strong>(dns_options : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns_search%3AArray%28String%29%3F-instance-method" class="signature"><strong>#dns_search</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dns_search%3D%28dns_search%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#dns_search=</strong>(dns_search : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#extra_hosts%3AArray%28String%29%3F-instance-method" class="signature"><strong>#extra_hosts</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#extra_hosts%3D%28extra_hosts%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#extra_hosts=</strong>(extra_hosts : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_add%3AArray%28String%29%3F-instance-method" class="signature"><strong>#group_add</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_add%3D%28group_add%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#group_add=</strong>(group_add : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ipc_mode%3AString%3F-instance-method" class="signature"><strong>#ipc_mode</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ipc_mode%3D%28ipc_mode%3AString%3F%29-instance-method" class="signature"><strong>#ipc_mode=</strong>(ipc_mode : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#isolation%3AString-instance-method" class="signature"><strong>#isolation</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#isolation%3D%28isolation%29-instance-method" class="signature"><strong>#isolation=</strong>(isolation)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_memory%3AInt64%3F-instance-method" class="signature"><strong>#kernel_memory</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kernel_memory%3D%28kernel_memory%3AInt64%3F%29-instance-method" class="signature"><strong>#kernel_memory=</strong>(kernel_memory : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#links%3AArray%28String%29%3F-instance-method" class="signature"><strong>#links</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#links%3D%28links%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#links=</strong>(links : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log_config%3AHash%28String%2CString%7CHash%28String%2CString%29%29%3F-instance-method" class="signature"><strong>#log_config</strong> : Hash(String, String | Hash(String, String))?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log_config%3D%28log_config%3AHash%28String%2CString%7CHash%28String%2CString%29%29%3F%29-instance-method" class="signature"><strong>#log_config=</strong>(log_config : Hash(String, String | Hash(String, String))?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#make_privileged-instance-method" class="signature"><strong>#make_privileged</strong></a>
+        
+          <div class="summary"><p>Gives the container full access to the host.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#maximum_bandwidth%3AInt64%3F-instance-method" class="signature"><strong>#maximum_bandwidth</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#maximum_bandwidth%3D%28maximum_bandwidth%3AInt64%3F%29-instance-method" class="signature"><strong>#maximum_bandwidth=</strong>(maximum_bandwidth : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#maximum_iops%3AInt64%3F-instance-method" class="signature"><strong>#maximum_iops</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#maximum_iops%3D%28maximum_iops%3AInt64%3F%29-instance-method" class="signature"><strong>#maximum_iops=</strong>(maximum_iops : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory%3AInt64%3F-instance-method" class="signature"><strong>#memory</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory%3D%28memory%3AInt64%3F%29-instance-method" class="signature"><strong>#memory=</strong>(memory : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_and_swap%3AInt64%3F-instance-method" class="signature"><strong>#memory_and_swap</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_and_swap%3D%28memory_and_swap%3AInt64%3F%29-instance-method" class="signature"><strong>#memory_and_swap=</strong>(memory_and_swap : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_reservation%3AInt64%3F-instance-method" class="signature"><strong>#memory_reservation</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_reservation%3D%28memory_reservation%3AInt64%3F%29-instance-method" class="signature"><strong>#memory_reservation=</strong>(memory_reservation : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_swappiness%3AInt64%3F-instance-method" class="signature"><strong>#memory_swappiness</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_swappiness%3D%28memory_swappiness%3AInt64%3F%29-instance-method" class="signature"><strong>#memory_swappiness=</strong>(memory_swappiness : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mounts%3AArray%28Mount%3F%29%3F-instance-method" class="signature"><strong>#mounts</strong> : Array(Mount?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mounts%3D%28mounts%3AArray%28Mount%3F%29%3F%29-instance-method" class="signature"><strong>#mounts=</strong>(mounts : Array(Mount?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nano_cpus%3AInt64%3F-instance-method" class="signature"><strong>#nano_cpus</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nano_cpus%3D%28nano_cpus%3AInt64%3F%29-instance-method" class="signature"><strong>#nano_cpus=</strong>(nano_cpus : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_mode%3AString%3F-instance-method" class="signature"><strong>#network_mode</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_mode%3D%28network_mode%3AString%3F%29-instance-method" class="signature"><strong>#network_mode=</strong>(network_mode : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_kill_disable%3ABool%3F-instance-method" class="signature"><strong>#oom_kill_disable</strong> : Bool?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_kill_disable%3D%28oom_kill_disable%3ABool%3F%29-instance-method" class="signature"><strong>#oom_kill_disable=</strong>(oom_kill_disable : Bool?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_score_adjustment%3AInt64%3F-instance-method" class="signature"><strong>#oom_score_adjustment</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oom_score_adjustment%3D%28oom_score_adjustment%3AInt64%3F%29-instance-method" class="signature"><strong>#oom_score_adjustment=</strong>(oom_score_adjustment : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pid_mode%3AString%3F-instance-method" class="signature"><strong>#pid_mode</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pid_mode%3D%28pid_mode%3AString%3F%29-instance-method" class="signature"><strong>#pid_mode=</strong>(pid_mode : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pids_limit%3AInt64%3F-instance-method" class="signature"><strong>#pids_limit</strong> : Int64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pids_limit%3D%28pids_limit%3AInt64%3F%29-instance-method" class="signature"><strong>#pids_limit=</strong>(pids_limit : Int64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port_bindings%3AHash%28String%7CInt64%2CDocker%3A%3AAPIClient%3A%3APortBindings%29%3F-instance-method" class="signature"><strong>#port_bindings</strong> : Hash(String | Int64, Docker::APIClient::PortBindings)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port_bindings%3D%28port_bindings%3AHash%28String%7CInt64%2CDocker%3A%3AAPIClient%3A%3APortBindings%29%3F%29-instance-method" class="signature"><strong>#port_bindings=</strong>(port_bindings : Hash(String | Int64, Docker::APIClient::PortBindings)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#privileged%3F%3ABool-instance-method" class="signature"><strong>#privileged?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#publish_all_ports-instance-method" class="signature"><strong>#publish_all_ports</strong></a>
+        
+          <div class="summary"><p>Allocate a random host port for all of a container's exposed ports.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#publish_all_ports%3F%3ABool-instance-method" class="signature"><strong>#publish_all_ports?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_only_rootfs-instance-method" class="signature"><strong>#read_only_rootfs</strong></a>
+        
+          <div class="summary"><p>Mount the container's root filesystem as read only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_only_rootfs%3F%3ABool-instance-method" class="signature"><strong>#read_only_rootfs?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_policy%3ADocker%3A%3AAPIClient%3A%3ARestartPolicy%3F-instance-method" class="signature"><strong>#restart_policy</strong> : Docker::APIClient::RestartPolicy?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_policy%3D%28restart_policy%3ADocker%3A%3AAPIClient%3A%3ARestartPolicy%3F%29-instance-method" class="signature"><strong>#restart_policy=</strong>(restart_policy : Docker::APIClient::RestartPolicy?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#runtime%3AString%3F-instance-method" class="signature"><strong>#runtime</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#runtime%3D%28runtime%3AString%3F%29-instance-method" class="signature"><strong>#runtime=</strong>(runtime : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#secure_opt%3AArray%28String%29%3F-instance-method" class="signature"><strong>#secure_opt</strong> : Array(String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#secure_opt%3D%28secure_opt%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#secure_opt=</strong>(secure_opt : Array(String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shm_size%3AUInt64%3F-instance-method" class="signature"><strong>#shm_size</strong> : UInt64?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shm_size%3D%28shm_size%3AUInt64%3F%29-instance-method" class="signature"><strong>#shm_size=</strong>(shm_size : UInt64?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#storage_opt%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#storage_opt</strong> : Hash(String, String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#storage_opt%3D%28storage_opt%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#storage_opt=</strong>(storage_opt : Hash(String, String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#systctls%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#systctls</strong> : Hash(String, String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#systctls%3D%28systctls%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#systctls=</strong>(systctls : Hash(String, String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tmpfs%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#tmpfs</strong> : Hash(String, String)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tmpfs%3D%28tmpfs%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#tmpfs=</strong>(tmpfs : Hash(String, String)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#u_limits%3AArray%28ULimit%3F%29%3F-instance-method" class="signature"><strong>#u_limits</strong> : Array(ULimit?)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#u_limits%3D%28u_limits%3AArray%28ULimit%3F%29%3F%29-instance-method" class="signature"><strong>#u_limits=</strong>(u_limits : Array(ULimit?)?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_namespace_mode%3AString%3F-instance-method" class="signature"><strong>#user_namespace_mode</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_namespace_mode%3D%28user_namespace_mode%3AString%3F%29-instance-method" class="signature"><strong>#user_namespace_mode=</strong>(user_namespace_mode : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uts_mode%3AString%3F-instance-method" class="signature"><strong>#uts_mode</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uts_mode%3D%28uts_mode%3AString%3F%29-instance-method" class="signature"><strong>#uts_mode=</strong>(uts_mode : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volume_driver%3AString-instance-method" class="signature"><strong>#volume_driver</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volume_driver%3D%28volume_driver%3AString%29-instance-method" class="signature"><strong>#volume_driver=</strong>(volume_driver : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volumes_from%3AArray%28String%29-instance-method" class="signature"><strong>#volumes_from</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volumes_from%3D%28volumes_from%3AArray%28String%29%29-instance-method" class="signature"><strong>#volumes_from=</strong>(volumes_from : Array(String))</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="allowed_CPUs:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>allowed_CPUs</strong> : String?
+
+        <a class="method-permalink" href="#allowed_CPUs%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="allowed_CPUs=(allowed_CPUs:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>allowed_CPUs=</strong>(allowed_CPUs : String?)
+
+        <a class="method-permalink" href="#allowed_CPUs%3D%28allowed_CPUs%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="auto_remove-instance-method">
+      <div class="signature">
+        
+        def <strong>auto_remove</strong>
+
+        <a class="method-permalink" href="#auto_remove-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Automatically remove the container when the container's process exits.
+This has no effect if <code><a href="../../Docker/Container/HostConfig.html#restart_policy%3ADocker%3A%3AAPIClient%3A%3ARestartPolicy%3F-instance-method">#restart_policy</a></code> is set.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L338" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="auto_remove?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>auto_remove?</strong> : Bool
+
+        <a class="method-permalink" href="#auto_remove%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L332" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="binds:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>binds</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#binds%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L283" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="binds=(b:Hash(String,String))-instance-method">
+      <div class="signature">
+        
+        def <strong>binds=</strong>(b : Hash(String, String))
+
+        <a class="method-permalink" href="#binds%3D%28b%3AHash%28String%2CString%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L298" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_read_bps:Array(Docker::APIClient::ThrottleDevice?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_read_bps</strong> : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?
+
+        <a class="method-permalink" href="#blkio_device_read_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L179" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_read_bps=(blkio_device_read_bps:Array(Docker::APIClient::ThrottleDevice?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_read_bps=</strong>(blkio_device_read_bps : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?)
+
+        <a class="method-permalink" href="#blkio_device_read_bps%3D%28blkio_device_read_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L179" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_read_iops:Array(Docker::APIClient::ThrottleDevice?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_read_iops</strong> : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?
+
+        <a class="method-permalink" href="#blkio_device_read_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L185" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_read_iops=(blkio_device_read_iops:Array(Docker::APIClient::ThrottleDevice?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_read_iops=</strong>(blkio_device_read_iops : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?)
+
+        <a class="method-permalink" href="#blkio_device_read_iops%3D%28blkio_device_read_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L185" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_write_bps:Array(Docker::APIClient::ThrottleDevice?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_write_bps</strong> : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?
+
+        <a class="method-permalink" href="#blkio_device_write_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L182" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_write_bps=(blkio_device_write_bps:Array(Docker::APIClient::ThrottleDevice?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_write_bps=</strong>(blkio_device_write_bps : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?)
+
+        <a class="method-permalink" href="#blkio_device_write_bps%3D%28blkio_device_write_bps%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L182" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_write_iops:Array(Docker::APIClient::ThrottleDevice?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_write_iops</strong> : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?
+
+        <a class="method-permalink" href="#blkio_device_write_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_device_write_iops=(blkio_device_write_iops:Array(Docker::APIClient::ThrottleDevice?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_device_write_iops=</strong>(blkio_device_write_iops : Array(<a href="../../Docker/APIClient/ThrottleDevice.html">Docker::APIClient::ThrottleDevice</a>?)?)
+
+        <a class="method-permalink" href="#blkio_device_write_iops%3D%28blkio_device_write_iops%3AArray%28Docker%3A%3AAPIClient%3A%3AThrottleDevice%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_weight:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_weight</strong> : Int64?
+
+        <a class="method-permalink" href="#blkio_weight%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L172" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_weight=(blkio_weight:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_weight=</strong>(blkio_weight : Int64?)
+
+        <a class="method-permalink" href="#blkio_weight%3D%28blkio_weight%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L172" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_weight_device:Array(Hash(String,String|Int64))?-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_weight_device</strong> : Array(Hash(String, String | Int64))?
+
+        <a class="method-permalink" href="#blkio_weight_device%3AArray%28Hash%28String%2CString%7CInt64%29%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L176" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blkio_weight_device=(blkio_weight_device:Array(Hash(String,String|Int64))?)-instance-method">
+      <div class="signature">
+        
+        def <strong>blkio_weight_device=</strong>(blkio_weight_device : Array(Hash(String, String | Int64))?)
+
+        <a class="method-permalink" href="#blkio_weight_device%3D%28blkio_weight_device%3AArray%28Hash%28String%2CString%7CInt64%29%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L176" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cap_add:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>cap_add</strong> : Array(String)?
+
+        <a class="method-permalink" href="#cap_add%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L353" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cap_add=(cap_add:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cap_add=</strong>(cap_add : Array(String)?)
+
+        <a class="method-permalink" href="#cap_add%3D%28cap_add%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L353" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cap_drop:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>cap_drop</strong> : Array(String)?
+
+        <a class="method-permalink" href="#cap_drop%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L356" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cap_drop=(cap_drop:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cap_drop=</strong>(cap_drop : Array(String)?)
+
+        <a class="method-permalink" href="#cap_drop%3D%28cap_drop%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L356" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cgroup:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup</strong> : String?
+
+        <a class="method-permalink" href="#cgroup%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L378" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cgroup=(cgroup:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup=</strong>(cgroup : String?)
+
+        <a class="method-permalink" href="#cgroup%3D%28cgroup%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L378" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cgroup_parent:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup_parent</strong> : String?
+
+        <a class="method-permalink" href="#cgroup_parent%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cgroup_parent=(cgroup_parent:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cgroup_parent=</strong>(cgroup_parent : String?)
+
+        <a class="method-permalink" href="#cgroup_parent%3D%28cgroup_parent%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="console_size:Tuple(UInt64,UInt64)?-instance-method">
+      <div class="signature">
+        
+        def <strong>console_size</strong> : Tuple(UInt64, UInt64)?
+
+        <a class="method-permalink" href="#console_size%3ATuple%28UInt64%2CUInt64%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L449" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="console_size=(console_size:Tuple(UInt64,UInt64)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>console_size=</strong>(console_size : Tuple(UInt64, UInt64)?)
+
+        <a class="method-permalink" href="#console_size%3D%28console_size%3ATuple%28UInt64%2CUInt64%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L449" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="container_id_file:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>container_id_file</strong> : String?
+
+        <a class="method-permalink" href="#container_id_file%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="container_id_file=(container_id_file:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>container_id_file=</strong>(container_id_file : String?)
+
+        <a class="method-permalink" href="#container_id_file%3D%28container_id_file%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L306" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_count:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_count</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_count%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L250" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_count=(cpu_count:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_count=</strong>(cpu_count : Int64?)
+
+        <a class="method-permalink" href="#cpu_count%3D%28cpu_count%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L250" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_percent:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_percent</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_percent%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L257" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_percent=(cpu_percent:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_percent=</strong>(cpu_percent : Int64?)
+
+        <a class="method-permalink" href="#cpu_percent%3D%28cpu_percent%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L257" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_period:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_period</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_period%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L191" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_period=(cpu_period:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_period=</strong>(cpu_period : Int64?)
+
+        <a class="method-permalink" href="#cpu_period%3D%28cpu_period%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L191" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_quota:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_quota</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_quota%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L194" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_quota=(cpu_quota:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_quota=</strong>(cpu_quota : Int64?)
+
+        <a class="method-permalink" href="#cpu_quota%3D%28cpu_quota%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L194" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_realtime_period:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_realtime_period</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_realtime_period%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L198" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_realtime_period=(cpu_realtime_period:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_realtime_period=</strong>(cpu_realtime_period : Int64?)
+
+        <a class="method-permalink" href="#cpu_realtime_period%3D%28cpu_realtime_period%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L198" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_realtime_runtime:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_realtime_runtime</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_realtime_runtime%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L202" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_realtime_runtime=(cpu_realtime_runtime:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_realtime_runtime=</strong>(cpu_realtime_runtime : Int64?)
+
+        <a class="method-permalink" href="#cpu_realtime_runtime%3D%28cpu_realtime_runtime%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L202" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_set_mems:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_set_mems</strong> : String?
+
+        <a class="method-permalink" href="#cpu_set_mems%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L209" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_set_mems=(cpu_set_mems:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_set_mems=</strong>(cpu_set_mems : String?)
+
+        <a class="method-permalink" href="#cpu_set_mems%3D%28cpu_set_mems%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L209" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_shares:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_shares</strong> : Int64?
+
+        <a class="method-permalink" href="#cpu_shares%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L160" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cpu_shares=(cpu_shares:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>cpu_shares=</strong>(cpu_shares : Int64?)
+
+        <a class="method-permalink" href="#cpu_shares%3D%28cpu_shares%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L160" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="device_cgroup_rules:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>device_cgroup_rules</strong> : Array(String)?
+
+        <a class="method-permalink" href="#device_cgroup_rules%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L215" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="device_cgroup_rules=(device_cgroup_rules:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>device_cgroup_rules=</strong>(device_cgroup_rules : Array(String)?)
+
+        <a class="method-permalink" href="#device_cgroup_rules%3D%28device_cgroup_rules%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L215" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="devices:Array(DeviceMapping)?-instance-method">
+      <div class="signature">
+        
+        def <strong>devices</strong> : Array(<a href="../../DeviceMapping.html">DeviceMapping</a>)?
+
+        <a class="method-permalink" href="#devices%3AArray%28DeviceMapping%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L212" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="devices=(devices:Array(DeviceMapping)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>devices=</strong>(devices : Array(<a href="../../DeviceMapping.html">DeviceMapping</a>)?)
+
+        <a class="method-permalink" href="#devices%3D%28devices%3AArray%28DeviceMapping%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L212" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disk_quota:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>disk_quota</strong> : Int64?
+
+        <a class="method-permalink" href="#disk_quota%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L218" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disk_quota=(disk_quota:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>disk_quota=</strong>(disk_quota : Int64?)
+
+        <a class="method-permalink" href="#disk_quota%3D%28disk_quota%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L218" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>dns</strong> : Array(String)?
+
+        <a class="method-permalink" href="#dns%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L359" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns=(dns:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>dns=</strong>(dns : Array(String)?)
+
+        <a class="method-permalink" href="#dns%3D%28dns%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L359" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns_options:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>dns_options</strong> : Array(String)?
+
+        <a class="method-permalink" href="#dns_options%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L362" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns_options=(dns_options:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>dns_options=</strong>(dns_options : Array(String)?)
+
+        <a class="method-permalink" href="#dns_options%3D%28dns_options%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L362" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns_search:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>dns_search</strong> : Array(String)?
+
+        <a class="method-permalink" href="#dns_search%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L365" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dns_search=(dns_search:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>dns_search=</strong>(dns_search : Array(String)?)
+
+        <a class="method-permalink" href="#dns_search%3D%28dns_search%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L365" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extra_hosts:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>extra_hosts</strong> : Array(String)?
+
+        <a class="method-permalink" href="#extra_hosts%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L369" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extra_hosts=(extra_hosts:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>extra_hosts=</strong>(extra_hosts : Array(String)?)
+
+        <a class="method-permalink" href="#extra_hosts%3D%28extra_hosts%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L369" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_add:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>group_add</strong> : Array(String)?
+
+        <a class="method-permalink" href="#group_add%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L372" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_add=(group_add:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>group_add=</strong>(group_add : Array(String)?)
+
+        <a class="method-permalink" href="#group_add%3D%28group_add%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L372" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ipc_mode:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>ipc_mode</strong> : String?
+
+        <a class="method-permalink" href="#ipc_mode%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L375" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ipc_mode=(ipc_mode:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>ipc_mode=</strong>(ipc_mode : String?)
+
+        <a class="method-permalink" href="#ipc_mode%3D%28ipc_mode%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L375" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="isolation:String-instance-method">
+      <div class="signature">
+        
+        def <strong>isolation</strong> : String
+
+        <a class="method-permalink" href="#isolation%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="isolation=(isolation)-instance-method">
+      <div class="signature">
+        
+        def <strong>isolation=</strong>(isolation)
+
+        <a class="method-permalink" href="#isolation%3D%28isolation%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_memory:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_memory</strong> : Int64?
+
+        <a class="method-permalink" href="#kernel_memory%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L221" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kernel_memory=(kernel_memory:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>kernel_memory=</strong>(kernel_memory : Int64?)
+
+        <a class="method-permalink" href="#kernel_memory%3D%28kernel_memory%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L221" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="links:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>links</strong> : Array(String)?
+
+        <a class="method-permalink" href="#links%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L381" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="links=(links:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>links=</strong>(links : Array(String)?)
+
+        <a class="method-permalink" href="#links%3D%28links%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L381" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_config:Hash(String,String|Hash(String,String))?-instance-method">
+      <div class="signature">
+        
+        def <strong>log_config</strong> : Hash(String, String | Hash(String, String))?
+
+        <a class="method-permalink" href="#log_config%3AHash%28String%2CString%7CHash%28String%2CString%29%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L312" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_config=(log_config:Hash(String,String|Hash(String,String))?)-instance-method">
+      <div class="signature">
+        
+        def <strong>log_config=</strong>(log_config : Hash(String, String | Hash(String, String))?)
+
+        <a class="method-permalink" href="#log_config%3D%28log_config%3AHash%28String%2CString%7CHash%28String%2CString%29%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L312" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="make_privileged-instance-method">
+      <div class="signature">
+        
+        def <strong>make_privileged</strong>
+
+        <a class="method-permalink" href="#make_privileged-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gives the container full access to the host.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L397" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="maximum_bandwidth:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_bandwidth</strong> : Int64?
+
+        <a class="method-permalink" href="#maximum_bandwidth%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L264" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="maximum_bandwidth=(maximum_bandwidth:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_bandwidth=</strong>(maximum_bandwidth : Int64?)
+
+        <a class="method-permalink" href="#maximum_bandwidth%3D%28maximum_bandwidth%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L264" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="maximum_iops:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_iops</strong> : Int64?
+
+        <a class="method-permalink" href="#maximum_iops%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L260" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="maximum_iops=(maximum_iops:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>maximum_iops=</strong>(maximum_iops : Int64?)
+
+        <a class="method-permalink" href="#maximum_iops%3D%28maximum_iops%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L260" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory</strong> : Int64?
+
+        <a class="method-permalink" href="#memory%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory=(memory:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory=</strong>(memory : Int64?)
+
+        <a class="method-permalink" href="#memory%3D%28memory%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_and_swap:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_and_swap</strong> : Int64?
+
+        <a class="method-permalink" href="#memory_and_swap%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L227" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_and_swap=(memory_and_swap:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_and_swap=</strong>(memory_and_swap : Int64?)
+
+        <a class="method-permalink" href="#memory_and_swap%3D%28memory_and_swap%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L227" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_reservation:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_reservation</strong> : Int64?
+
+        <a class="method-permalink" href="#memory_reservation%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_reservation=(memory_reservation:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_reservation=</strong>(memory_reservation : Int64?)
+
+        <a class="method-permalink" href="#memory_reservation%3D%28memory_reservation%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_swappiness:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_swappiness</strong> : Int64?
+
+        <a class="method-permalink" href="#memory_swappiness%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L231" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_swappiness=(memory_swappiness:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>memory_swappiness=</strong>(memory_swappiness : Int64?)
+
+        <a class="method-permalink" href="#memory_swappiness%3D%28memory_swappiness%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L231" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mounts:Array(Mount?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>mounts</strong> : Array(<a href="../../Docker/Container/HostConfig/Mount.html">Mount</a>?)?
+
+        <a class="method-permalink" href="#mounts%3AArray%28Mount%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L350" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mounts=(mounts:Array(Mount?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>mounts=</strong>(mounts : Array(<a href="../../Docker/Container/HostConfig/Mount.html">Mount</a>?)?)
+
+        <a class="method-permalink" href="#mounts%3D%28mounts%3AArray%28Mount%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L350" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nano_cpus:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>nano_cpus</strong> : Int64?
+
+        <a class="method-permalink" href="#nano_cpus%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L234" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nano_cpus=(nano_cpus:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>nano_cpus=</strong>(nano_cpus : Int64?)
+
+        <a class="method-permalink" href="#nano_cpus%3D%28nano_cpus%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L234" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_mode:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>network_mode</strong> : String?
+
+        <a class="method-permalink" href="#network_mode%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L318" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_mode=(network_mode:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>network_mode=</strong>(network_mode : String?)
+
+        <a class="method-permalink" href="#network_mode%3D%28network_mode%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L318" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_kill_disable:Bool?-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_kill_disable</strong> : Bool?
+
+        <a class="method-permalink" href="#oom_kill_disable%3ABool%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_kill_disable=(oom_kill_disable:Bool?)-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_kill_disable=</strong>(oom_kill_disable : Bool?)
+
+        <a class="method-permalink" href="#oom_kill_disable%3D%28oom_kill_disable%3ABool%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_score_adjustment:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_score_adjustment</strong> : Int64?
+
+        <a class="method-permalink" href="#oom_score_adjustment%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L385" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oom_score_adjustment=(oom_score_adjustment:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>oom_score_adjustment=</strong>(oom_score_adjustment : Int64?)
+
+        <a class="method-permalink" href="#oom_score_adjustment%3D%28oom_score_adjustment%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L385" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pid_mode:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>pid_mode</strong> : String?
+
+        <a class="method-permalink" href="#pid_mode%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L392" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pid_mode=(pid_mode:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>pid_mode=</strong>(pid_mode : String?)
+
+        <a class="method-permalink" href="#pid_mode%3D%28pid_mode%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L392" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pids_limit:Int64?-instance-method">
+      <div class="signature">
+        
+        def <strong>pids_limit</strong> : Int64?
+
+        <a class="method-permalink" href="#pids_limit%3AInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L240" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pids_limit=(pids_limit:Int64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>pids_limit=</strong>(pids_limit : Int64?)
+
+        <a class="method-permalink" href="#pids_limit%3D%28pids_limit%3AInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L240" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port_bindings:Hash(String|Int64,Docker::APIClient::PortBindings)?-instance-method">
+      <div class="signature">
+        
+        def <strong>port_bindings</strong> : Hash(String | Int64, <a href="../../Docker/APIClient/PortBindings.html">Docker::APIClient::PortBindings</a>)?
+
+        <a class="method-permalink" href="#port_bindings%3AHash%28String%7CInt64%2CDocker%3A%3AAPIClient%3A%3APortBindings%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L321" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port_bindings=(port_bindings:Hash(String|Int64,Docker::APIClient::PortBindings)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>port_bindings=</strong>(port_bindings : Hash(String | Int64, <a href="../../Docker/APIClient/PortBindings.html">Docker::APIClient::PortBindings</a>)?)
+
+        <a class="method-permalink" href="#port_bindings%3D%28port_bindings%3AHash%28String%7CInt64%2CDocker%3A%3AAPIClient%3A%3APortBindings%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L321" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="privileged?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>privileged?</strong> : Bool
+
+        <a class="method-permalink" href="#privileged%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L394" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="publish_all_ports-instance-method">
+      <div class="signature">
+        
+        def <strong>publish_all_ports</strong>
+
+        <a class="method-permalink" href="#publish_all_ports-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Allocate a random host port for all of a container's exposed ports.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L405" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="publish_all_ports?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>publish_all_ports?</strong> : Bool
+
+        <a class="method-permalink" href="#publish_all_ports%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L402" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_only_rootfs-instance-method">
+      <div class="signature">
+        
+        def <strong>read_only_rootfs</strong>
+
+        <a class="method-permalink" href="#read_only_rootfs-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Mount the container's root filesystem as read only.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L413" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_only_rootfs?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>read_only_rootfs?</strong> : Bool
+
+        <a class="method-permalink" href="#read_only_rootfs%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L410" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_policy:Docker::APIClient::RestartPolicy?-instance-method">
+      <div class="signature">
+        
+        def <strong>restart_policy</strong> : <a href="../../Docker/APIClient/RestartPolicy.html">Docker::APIClient::RestartPolicy</a>?
+
+        <a class="method-permalink" href="#restart_policy%3ADocker%3A%3AAPIClient%3A%3ARestartPolicy%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L328" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_policy=(restart_policy:Docker::APIClient::RestartPolicy?)-instance-method">
+      <div class="signature">
+        
+        def <strong>restart_policy=</strong>(restart_policy : <a href="../../Docker/APIClient/RestartPolicy.html">Docker::APIClient::RestartPolicy</a>?)
+
+        <a class="method-permalink" href="#restart_policy%3D%28restart_policy%3ADocker%3A%3AAPIClient%3A%3ARestartPolicy%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L328" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="runtime:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>runtime</strong> : String?
+
+        <a class="method-permalink" href="#runtime%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L446" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="runtime=(runtime:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>runtime=</strong>(runtime : String?)
+
+        <a class="method-permalink" href="#runtime%3D%28runtime%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L446" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="secure_opt:Array(String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>secure_opt</strong> : Array(String)?
+
+        <a class="method-permalink" href="#secure_opt%3AArray%28String%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L420" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="secure_opt=(secure_opt:Array(String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>secure_opt=</strong>(secure_opt : Array(String)?)
+
+        <a class="method-permalink" href="#secure_opt%3D%28secure_opt%3AArray%28String%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L420" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shm_size:UInt64?-instance-method">
+      <div class="signature">
+        
+        def <strong>shm_size</strong> : UInt64?
+
+        <a class="method-permalink" href="#shm_size%3AUInt64%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L439" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shm_size=(shm_size:UInt64?)-instance-method">
+      <div class="signature">
+        
+        def <strong>shm_size=</strong>(shm_size : UInt64?)
+
+        <a class="method-permalink" href="#shm_size%3D%28shm_size%3AUInt64%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L439" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="storage_opt:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>storage_opt</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#storage_opt%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L424" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="storage_opt=(storage_opt:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>storage_opt=</strong>(storage_opt : Hash(String, String)?)
+
+        <a class="method-permalink" href="#storage_opt%3D%28storage_opt%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L424" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="systctls:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>systctls</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#systctls%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L443" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="systctls=(systctls:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>systctls=</strong>(systctls : Hash(String, String)?)
+
+        <a class="method-permalink" href="#systctls%3D%28systctls%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L443" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tmpfs:Hash(String,String)?-instance-method">
+      <div class="signature">
+        
+        def <strong>tmpfs</strong> : Hash(String, String)?
+
+        <a class="method-permalink" href="#tmpfs%3AHash%28String%2CString%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L429" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tmpfs=(tmpfs:Hash(String,String)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>tmpfs=</strong>(tmpfs : Hash(String, String)?)
+
+        <a class="method-permalink" href="#tmpfs%3D%28tmpfs%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L429" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="u_limits:Array(ULimit?)?-instance-method">
+      <div class="signature">
+        
+        def <strong>u_limits</strong> : Array(<a href="../../Docker/Container/HostConfig/ULimit.html">ULimit</a>?)?
+
+        <a class="method-permalink" href="#u_limits%3AArray%28ULimit%3F%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L243" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="u_limits=(u_limits:Array(ULimit?)?)-instance-method">
+      <div class="signature">
+        
+        def <strong>u_limits=</strong>(u_limits : Array(<a href="../../Docker/Container/HostConfig/ULimit.html">ULimit</a>?)?)
+
+        <a class="method-permalink" href="#u_limits%3D%28u_limits%3AArray%28ULimit%3F%29%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L243" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_namespace_mode:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>user_namespace_mode</strong> : String?
+
+        <a class="method-permalink" href="#user_namespace_mode%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L436" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_namespace_mode=(user_namespace_mode:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>user_namespace_mode=</strong>(user_namespace_mode : String?)
+
+        <a class="method-permalink" href="#user_namespace_mode%3D%28user_namespace_mode%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L436" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uts_mode:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>uts_mode</strong> : String?
+
+        <a class="method-permalink" href="#uts_mode%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L432" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uts_mode=(uts_mode:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>uts_mode=</strong>(uts_mode : String?)
+
+        <a class="method-permalink" href="#uts_mode%3D%28uts_mode%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L432" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volume_driver:String-instance-method">
+      <div class="signature">
+        
+        def <strong>volume_driver</strong> : String
+
+        <a class="method-permalink" href="#volume_driver%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L344" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volume_driver=(volume_driver:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>volume_driver=</strong>(volume_driver : String)
+
+        <a class="method-permalink" href="#volume_driver%3D%28volume_driver%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L344" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volumes_from:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>volumes_from</strong> : Array(String)
+
+        <a class="method-permalink" href="#volumes_from%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L348" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volumes_from=(volumes_from:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>volumes_from=</strong>(volumes_from : Array(String))
+
+        <a class="method-permalink" href="#volumes_from%3D%28volumes_from%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/owentams/docker.cr/blob/f98b02622f94b6bdd9806ac810f0bfbf45d159ac/src/docker/container/host_config.cr#L348" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
